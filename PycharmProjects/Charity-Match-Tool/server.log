@@ -1,0 +1,10 @@
+INFO:     127.0.0.1:50990 - "POST /api/match HTTP/1.1" 200 OK
+  INFO:     127.0.0.1:63919 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63919 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62900 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62900 - "GET /quiz HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62900 - "GET /js/quiz.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "POST /api/match HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /js/results.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59966 - "POST /api/match HTTP/1.1" 200 OK
