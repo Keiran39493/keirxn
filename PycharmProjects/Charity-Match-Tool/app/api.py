@@ -39,5 +39,8 @@ async def results_page():
     return FileResponse(STATIC_DIR / "results.html")
 
 
+# Serve NGO logo images
+app.mount("/images", StaticFiles(directory=str(IMAGES_DIR)), name="images")
+
 # Static files catch-all (must be mounted last)
 app.mount("/", StaticFiles(directory=str(STATIC_DIR), html=True), name="static")
