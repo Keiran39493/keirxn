@@ -1,0 +1,29 @@
+# IDE
+.idea/
+.vscode/
+
+# Claude internal
+.claude/
+
+# Node
+web/node_modules/
+web/.next/
+web/.pnpm-debug.log*
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
+web/*.tsbuildinfo
+web/next-env.d.ts
+web/.vercel
+web/.env*
+
+# Python / PyCharm
+PycharmProjects/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,211 @@
+{
+  "ackerschaft": {
+    "long_description": "We create unique, hands-on experiences around the field with the aim of promoting an appreciation of nature and food among children, young people and adults alike.",
+    "field_of_activity": "Education, sustainability, environmental protection, nutrition, health, agriculture, garden, gastronomy",
+    "founded_year": 2019,
+    "website": "https://www.ackerschaft.li",
+    "board_president": "Elisabeth Müssner",
+    "address": "c/o Technopark, Schaanerstrasse 27, 9490 Vaduz",
+    "phone": "+423 780 88 89",
+    "commercial_register": "FL-0002.627.452-1",
+    "tax_exempt": true,
+    "association_memberships": ["SDG Alliance Liechtenstein"],
+    "governance_badges": ["annual_report", "bank_details_on_request"],
+    "contact_email": "info@ackerschaft.li",
+    "featured_project_id": "gemuese-ackerdemie",
+    "projects": [
+      {
+        "id": "gemuese-ackerdemie",
+        "title": "GemüseAckerdemie",
+        "summary": "Curriculum-aligned school and kindergarten gardens across Liechtenstein.",
+        "problem": "Many children grow up disconnected from how food is grown.",
+        "intervention": "Six schools and four kindergartens receive setup support, training, and long-term integration of vegetable gardens into everyday school life.",
+        "outcome": "Children and teachers experience the work and joy behind regional food through hands-on gardening.",
+        "budget_total_chf": 85000,
+        "budget_secured_chf": 52000,
+        "budget_gap_chf": 33000,
+        "deadline": "2026-08-31",
+        "timeline_months": 12,
+        "budget_lines": [
+          { "category": "Garden materials & soil", "amount_chf": 22000 },
+          { "category": "Educator training", "amount_chf": 18000 },
+          { "category": "Coordination & school visits", "amount_chf": 25000 },
+          { "category": "Programme materials", "amount_chf": 20000 }
+        ],
+        "impact_metrics": [
+          { "label": "Schools & kindergartens", "value": "10 sites" },
+          { "label": "Children reached (est.)", "value": "1,200+/year" },
+          { "label": "Programme since", "value": "2022 in LI" }
+        ],
+        "highlights_for_matchers": [
+          "Multi-award-winning German programme adapted for Liechtenstein",
+          "Strong education + environment crossover for open mandates",
+          "Measurable participation in schools"
+        ],
+        "track_record": [
+          {
+            "title": "Pilot schools 2022–2024",
+            "result": "Gardens integrated into weekly lessons; teacher feedback 4.6/5"
+          }
+        ]
+      },
+      {
+        "id": "post-ernte",
+        "title": "Off to the post-harvest",
+        "summary": "Public harvest campaigns with Liechtenstein farmers to save field surplus.",
+        "problem": "Large quantities of vegetables remain in fields after commercial harvest.",
+        "intervention": "Coordinated post-harvest days with farmers; volunteers collect and distribute produce.",
+        "outcome": "Food loss reduced; 600+ households on the vegetable-saver mailing list.",
+        "budget_total_chf": 35000,
+        "budget_secured_chf": 28000,
+        "budget_gap_chf": 7000,
+        "timeline_months": 6,
+        "budget_lines": [
+          { "category": "Logistics & transport", "amount_chf": 12000 },
+          { "category": "Volunteer coordination", "amount_chf": 8000 },
+          { "category": "Farmer partnerships", "amount_chf": 10000 },
+          { "category": "Communication", "amount_chf": 5000 }
+        ],
+        "impact_metrics": [
+          { "label": "Vegetable savers registered", "value": "600+" },
+          { "label": "Campaigns since", "value": "2020" },
+          { "label": "kg rescued (2024 est.)", "value": "12,000" }
+        ],
+        "highlights_for_matchers": [
+          "Visible local impact — food waste & climate",
+          "Partnership model with LI agriculture"
+        ]
+      },
+      {
+        "id": "acker-kueche",
+        "title": "AckerKüche",
+        "summary": "Radically regional catering using post-harvest and local ingredients.",
+        "problem": "Institutional events rarely showcase Liechtenstein produce.",
+        "intervention": "Two association chefs cook exclusively with regional and rescued vegetables at events.",
+        "outcome": "Demonstrates viable local food culture; revenue partially reinvested in programmes.",
+        "budget_total_chf": 45000,
+        "budget_secured_chf": 30000,
+        "budget_gap_chf": 15000,
+        "timeline_months": 12,
+        "budget_lines": [
+          { "category": "Kitchen equipment", "amount_chf": 15000 },
+          { "category": "Chef time & events", "amount_chf": 20000 },
+          { "category": "Ingredient sourcing", "amount_chf": 10000 }
+        ],
+        "impact_metrics": [
+          { "label": "Institutional events", "value": "25+ / year" },
+          { "label": "Local ingredient share", "value": "~95%" },
+          { "label": "Operating since", "value": "2022" }
+        ],
+        "highlights_for_matchers": [
+          "Earned-income component lowers net funding need",
+          "Storytelling asset for funder visits"
+        ]
+      }
+    ]
+  },
+  "demenz": {
+    "long_description": "Demenz Liechtenstein raises awareness, supports people living with dementia and their families, and works toward a dementia-friendly society — the only organisation in the Principality with this dedicated portfolio.",
+    "field_of_activity": "Dementia awareness, carer support, day programmes, outreach",
+    "board_president": "Board listed on gemeinnuetzig.li",
+    "phone": null,
+    "commercial_register": null,
+    "tax_exempt": true,
+    "association_memberships": ["DADO"],
+    "governance_badges": ["annual_report", "bank_details_on_request"],
+    "contact_email": "kontakt@demenz.li",
+    "featured_project_id": "tagesstruktur",
+    "projects": [
+      {
+        "id": "tagesstruktur",
+        "title": "Day centre & structured activities",
+        "summary": "Weekly programme for people with dementia and respite for family carers.",
+        "problem": "Family carers in LI lack affordable structured daytime support.",
+        "intervention": "Run a day centre with therapeutic activities and trained staff.",
+        "outcome": "Improved wellbeing for participants; carers can maintain employment.",
+        "budget_total_chf": 180000,
+        "budget_secured_chf": 120000,
+        "budget_gap_chf": 60000,
+        "timeline_months": 12,
+        "budget_lines": [
+          { "category": "Staff & training", "amount_chf": 110000 },
+          { "category": "Premises & materials", "amount_chf": 40000 },
+          { "category": "Transport assistance", "amount_chf": 30000 }
+        ],
+        "impact_metrics": [
+          { "label": "Participants per week", "value": "35–40" },
+          { "label": "Carer respite days", "value": "900+/year" },
+          { "label": "Dementia prevalence LI", "value": "~2,400 people" }
+        ],
+        "highlights_for_matchers": [
+          "Only provider with this full portfolio in Liechtenstein",
+          "Strong health & seniors mandate fit"
+        ]
+      },
+      {
+        "id": "aufklaerung",
+        "title": "Awareness & outreach",
+        "summary": "Community talks, materials, and dementia-friendly community projects.",
+        "problem": "Stigma delays diagnosis and help-seeking.",
+        "intervention": "School and employer outreach, information events, volunteer network.",
+        "outcome": "Earlier referrals and more dementia-friendly institutions.",
+        "budget_total_chf": 45000,
+        "budget_secured_chf": 35000,
+        "budget_gap_chf": 10000,
+        "timeline_months": 12,
+        "budget_lines": [
+          { "category": "Events & materials", "amount_chf": 20000 },
+          { "category": "Volunteer coordination", "amount_chf": 15000 },
+          { "category": "Digital resources", "amount_chf": 10000 }
+        ],
+        "impact_metrics": [
+          { "label": "Talks per year", "value": "40+" },
+          { "label": "Partner institutions", "value": "25" },
+          { "label": "Website visits", "value": "15k+/year" }
+        ],
+        "highlights_for_matchers": [
+          "Prevention angle for health-focused foundations",
+          "Scalable with partial funding"
+        ]
+      }
+    ]
+  },
+  "eltern-kind-forum": {
+    "long_description": "The Eltern Kind Forum strengthens families through early childhood programmes, parenting support, and community spaces — core services are often contract-funded; new offers depend on third-party project grants.",
+    "field_of_activity": "Early childhood, parenting education, family counselling",
+    "board_president": "Presidium per directory listing",
+    "tax_exempt": true,
+    "association_memberships": [],
+    "governance_badges": ["annual_report"],
+    "contact_email": "info@elternkindforum.li",
+    "featured_project_id": "innovation-angebote",
+    "projects": [
+      {
+        "id": "innovation-angebote",
+        "title": "New family programme pilot",
+        "summary": "Innovative group offers for parents with young children (third-party funded).",
+        "problem": "Core operations are secured; innovation requires external grants.",
+        "intervention": "Pilot bilingual parent-child courses and outreach to underserved municipalities.",
+        "outcome": "Expand reach beyond existing centres; evaluate for state co-funding.",
+        "budget_total_chf": 65000,
+        "budget_secured_chf": 20000,
+        "budget_gap_chf": 45000,
+        "timeline_months": 18,
+        "budget_lines": [
+          { "category": "Programme staff", "amount_chf": 35000 },
+          { "category": "Room & materials", "amount_chf": 15000 },
+          { "category": "Outreach", "amount_chf": 15000 }
+        ],
+        "impact_metrics": [
+          { "label": "Families (target)", "value": "120" },
+          { "label": "Municipalities", "value": "3 new" },
+          { "label": "Core ops funding", "value": "State contracts" }
+        ],
+        "highlights_for_matchers": [
+          "Clear split: fundable project vs. general org",
+          "Children & families mandate; LI geography"
+        ]
+      }
+    ]
+  }
+}

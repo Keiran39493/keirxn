@@ -1,0 +1,1106 @@
+{
+  "ngos": [
+    {
+      "id": "ackerschaft",
+      "name": "Ackerschaft",
+      "slug": "ackerschaft",
+      "category": "environment_climate",
+      "description": "Eine Gemeinschaftslandwirtschaft, die nachhaltige Landwirtschaft und lokale Lebensmittelproduktion in Liechtenstein fördert und Menschen durch gemeinsame Anbauprojekte mit der Natur verbindet.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        2,
+        11,
+        13,
+        15
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/ackerschaft/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "aha",
+      "name": "aha – Tipps und Infos für junge Leute",
+      "slug": "aha-tipps-und-infos-fuer-junge-leute",
+      "category": "children_youth_families",
+      "description": "Liechtensteins Jugend-Informations- und Beratungszentrum – bietet jungen Menschen Orientierung, Ressourcen und Unterstützung zu Ausbildung, Beruf, Freiwilligenarbeit und zivilem Engagement.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": "https://www.aha.li",
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/aha-tipps-und-infos-fuer-junge-leute/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "assitej",
+      "name": "ASSITEJ Liechtenstein",
+      "slug": "assitej-liechtenstein",
+      "category": "arts_culture",
+      "description": "Das liechtensteinische Mitglied der Internationalen Vereinigung des Theaters für Kinder und Jugendliche – fördert darstellende Kunst für junges Publikum und unterstützt Jugendtheaterprojekte.",
+      "legal_form": "association",
+      "geographic_scope": "dach",
+      "sdgs": [
+        4,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/assitej-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "ccf",
+      "name": "CCF – Children Cancer Foundation",
+      "slug": "ccf-children-cancer-foundation",
+      "category": "children_youth_families",
+      "description": "Unterstützt krebskranke Kinder und ihre Familien durch Forschungsförderung, praktische Hilfe und psychologische Begleitung während und nach der Behandlung.",
+      "legal_form": "foundation",
+      "geographic_scope": "dach",
+      "sdgs": [
+        3,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/ccf-children-cancer-foundation/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "cystische-fibrose",
+      "name": "Cystische Fibrose Verein Liechtenstein",
+      "slug": "cystische-fibrose-verein-liechtenstein",
+      "category": "social_health",
+      "description": "Unterstützt Menschen mit Mukoviszidose und ihre Familien in Liechtenstein durch Interessenvertretung, gegenseitige Unterstützung und Zugang zu neuesten medizinischen Erkenntnissen und Therapien.",
+      "legal_form": "association",
+      "geographic_scope": "dach",
+      "sdgs": [
+        3,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/cystische-fibrose-verein-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "demenz",
+      "name": "Demenz Liechtenstein",
+      "slug": "demenz-liechtenstein",
+      "category": "senior_citizens",
+      "description": "Sensibilisiert für das Thema Demenz, unterstützt Betroffene und Angehörige und setzt sich für eine demenzfreundliche Gesellschaft in Liechtenstein ein.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/demenz-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "eltern-kind-forum",
+      "name": "Eltern Kind Forum",
+      "slug": "eltern-kind-forum",
+      "category": "children_youth_families",
+      "description": "Eine Familienunterstützungsorganisation, die Frühbildungsprogramme, Elternberatung und Gemeinschaftsräume anbietet, in denen Eltern und Kleinkinder gemeinsam lernen und wachsen.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        4,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/eltern-kind-forum/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "erwachsenenbildung",
+      "name": "Erwachsenenbildung Stein Egerta",
+      "slug": "erwachsenenbildung-stein-egerta",
+      "category": "education",
+      "description": "Liechtensteins führendes Zentrum für Erwachsenenbildung – bietet Weiterbildung, Berufsausbildung und lebenslanges Lernen in einem breiten Fächerspektrum.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/erwachsenenbildung-stein-egerta/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "familienhilfe",
+      "name": "Familienhilfe Liechtenstein",
+      "slug": "familienhilfe-liechtenstein",
+      "category": "social_health",
+      "description": "Bietet praktische Haushalts- und Sozialhilfe für Familien und Einzelpersonen in Not in ganz Liechtenstein, besonders für jene, die mit Krankheit, Krise oder sozialen Schwierigkeiten konfrontiert sind.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        1,
+        3,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/familienhilfe-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "familienraum",
+      "name": "FamilienRaum",
+      "slug": "familienraum",
+      "category": "children_youth_families",
+      "description": "Schafft inklusive Familienräume und Unterstützungsnetzwerke in Liechtenstein mit Beratung, Workshops und Gemeinschaftsangeboten für Familien im Alltag.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        4,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/familienraum/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "mueze",
+      "name": "Familienzentrum \"müze\"",
+      "slug": "mueze",
+      "category": "children_youth_families",
+      "description": "Ein Familienzentrum in Liechtenstein mit einem einladenden Raum für Eltern und Kinder – mit Programmen zu Frühförderung, sozialem Austausch und Elternbegleitung.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        4,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/mueze/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "fivetolife",
+      "name": "Fivetolife",
+      "slug": "five-to-life",
+      "category": "social_health",
+      "description": "Engagiert sich für Suizidprävention und psychisches Wohlbefinden in Liechtenstein durch Krisenintervention, Aufklärungskampagnen und Ressourcen für Gefährdete.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/five-to-life/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "frauenhaus",
+      "name": "Frauenhaus Liechtenstein",
+      "slug": "frauenhaus-liechtenstein",
+      "category": "social_health",
+      "description": "Bietet Notunterkünfte, Beratung und Unterstützung für Frauen und Kinder, die häusliche Gewalt erfahren, und begleitet Betroffene auf dem Weg zu Sicherheit und Selbstständigkeit.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        5,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/frauenhaus-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "haus-gutenberg",
+      "name": "Haus Gutenberg",
+      "slug": "haus-gutenberg",
+      "category": "education",
+      "description": "Ein Zentrum für Dialog, Bildung und kulturellen Austausch in Liechtenstein – veranstaltet Seminare, Konferenzen und Bildungsveranstaltungen, die verschiedene Gemeinschaften und Disziplinen verbinden.",
+      "legal_form": "association",
+      "geographic_scope": "dach",
+      "sdgs": [
+        4,
+        10,
+        11,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/haus-gutenberg/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "hilfe-bangladesch",
+      "name": "Hilfe für Bangladesch",
+      "slug": "hilfe-fuer-bangladesch",
+      "category": "development",
+      "description": "Unterstützt nachhaltige Entwicklungsprojekte in Bangladesch durch humanitäre Hilfe, Bildungsförderung und von Liechtenstein aus geleitete Gemeindeentwicklungsinitiativen.",
+      "legal_form": "association",
+      "geographic_scope": "international",
+      "sdgs": [
+        1,
+        2,
+        3,
+        4,
+        10,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/hilfe-fuer-bangladesch/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "hilfswerk",
+      "name": "Hilfswerk Liechtenstein",
+      "slug": "hilfswerk-liechtenstein",
+      "category": "children_youth_families",
+      "description": "Bietet ein breites Spektrum sozialer Dienstleistungen, darunter Kinderbetreuung, Familienunterstützung, Altenpflege und Integrationsprogramme in ganz Liechtenstein.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        1,
+        3,
+        4,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/hilfswerk-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "hospizbewegung",
+      "name": "Hospizbewegung Liechtenstein",
+      "slug": "hospizbewegung-liechtenstein",
+      "category": "senior_citizens",
+      "description": "Bildet ehrenamtliche Hospizbegleiterinnen und -begleiter aus und koordiniert diese – sie schenken Sterbenden und ihren Angehörigen in Liechtenstein Trost, Würde und menschliche Nähe.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/hospizbewegung-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "infra",
+      "name": "infra – Informations- und Beratungsstelle für Frauen",
+      "slug": "infra-informations-und-beratungsstelle-fuer-frauen",
+      "category": "social_health",
+      "description": "Liechtensteins spezialisierte Informations- und Beratungsstelle für Frauen – bietet vertrauliche Unterstützung zu Gesundheit, Beziehungen, Rechtsfragen und sozialer Absicherung.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        5,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/infra-informations-und-beratungsstelle-fuer-frauen/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "integrity-earth",
+      "name": "Integrity.Earth",
+      "slug": "integrity-earth",
+      "category": "environment_climate",
+      "description": "Eine Umweltorganisation, die sich für die Wiederherstellung ökologischer Integrität durch Naturschutzprojekte, nachhaltige Landnutzung und internationale Biodiversitätspartnerschaften einsetzt.",
+      "legal_form": "association",
+      "geographic_scope": "international",
+      "sdgs": [
+        6,
+        11,
+        13,
+        15,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/integrity-earth/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "junges-theater",
+      "name": "junges Theater Liechtenstein",
+      "slug": "junges-theater-liechtenstein",
+      "category": "arts_culture",
+      "description": "Produziert und präsentiert professionelles Theater für junges Publikum in Liechtenstein und fördert Kreativität, Empathie und kulturelles Engagement bei Kindern und Jugendlichen.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/junges-theater-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "kit",
+      "name": "KIT – Kriseninterventionsteam Liechtenstein",
+      "slug": "kit-kriseninterventionsteam-liechtenstein",
+      "category": "social_health",
+      "description": "Liechtensteins ehrenamtliches Kriseninterventionsteam – leistet unmittelbare psychologische Erste Hilfe für Einzelpersonen und Gemeinschaften nach traumatischen Ereignissen.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/kit-kriseninterventionsteam-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "kulturverein-triangel",
+      "name": "Kulturverein TRIANGEL",
+      "slug": "kulturverein-triangel",
+      "category": "arts_culture",
+      "description": "Ein Kulturverein, der zeitgenössische Kunst und interkulturellen Dialog in Liechtenstein durch Ausstellungen, Veranstaltungen und gemeinschaftliche Kunstprojekte fördert.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/kulturverein-triangel/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "kunstschule",
+      "name": "Kunstschule Liechtenstein",
+      "slug": "kunstschule-liechtenstein",
+      "category": "education",
+      "description": "Liechtensteins Kunstschule für alle Altersgruppen – bietet Kurse in bildender Kunst, Kunsthandwerk und Design, die kreatives Schaffen vom Kleinkindalter bis ins Erwachsenenalter fördern.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/kunstschule-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "lcs",
+      "name": "Leichtathletik Club Schaan – LCS",
+      "slug": "leichtathletik-club-schaan-lcs",
+      "category": "sport_leisure",
+      "description": "Fördert Leichtathletik und Laufsport für Jugendliche und Erwachsene in Liechtenstein und stärkt Gesundheit, Teamgeist und sportliche Exzellenz durch Training und Wettkampf.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/leichtathletik-club-schaan-lcs/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "behindertenverband",
+      "name": "Liechtensteiner Behindertenverband",
+      "slug": "liechtensteiner-behindertenverband",
+      "category": "social_health",
+      "description": "Die Dachorganisation für Menschen mit Behinderungen in Liechtenstein – setzt sich für Inklusion, Barrierefreiheit und gleichberechtigte Teilhabe in allen Bereichen des gesellschaftlichen Lebens ein.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        10,
+        11,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/liechtensteiner-behindertenverband/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "seniorenbund",
+      "name": "Liechtensteiner Seniorenbund",
+      "slug": "liechtensteiner-seniorenbund",
+      "category": "senior_citizens",
+      "description": "Vertritt die Interessen der Seniorinnen und Senioren in Liechtenstein und fördert aktives Altern, soziale Teilhabe und Lebensqualität für ältere Einwohnerinnen und Einwohner.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/liechtensteiner-seniorenbund/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "lgu",
+      "name": "Liechtensteinische Gesellschaft für Umweltschutz",
+      "slug": "liechtensteinische-gesellschaft-fuer-umweltschutz",
+      "category": "environment_climate",
+      "description": "Liechtensteins führende Umweltschutzorganisation – engagiert sich für Naturschutz, Artenvielfalt und nachhaltige Entwicklung durch Bildung und politisches Engagement.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        6,
+        11,
+        13,
+        15
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/liechtensteinische-gesellschaft-fuer-umweltschutz/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "musikschule",
+      "name": "Liechtensteinische Musikschule",
+      "slug": "liechtensteinische-musikschule",
+      "category": "education",
+      "description": "Die Musikschule Liechtensteins – bietet Instrumentalunterricht, Ensembleprogramme und Musikpädagogik für Kinder und Erwachsene im ganzen Fürstentum.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/liechtensteinische-musikschule/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "love-li",
+      "name": "Love.li",
+      "slug": "love-li",
+      "category": "education",
+      "description": "Fördert soziale Inklusion und Chancengleichheit durch Bildungs- und Integrationsprogramme für Zugewanderte und marginalisierte Gemeinschaften in Liechtenstein.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/love-li/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "mali-kinderhilfe",
+      "name": "Mali Kinderhilfe Liechtenstein",
+      "slug": "mali-kinderhilfe-liechtenstein",
+      "category": "development",
+      "description": "Unterstützt Kinderrechte und Bildung in Mali durch Schulbau, Lehrerausbildung und von Liechtenstein aus geförderte Gemeindeentwicklungsprojekte.",
+      "legal_form": "association",
+      "geographic_scope": "international",
+      "sdgs": [
+        1,
+        2,
+        3,
+        4,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/mali-kinderhilfe-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "mus-e",
+      "name": "MUS-E Liechtenstein",
+      "slug": "mus-e-liechtenstein",
+      "category": "arts_culture",
+      "description": "Bringt professionelle Künstlerinnen und Künstler in liechtensteinische Grundschulen, um durch Musik, Tanz, Theater und bildende Kunst Kreativität, Toleranz und sozialen Zusammenhalt zu stärken.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        4,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/mus-e-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "netzwerk-familie",
+      "name": "Netzwerk Familie",
+      "slug": "netzwerk-familie",
+      "category": "children_youth_families",
+      "description": "Ein Netzwerk von Familienorganisationen in Liechtenstein, das zusammenarbeitet, um Familienleben zu stärken, familienfreundliche Rahmenbedingungen zu fördern und Angebote für Eltern und Kinder zu verbessern.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        4,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/netzwerk-familie/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "oskj",
+      "name": "Ombudsstelle für Kinder und Jugendliche (OSKJ)",
+      "slug": "ombudsstelle-fuer-kinder-und-jugendliche",
+      "category": "children_youth_families",
+      "description": "Liechtensteins unabhängige Ombudsstelle für Kinder und Jugendliche – setzt sich für deren Rechte ein und bearbeitet Beschwerden gegen Institutionen und Behörden.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/ombudsstelle-fuer-kinder-und-jugendliche/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "private-uni",
+      "name": "Private Universität im Fürstentum Liechtenstein",
+      "slug": "private-universitaet-im-fuerstentum-liechtenstein",
+      "category": "education",
+      "description": "Eine Privatuniversität in Liechtenstein, die spezialisierte Studiengänge in Gesundheitswissenschaften, Biowissenschaften und Humanmedizin mit Schwerpunkt auf angewandter Forschung und Innovation anbietet.",
+      "legal_form": "foundation",
+      "geographic_scope": "dach",
+      "sdgs": [
+        3,
+        4,
+        9,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/private-universitaet-im-fuerstentum-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "rokj",
+      "name": "ROKJ Rheintal-Liechtenstein",
+      "slug": "rokj-rheintal-liechtenstein",
+      "category": "children_youth_families",
+      "description": "Bietet psychologische und soziale Unterstützungsdienste für Kinder und Jugendliche in der Rheintalregion einschliesslich Liechtensteins – mit Fachtherapie und Familienberatung.",
+      "legal_form": "association",
+      "geographic_scope": "dach",
+      "sdgs": [
+        3,
+        4,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/rokj-rheintal-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "sachwalterverein",
+      "name": "Sachwalterverein Liechtenstein",
+      "slug": "sachwalterverein-liechtenstein",
+      "category": "social_health",
+      "description": "Unterstützt schutzbedürftige Erwachsene ohne Handlungsfähigkeit in Liechtenstein durch professionelle Sachwalterschaft, Finanzverwaltung und Interessenvertretung.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/sachwalterverein-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "schwanger-li",
+      "name": "Schwanger.li",
+      "slug": "schwanger-li",
+      "category": "social_health",
+      "description": "Bietet umfassende Informationen, Beratung und Unterstützung für Schwangere und junge Eltern in Liechtenstein zu Gesundheit, Rechten und verfügbaren Sozialleistungen.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        5,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/schwanger-li/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "solargenossenschaft",
+      "name": "Solargenossenschaft Liechtenstein",
+      "slug": "solargenossenschaft-liechtenstein",
+      "category": "environment_climate",
+      "description": "Eine Genossenschaft, die den Einsatz von Solarenergie in Liechtenstein fördert und es Einwohnern sowie Unternehmen ermöglicht, gemeinsam in erneuerbare Energieinfrastruktur zu investieren.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        7,
+        11,
+        13
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/solargenossenschaft-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "sos-kinderdorf",
+      "name": "SOS-Kinderdorf (Liechtenstein) e.V.",
+      "slug": "sos-kinderdorf-liechtenstein-e-v",
+      "category": "children_youth_families",
+      "description": "Die liechtensteinische Sektion der SOS-Kinderdörfer – unterstützt Kinder ohne Elternfürsorge und gefährdete Familien durch SOS-Dörfer, Familienstärkungsprogramme und Jugendeinrichtungen.",
+      "legal_form": "association",
+      "geographic_scope": "dach",
+      "sdgs": [
+        1,
+        3,
+        4,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": "https://www.sos-kinderdorf.li",
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/sos-kinderdorf-liechtenstein-e-v/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "special-olympics",
+      "name": "Special Olympics Liechtenstein",
+      "slug": "special-olympics-liechtenstein",
+      "category": "sport_leisure",
+      "description": "Organisiert ganzjährig Sporttraining und Wettkämpfe für Menschen mit geistiger Behinderung in Liechtenstein und fördert Inklusion, Gesundheit und Gemeinschaft durch Sport.",
+      "legal_form": "association",
+      "geographic_scope": "dach",
+      "sdgs": [
+        3,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/special-olympics-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "spge",
+      "name": "Stiftung für soziale und psychische Gesundheit SPGe",
+      "slug": "verein-fuer-betreutes-wohnen-in-liechtenstein",
+      "category": "social_health",
+      "description": "Unterstützt Menschen mit psychischen Erkrankungen in Liechtenstein durch betreutes Wohnen, soziale Wiedereingliederung und gemeindenahe psychiatrische Begleitung.",
+      "legal_form": "foundation",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/verein-fuer-betreutes-wohnen-in-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "stiftung-liacht",
+      "name": "Stiftung LIACHT",
+      "slug": "stiftung-liacht",
+      "category": "social_health",
+      "description": "Eine Stiftung zur Verbesserung der Lebensqualität von Menschen mit chronischen Erkrankungen oder Behinderungen in Liechtenstein durch Förderung, Pflegekoordination und Initiativen zur sozialen Inklusion.",
+      "legal_form": "foundation",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/stiftung-liacht/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "stiftung-liachtbleck",
+      "name": "Stiftung Liachtbleck",
+      "slug": "stiftung-liachtbleck",
+      "category": "social_health",
+      "description": "Spendet einen Lichtblick für Menschen in schwierigen Lebenslagen in Liechtenstein und unterstützt jene, die von Armut, Krankheit oder sozialer Ausgrenzung betroffen sind, durch gezielte Zuwendungen und praktische Hilfe.",
+      "legal_form": "foundation",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        1,
+        3,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/stiftung-liachtbleck/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "stiftung-ojal",
+      "name": "Stiftung Offene Jugendarbeit Liechtenstein",
+      "slug": "stiftung-offene-jugendarbeit-liechtenstein",
+      "category": "children_youth_families",
+      "description": "Finanziert und koordiniert offene Jugendarbeit in ganz Liechtenstein und unterstützt die Entwicklung junger Menschen durch non-formale Bildung, Peer-Unterstützung und Gemeinwesenarbeit.",
+      "legal_form": "foundation",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        4,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/stiftung-offene-jugendarbeit-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "stiftung-sos-sv",
+      "name": "Stiftung SOS-Kinderdorf SV",
+      "slug": "stiftung-sos-kinderdorf-sv",
+      "category": "children_youth_families",
+      "description": "Der Stiftungsarm der SOS-Kinderdörfer in Liechtenstein – stellt langfristige finanzielle Unterstützung für Kinder ohne Elternfürsorge und Familienstärkungsprogramme bereit.",
+      "legal_form": "foundation",
+      "geographic_scope": "dach",
+      "sdgs": [
+        1,
+        3,
+        4,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/stiftung-sos-kinderdorf-sv/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "stiftung-tiefsinn",
+      "name": "Stiftung TIEFSINN",
+      "slug": "stiftung-tiefsinn",
+      "category": "social_health",
+      "description": "Begegnet der wachsenden Krise in der psychischen Gesundheitsversorgung durch die Sicherung psychiatrischer Dienste, die Förderung von Therapiezugang und die Entstigmatisierung psychischer Erkrankungen im DACH-Raum.",
+      "legal_form": "foundation",
+      "geographic_scope": "dach",
+      "sdgs": [
+        3,
+        10
+      ],
+      "founded_year": 2022,
+      "website": "https://www.tiefsinn.org",
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/stiftung-tiefsinn/",
+      "board_president": "Michaela Risch",
+      "address": "Gafleistrasse 70, 9497 Triesenberg"
+    },
+    {
+      "id": "streetwork",
+      "name": "Streetwork Liechtenstein",
+      "slug": "streetwork-liechtenstein",
+      "category": "social_health",
+      "description": "Erreicht marginalisierte und gefährdete Jugendliche in Liechtenstein durch mobile aufsuchende Sozialarbeit, Schadensminimierung und niedrigschwellige Beratungsangebote.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        16
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/streetwork-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "princely-tattoo",
+      "name": "The Princely Liechtenstein Tattoo",
+      "slug": "the-princely-liechtenstein-tattoo",
+      "category": "arts_culture",
+      "description": "Veranstaltet ein internationales Militärmusikfest auf dem Gelände von Schloss Vaduz, das Liechtensteins kulturelles Erbe feiert und internationalen künstlerischen Austausch fördert.",
+      "legal_form": "association",
+      "geographic_scope": "dach",
+      "sdgs": [
+        11,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/the-princely-liechtenstein-tattoo/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "turtle-foundation",
+      "name": "Turtle Foundation",
+      "slug": "turtle-foundation",
+      "category": "environment_climate",
+      "description": "Eine von weltweit sieben nationalen Organisationen zum Schutz bedrohter Meeresschildkröten – mit Naturschutzprojekten in Kap Verde und Indonesien unter Einbindung lokaler Gemeinschaften.",
+      "legal_form": "foundation",
+      "geographic_scope": "international",
+      "sdgs": [
+        14,
+        15,
+        13
+      ],
+      "founded_year": 2014,
+      "website": "https://www.turtle-foundation.org",
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/turtle-foundation/",
+      "board_president": "Dr Frank Zindel",
+      "address": "Landstrasse 63, 9490 Vaduz"
+    },
+    {
+      "id": "unicef",
+      "name": "UNICEF Schweiz und Liechtenstein",
+      "slug": "unicef-schweiz-und-liechtenstein",
+      "category": "children_youth_families",
+      "description": "Das schweizerisch-liechtensteinische Nationalkomitee von UNICEF – setzt sich weltweit für Kinderrechte ein und finanziert UNICEF-Programme durch Fundraising und Öffentlichkeitsarbeit.",
+      "legal_form": "association",
+      "geographic_scope": "international",
+      "sdgs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        10,
+        16,
+        17
+      ],
+      "founded_year": null,
+      "website": "https://www.unicef.ch",
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/unicef-schweiz-und-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "uni-liechtenstein",
+      "name": "Universität Liechtenstein",
+      "slug": "universitaet-liechtenstein",
+      "category": "education",
+      "description": "Liechtensteins nationale Universität – bietet Bachelor-, Master- und Doktoratsprogramme in Architektur, Wirtschaft und Unternehmertum mit starkem Fokus auf angewandte Forschung und Innovation.",
+      "legal_form": "foundation",
+      "geographic_scope": "dach",
+      "sdgs": [
+        4,
+        8,
+        9,
+        10,
+        17
+      ],
+      "founded_year": null,
+      "website": "https://www.uni.li",
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/universitaet-liechtenstein/",
+      "board_president": null,
+      "address": "Fürst-Franz-Josef-Strasse, 9490 Vaduz"
+    },
+    {
+      "id": "humanitaere-hilfe",
+      "name": "Verein für humanitäre Hilfe",
+      "slug": "verein-fuer-humanitaere-hilfe",
+      "category": "development",
+      "description": "Leistet humanitäre Nothilfe und längerfristige Entwicklungsunterstützung in Krisenregionen weltweit, koordiniert von Liechtenstein aus mit Fokus auf Würde und Selbstbestimmung.",
+      "legal_form": "association",
+      "geographic_scope": "international",
+      "sdgs": [
+        1,
+        2,
+        3,
+        10,
+        16,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/verein-fuer-humanitaere-hilfe/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "maennerfragen",
+      "name": "Verein für Männerfragen e.V.",
+      "slug": "verein-fuer-maennerfragen",
+      "category": "social_health",
+      "description": "Thematisiert Männergesundheit, Wohlbefinden und soziale Herausforderungen in Liechtenstein durch Beratung, Peer-Unterstützung und Interessenvertretung für einen ganzheitlicheren Umgang mit Gesundheit.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        5,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/verein-fuer-maennerfragen/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "menschenrechte",
+      "name": "Verein für Menschenrechte",
+      "slug": "verein-fuer-menschenrechte",
+      "category": "social_health",
+      "description": "Beobachtet und fördert die Menschenrechte in Liechtenstein durch Rechtspädagogik, Unterstützung von Betroffenen und Engagement in internationalen Menschenrechtsnetzwerken.",
+      "legal_form": "association",
+      "geographic_scope": "international",
+      "sdgs": [
+        10,
+        16,
+        17
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/verein-fuer-menschenrechte/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "herzgruppe",
+      "name": "Verein HerzGruppe",
+      "slug": "verein-herzgruppe",
+      "category": "social_health",
+      "description": "Eine Herzpatienten-Selbsthilfegruppe in Liechtenstein – bietet gegenseitige Unterstützung, Gesundheitsbildung und Gemeinschaft für Menschen nach Herzerkrankungen und ihre Familien.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/verein-herzgruppe/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "hindernislauf",
+      "name": "Verein Hindernislauf Liechtenstein",
+      "slug": "verein-hindernislauf-liechtenstein",
+      "category": "sport_leisure",
+      "description": "Organisiert Hindernisläufe in Liechtenstein, die Sport, Gemeinschaftsgeist und Spendenaktionen für wohltätige Zwecke verbinden und Sport für alle zugänglich und freudvoll machen.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        10,
+        11
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/verein-hindernislauf-liechtenstein/",
+      "board_president": null,
+      "address": null
+    },
+    {
+      "id": "kitali",
+      "name": "Verein Kindertagesstätten Liechtenstein",
+      "slug": "verein-kindertagesstaetten-liechtenstein",
+      "category": "children_youth_families",
+      "description": "Betreibt und fördert qualitativ hochwertige Kinderbetreuung und Kindergartenversorgung in Liechtenstein und unterstützt berufstätige Familien sowie frühkindliche Bildung nach höchsten Standards.",
+      "legal_form": "association",
+      "geographic_scope": "liechtenstein",
+      "sdgs": [
+        3,
+        4,
+        10
+      ],
+      "founded_year": null,
+      "website": null,
+      "profile_url": "https://www.gemeinnuetzig.li/en/directory/verein-kindertagesstaetten-liechtenstein/",
+      "board_president": null,
+      "address": null
+    }
+  ]
+}

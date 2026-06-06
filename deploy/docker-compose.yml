@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: ../web
+      dockerfile: Dockerfile
+    container_name: sos-kf-prototype-web
+    restart: unless-stopped
+    networks:
+      - propertydog_default
+
+networks:
+  propertydog_default:
+    external: true
