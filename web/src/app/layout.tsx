@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { LocaleProvider } from "@/context/LocaleContext";
+import { ChatWidget } from "@/components/ChatWidget";
 import "./globals.css";
 import "../styles/custom.css";
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="de" className={`${inter.variable} h-full`}>
       <body className="min-h-full">
         <LocaleProvider>{children}</LocaleProvider>
+        <ChatWidget />
       </body>
     </html>
   );
