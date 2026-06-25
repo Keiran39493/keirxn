@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keirxn — Healthy Recipes</title>
+  <meta name="description" content="A personal collection of healthy, high-protein recipes. Quick, easy and delicious.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">keirxn</a>
+    <div class="search-wrap">
+      <span class="search-icon" id="search-icon"></span>
+      <input
+        class="search-input"
+        id="search"
+        type="search"
+        placeholder="Search recipes or ingredients…"
+        autocomplete="off"
+      >
+    </div>
+    <span class="nav-count" id="result-count"></span>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Eat well,<br><span>feel great</span></h1>
+    <p>A personal recipe collection — healthy, high-protein meals that actually taste good.</p>
+    <span class="hero-badge">🥗 29 recipes &amp; counting</span>
+  </div>
+</section>
+
+<!-- ── FILTERS ── -->
+<div class="filters-section">
+  <div class="filters-inner">
+    <div class="filter-row">
+      <span class="filter-label">Meal</span>
+      <div id="type-filters" style="display:contents"></div>
+      <select class="sort-select" id="sort-select">
+        <option value="name">A – Z</option>
+        <option value="rating">Top rated</option>
+        <option value="popular">Most reviewed</option>
+        <option value="time">Quickest first</option>
+      </select>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Tags</span>
+      <div id="tag-filters" style="display:contents"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── GRID ── -->
+<main class="grid-section">
+  <div class="results-bar">
+    <span><strong id="result-count-main"></strong></span>
+  </div>
+  <div class="recipe-grid" id="recipe-grid"></div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p><strong>keirxn.com</strong> &mdash; personal recipe collection</p>
+  <p style="margin-top:6px">Recipes adapted from The Body Coach &bull; Made with ❤️</p>
+</footer>
+
+<script src="static/data.js"></script>
+<script src="static/app.js"></script>
+<script>
+  // keep both count elements in sync
+  const c1 = document.getElementById('result-count');
+  const c2 = document.getElementById('result-count-main');
+  const obs = new MutationObserver(() => { if (c2) c2.textContent = c1.textContent; });
+  obs.observe(c1, { childList: true, characterData: true, subtree: true });
+</script>
+</body>
+</html>
