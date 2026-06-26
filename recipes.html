@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keirxn — Recipes</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <link rel="stylesheet" href="static/style.css">
+  <style>body { visibility: hidden; }</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">keirxn</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link active" href="recipes.html">Recipes</a>
+    </div>
+    <div class="nav-right">
+      <div class="search-wrap">
+        <span class="search-icon" id="search-icon"></span>
+        <input class="search-input" id="search" type="search"
+               placeholder="Search recipes or ingredients…" autocomplete="off">
+      </div>
+      <span class="nav-count" id="result-count"></span>
+      <div class="clock-wrap">
+        <div class="clock-label">Vaduz<span>LIE</span></div>
+        <div class="clock-time" id="clock-time">0000</div>
+        <div class="clock-secs" id="clock-secs">00</div>
+      </div>
+      <a class="nav-avatar" id="nav-avatar" href="profile.html" title="Profile">?</a>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
+      <button class="signout-btn" id="signout-btn" title="Sign out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE TITLE ── -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1 class="page-title">Recipes</h1>
+  </div>
+</div>
+
+<!-- ── FILTERS ── -->
+<div class="filters-section">
+  <div class="filters-inner">
+    <div class="filter-row">
+      <span class="filter-label">Meal</span>
+      <div id="type-filters" style="display:contents"></div>
+      <select class="sort-select" id="sort-select">
+        <option value="name">A – Z</option>
+        <option value="rating">Top rated</option>
+        <option value="popular">Most reviewed</option>
+        <option value="time">Quickest first</option>
+      </select>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Tags</span>
+      <div id="tag-filters" style="display:contents"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── GRID ── -->
+<main class="grid-section">
+  <div class="results-bar">
+    <span><strong id="result-count-main"></strong></span>
+  </div>
+  <div class="recipe-grid" id="recipe-grid"></div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p><strong>keirxn</strong> &mdash; Recipes adapted from The Body Coach</p>
+</footer>
+
+<script src="static/auth.js"></script>
+<script src="static/data.js"></script>
+<script src="static/app.js"></script>
+<script>
+  AUTH.guard().then(ok => {
+    if (ok) document.getElementById("signout-btn").addEventListener("click", () => AUTH.logout());
+  });
+  const c1 = document.getElementById("result-count");
+  const c2 = document.getElementById("result-count-main");
+  const obs = new MutationObserver(() => { if (c2) c2.textContent = c1.textContent; });
+  obs.observe(c1, { childList: true, characterData: true, subtree: true });
+
+  // Set avatar initials from profile (best-effort)
+  fetch("/api/profile").then(r => r.json()).then(p => {
+    const el = document.getElementById("nav-avatar");
+    if (el && p.name) el.textContent = p.name.trim().split(/\s+/).map(w => w[0]).slice(0,2).join("").toUpperCase();
+  }).catch(() => {});
+</script>
+</body>
+</html>

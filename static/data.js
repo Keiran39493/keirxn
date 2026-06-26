@@ -1,4 +1,4 @@
-const RECIPES = [
+﻿const RECIPES = [
   {
     id: 1,
     name: "Almond and Honey Pancakes with Blueberries",
@@ -9,6 +9,7 @@ const RECIPES = [
     tags: ["Vegetarian", "Breakfast"],
     emoji: "🥞",
     gradient: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+    photo: "recipe_photos/Almond and Honey Pancakes with Blueberries.png",
     ingredients: [
       { amount: "45g", item: "ground almonds" },
       { amount: "30g", item: "rolled oats" },
@@ -33,6 +34,7 @@ const RECIPES = [
     tags: ["Vegetarian"],
     emoji: "🍆",
     gradient: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)",
+    photo: "recipe_photos/Aubergine Parmigiana.png",
     ingredients: [
       { amount: "1", item: "large aubergine, sliced into 1cm thick rounds" },
       { amount: "2 tsp", item: "olive oil" },
@@ -57,6 +59,7 @@ const RECIPES = [
     tags: ["Good on the go", "Quick"],
     emoji: "🥤",
     gradient: "linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)",
+    photo: "recipe_photos/Avo Blast Smoothie.png",
     ingredients: [
       { amount: "145ml", item: "skimmed milk" },
       { amount: "45g", item: "protein powder, vanilla" },
@@ -78,6 +81,7 @@ const RECIPES = [
     tags: ["Breakfast"],
     emoji: "🌮",
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+    photo: "recipe_photos/Bacon and Avocado Breakfast Tacos.png",
     ingredients: [
       { amount: "3", item: "rashers lean smoked back bacon" },
       { amount: "2 tsp", item: "butter" },
@@ -100,6 +104,7 @@ const RECIPES = [
     tags: ["Breakfast", "Best for 2 servings"],
     emoji: "🍳",
     gradient: "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
+    photo: "recipe_photos/Bacon Egg and Cheese Frittata.png",
     ingredients: [
       { amount: "3", item: "rashers lean smoked back bacon" },
       { amount: "6", item: "large eggs" },
@@ -122,6 +127,7 @@ const RECIPES = [
     tags: ["High protein", "Family friendly"],
     emoji: "🍕",
     gradient: "linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%)",
+    photo: "recipe_photos/BBQ Chicken Pizza.png",
     ingredients: [
       { amount: "85g", item: "self-raising flour" },
       { amount: "¼ tsp", item: "baking powder" },
@@ -147,6 +153,7 @@ const RECIPES = [
     tags: ["Vegetarian", "Plant-based"],
     emoji: "🌮",
     gradient: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+    photo: "recipe_photos/Bean Tacos with Roasted Chilli Salsa.png",
     ingredients: [
       { amount: "1", item: "tomato" },
       { amount: "½", item: "red onion, peeled and cut into wedges" },
@@ -173,6 +180,7 @@ const RECIPES = [
     tags: ["High protein", "Good to freeze"],
     emoji: "🥩",
     gradient: "linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%)",
+    photo: "recipe_photos/Beef Stroganoff.png",
     ingredients: [
       { amount: "1½ tsp", item: "olive oil" },
       { amount: "210g", item: "sirloin or rump steak, trimmed of fat, sliced" },
@@ -197,6 +205,7 @@ const RECIPES = [
     tags: ["High protein", "Quick"],
     emoji: "🍜",
     gradient: "linear-gradient(135deg, #f46b45 0%, #eea849 100%)",
+    photo: "recipe_photos/Beef and Broccoli Ramen Noodles.png",
     ingredients: [
       { amount: "125g", item: "small broccoli florets" },
       { amount: "70g", item: "dried noodles" },
@@ -221,6 +230,7 @@ const RECIPES = [
     tags: ["Good on the go", "Quick"],
     emoji: "🍝",
     gradient: "linear-gradient(135deg, #F7971E 0%, #FFD200 100%)",
+    photo: "recipe_photos/BLT Pesto Orzo Bowl.png",
     ingredients: [
       { amount: "75g", item: "lean bacon medallions, chopped" },
       { amount: "115g", item: "dried orzo pasta" },
@@ -244,6 +254,7 @@ const RECIPES = [
     tags: ["Family friendly", "Breakfast"],
     emoji: "🥞",
     gradient: "linear-gradient(135deg, #FCCB90 0%, #D57EEB 100%)",
+    photo: "recipe_photos/Banana and Cinnamon Pancakes.png",
     ingredients: [
       { amount: "195g", item: "fat-free quark" },
       { amount: "3", item: "large eggs" },
@@ -257,28 +268,6 @@ const RECIPES = [
     method: "Step 1: Put the quark, eggs, flour and pinch of salt into a liquidiser and blend until smooth. Step 2: Heat a non-stick frying pan over a medium-high heat and add the oil. Pour in enough batter to coat the base of the pan then cook for a minute on each side until golden. Repeat with the remaining batter. Step 3: Fold or stack the pancakes and serve with the banana, maple syrup and sprinkle of cinnamon."
   },
   {
-    id: 12,
-    name: "Blueberry Protein Muffins",
-    type: "General Meal",
-    time: null,
-    rating: null,
-    numRatings: null,
-    tags: ["Vegetarian", "Breakfast", "Best for 2 servings"],
-    emoji: "🫐",
-    gradient: "linear-gradient(135deg, #6a3de8 0%, #4facfe 100%)",
-    ingredients: [
-      { amount: "4", item: "large eggs" },
-      { amount: "30g", item: "butter, melted" },
-      { amount: "50ml", item: "semi-skimmed milk" },
-      { amount: "45g", item: "protein powder, vanilla" },
-      { amount: "100g", item: "ground almonds" },
-      { amount: "30g", item: "plain flour" },
-      { amount: "30g", item: "rolled oats" },
-      { amount: "95g", item: "blueberries, fresh or frozen" }
-    ],
-    method: "Step 1: Preheat the oven to 180C. Put the eggs, butter, milk and protein powder into a liquidiser and blend until smooth. Step 2: Pour into a large bowl then fold in the almonds, flour and oats. Carefully fold in the blueberries then divide the mixture between a non-stick, 6-hole muffin tin. Bake for 20 minutes until risen and golden. Step 3: Remove from the oven and leave to cool completely."
-  },
-  {
     id: 13,
     name: "Broccoli and Goats' Cheese Frittata",
     type: "General Meal",
@@ -288,6 +277,7 @@ const RECIPES = [
     tags: ["Vegetarian", "Best for 2 servings"],
     emoji: "🥦",
     gradient: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)",
+    photo: "recipe_photos/Broccoli and Goats' Cheese Frittata.png",
     ingredients: [
       { amount: "155g", item: "broccoli florets" },
       { amount: "2 tsp", item: "olive oil" },
@@ -312,6 +302,7 @@ const RECIPES = [
     tags: ["Good on the go", "Quick"],
     emoji: "🍊",
     gradient: "linear-gradient(135deg, #f7971e 0%, #b25a00 100%)",
+    photo: "recipe_photos/Budget Chocolate Orange Smoothie.png",
     ingredients: [
       { amount: "35g", item: "protein powder, vanilla" },
       { amount: "60g", item: "yoghurt (greek, natural or soya)" },
@@ -333,6 +324,7 @@ const RECIPES = [
     tags: ["High protein", "Good to freeze"],
     emoji: "🌶️",
     gradient: "linear-gradient(135deg, #e53e3e 0%, #f6ad55 100%)",
+    photo: "recipe_photos/Budget Crispy Chilli Beef.png",
     ingredients: [
       { amount: "200g", item: "5% fat beef mince" },
       { amount: "1", item: "clove garlic, peeled and crushed" },
@@ -356,6 +348,7 @@ const RECIPES = [
     tags: ["High protein"],
     emoji: "🥢",
     gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+    photo: "recipe_photos/Budget Spring Roll Bowl.png",
     ingredients: [
       { amount: "3 tsp", item: "olive oil" },
       { amount: "200g", item: "lean pork mince" },
@@ -381,6 +374,7 @@ const RECIPES = [
     tags: ["High protein", "Good to freeze"],
     emoji: "🍛",
     gradient: "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
+    photo: "recipe_photos/Butter Chicken Curry.png",
     ingredients: [
       { amount: "20g", item: "butter" },
       { amount: "½", item: "red onion, peeled and finely sliced" },
@@ -406,6 +400,7 @@ const RECIPES = [
     tags: ["Vegetarian"],
     emoji: "🥗",
     gradient: "linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)",
+    photo: "recipe_photos/Chargrilled Avocado Salad with Feta Dressing.png",
     ingredients: [
       { amount: "95g", item: "fat-free yoghurt (greek or natural)" },
       { amount: "50g", item: "feta, crumbled" },
@@ -430,6 +425,7 @@ const RECIPES = [
     tags: ["Breakfast"],
     emoji: "🥥",
     gradient: "linear-gradient(135deg, #c6a967 0%, #f8e8c0 100%)",
+    photo: "recipe_photos/Chia and Coconut Breakfast Bowl with Spiced Plums.png",
     ingredients: [
       { amount: "150ml", item: "reduced-fat tinned coconut milk" },
       { amount: "30g", item: "rolled oats" },
@@ -453,6 +449,7 @@ const RECIPES = [
     tags: ["High protein", "Good to freeze"],
     emoji: "🍛",
     gradient: "linear-gradient(135deg, #e0a458 0%, #f7ca88 100%)",
+    photo: "recipe_photos/Chicken Cashew Curry.png",
     ingredients: [
       { amount: "1", item: "clove garlic, peeled and crushed" },
       { amount: "20g", item: "ginger, peeled and roughly chopped" },
@@ -481,6 +478,7 @@ const RECIPES = [
     tags: ["High protein", "Good to freeze"],
     emoji: "🍛",
     gradient: "linear-gradient(135deg, #e72c34 0%, #f5a623 100%)",
+    photo: "recipe_photos/Chicken Jalfrezi with Poppadoms.png",
     ingredients: [
       { amount: "2 tsp", item: "coconut oil" },
       { amount: "200g", item: "skinless chicken breast, cut into bite-sized pieces" },
@@ -511,6 +509,7 @@ const RECIPES = [
     tags: [],
     emoji: "🥪",
     gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+    photo: "recipe_photos/Chicken Mayo Sandwich.png",
     ingredients: [
       { amount: "180g", item: "cooked skinless chicken breast, shredded" },
       { amount: "50g", item: "yoghurt (greek, natural or soya)" },
@@ -536,6 +535,7 @@ const RECIPES = [
     tags: ["Best for 2 servings"],
     emoji: "🥧",
     gradient: "linear-gradient(135deg, #8B6914 0%, #d4a574 100%)",
+    photo: "recipe_photos/Chicken and Mushroom Pie.png",
     ingredients: [
       { amount: "20g", item: "butter" },
       { amount: "355g", item: "skinless chicken thigh fillet, cut into large chunks" },
@@ -562,6 +562,7 @@ const RECIPES = [
     tags: ["High protein", "Good to freeze"],
     emoji: "🌮",
     gradient: "linear-gradient(135deg, #e53e3e 0%, #f6ad55 100%)",
+    photo: "recipe_photos/Chilli Beef Nachos.png",
     ingredients: [
       { amount: "2 tsp", item: "olive oil" },
       { amount: "½", item: "onion, peeled and finely chopped" },
@@ -590,6 +591,7 @@ const RECIPES = [
     tags: ["Vegetarian", "Plant-based"],
     emoji: "🥡",
     gradient: "linear-gradient(135deg, #e72c34 0%, #f5a623 100%)",
+    photo: "recipe_photos/Chinese Style Tofu with Broccoli.png",
     ingredients: [
       { amount: "3 tsp", item: "sunflower oil" },
       { amount: "2 tsp", item: "Chinese five spice" },
@@ -615,6 +617,7 @@ const RECIPES = [
     tags: ["Vegetarian", "Good to freeze"],
     emoji: "🍫",
     gradient: "linear-gradient(135deg, #3d2b1f 0%, #8b4513 100%)",
+    photo: "recipe_photos/Chocolate and Hazelnut Frozen Yoghurt.png",
     ingredients: [
       { amount: "195g", item: "yoghurt (greek, natural or soya)" },
       { amount: "150g", item: "tofu, drained" },
@@ -634,6 +637,7 @@ const RECIPES = [
     tags: ["Batch cooking"],
     emoji: "🎄",
     gradient: "linear-gradient(135deg, #134e5e 0%, #71b280 100%)",
+    photo: "recipe_photos/Christmas Dinner.png",
     ingredients: [
       { amount: "140g", item: "new potatoes, halved" },
       { amount: "1", item: "carrot, peeled and cut into batons" },
@@ -658,6 +662,7 @@ const RECIPES = [
     tags: ["High protein"],
     emoji: "🍖",
     gradient: "linear-gradient(135deg, #b06ab3 0%, #4568dc 100%)",
+    photo: "recipe_photos/Christmas Maple Glazed Gammon.png",
     ingredients: [
       { amount: "15g", item: "maple syrup" },
       { amount: "1 tsp", item: "cider vinegar" },
@@ -681,6 +686,7 @@ const RECIPES = [
     tags: ["Good on the go", "Quick"],
     emoji: "✨",
     gradient: "linear-gradient(135deg, #8E0E00 0%, #6b3030 100%)",
+    photo: "recipe_photos/Christmas Mince Pie Smoothie.png",
     ingredients: [
       { amount: "390ml", item: "semi-skimmed milk" },
       { amount: "40g", item: "rolled oats" },
@@ -691,6 +697,283 @@ const RECIPES = [
       { amount: "1 handful", item: "ice" }
     ],
     method: "Step 1: Mega simple; just combine all of the ingredients in a liquidiser and blend until smooth."
+  },
+  {
+    id: 30,
+    name: "Christmas Salmon with Dill Sauce",
+    type: "General Meal",
+    time: null,
+    rating: 5.0,
+    numRatings: 9,
+    tags: [],
+    emoji: "🐟",
+    gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+    photo: "recipe_photos/Christmas Salmon with Dill Sauce.png",
+    ingredients: [
+      { amount: "860g", item: "salmon fillet" },
+      { amount: "55g", item: "maple syrup" },
+      { amount: "60g", item: "butter, melted" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "45g", item: "dried cranberries" },
+      { amount: "80g", item: "pistachios, roughly chopped" },
+      { amount: "1", item: "parsley, finely chopped" },
+      { amount: "½ tbsp", item: "olive oil" },
+      { amount: "75g", item: "pomegranate seeds" },
+      { amount: "", item: "green salad, to serve" },
+      { amount: "1", item: "lemon, cut into wedges" },
+      { amount: "115g", item: "crème fraîche" },
+      { amount: "1", item: "dill, finely chopped" },
+      { amount: "1", item: "lemon, finely grated zest" }
+    ],
+    method: "Step 1: Preheat the oven to 180C. Place a large piece of foil on a baking tray then place a slightly smaller piece of non-stick baking paper on top. Lay the salmon in the middle of the baking paper. Step 2: Combine the maple syrup and butter, pour over the salmon then season with salt and pepper. Fold the foil over the salmon and roll the edges over themselves to make a big, tightly sealed parcel. Place in the oven for 15 minutes then unpackage the foil so the salmon is uncovered and place under a hot grill for 5 minutes to finish. Step 3: Meanwhile mix together the cranberries, pistachios, parsley, oil and pomegranate seeds. In a separate bowl, mix together the ingredients for the sauce. Step 4: Carefully place the cooked salmon on a serving platter and spoon over the cranberry and pistachio mix. Serve with a simple green salad, lemon wedges and the dill sauce."
+  },
+  {
+    id: 31,
+    name: "Christmas Sprouts with Bacon and Pecans",
+    type: "General Meal",
+    time: null,
+    rating: 3.9,
+    numRatings: 11,
+    tags: [],
+    emoji: "🥦",
+    gradient: "linear-gradient(135deg, #134e5e 0%, #71b280 100%)",
+    photo: "recipe_photos/Christmas Sprouts with Bacon and Pecans.png",
+    ingredients: [
+      { amount: "310g", item: "brussel sprouts, halved" },
+      { amount: "1 tbsp", item: "olive oil" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "120g", item: "lean bacon medallions, chopped" },
+      { amount: "15g", item: "dried cranberries" },
+      { amount: "1", item: "orange, juice" },
+      { amount: "125g", item: "kale, stems removed and leaves shredded" },
+      { amount: "25g", item: "pecans, chopped" },
+      { amount: "1 tbsp", item: "balsamic glaze" }
+    ],
+    method: "Step 1: Preheat the oven to 180C. Mix the sprouts with half of the oil and some salt and pepper. Lay the sprouts cut-side down on a lined baking tray. Cook in the oven for 15 minutes before adding the bacon to the tray and cooking for a further 5 minutes. Step 2: Meanwhile place the cranberries and orange juice in a small pan. Boil for just a few seconds then remove from the heat and let the cranberries puff up a little. Step 3: Massage the remaining oil into the kale until it softens and turns a darker green. Mix through the sprouts, bacon, cranberries and pecans then drizzle over the balsamic glaze to serve."
+  },
+  {
+    id: 32,
+    name: "Cod and Spinach Curry",
+    type: "General Meal",
+    time: null,
+    rating: 4.4,
+    numRatings: 16,
+    tags: [],
+    emoji: "🍛",
+    gradient: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+    photo: "recipe_photos/Cod and Spinach Curry.png",
+    ingredients: [
+      { amount: "1½ tsp", item: "coconut oil" },
+      { amount: "½", item: "onion, peeled and finely sliced" },
+      { amount: "30g", item: "madras curry paste" },
+      { amount: "1 tsp", item: "black mustard seeds" },
+      { amount: "145ml", item: "tinned coconut milk" },
+      { amount: "220g", item: "skinless cod fillet, cut into chunks" },
+      { amount: "155g", item: "baby spinach" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "1", item: "red chilli, finely chopped" },
+      { amount: "3", item: "poppadoms" }
+    ],
+    method: "Step 1: Heat the oil in a saucepan, add the onion and cook for 2-3 minutes until soft. Add the curry paste and mustard seeds, fry for a minute then stir in the coconut milk and a splash of water. Add the fish, stir to coat in the sauce and bring to a gentle simmer. Cover and cook for 5 minutes then gently stir in the spinach and a pinch of salt and pepper, taking care not to break up the fish. Step 2: Spoon the curry into a bowl, top with the chilli and serve with the poppadoms."
+  },
+  {
+    id: 33,
+    name: "Coronation Chicken Salad",
+    type: "General Meal",
+    time: null,
+    rating: 4.8,
+    numRatings: 139,
+    tags: ["Good on the go"],
+    emoji: "🥗",
+    gradient: "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
+    photo: "recipe_photos/Coronation Chicken Salad.png",
+    ingredients: [
+      { amount: "25g", item: "yoghurt (greek, natural or soya)" },
+      { amount: "25g", item: "mayonnaise" },
+      { amount: "½ tsp", item: "mild curry powder" },
+      { amount: "15g", item: "mango chutney" },
+      { amount: "1 squeeze", item: "lemon juice" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "20g", item: "flaked almonds, toasted" },
+      { amount: "180g", item: "cooked skinless chicken breast, sliced" },
+      { amount: "30g", item: "sultanas" },
+      { amount: "1", item: "baby gem lettuce, leaves torn" },
+      { amount: "1 handful", item: "rocket" }
+    ],
+    method: "In a bowl, mix together the yoghurt, mayonnaise, curry powder, chutney and lemon juice with a little salt and pepper. Stir through the almonds, chicken and sultanas then serve on top of the lettuce and rocket."
+  },
+  {
+    id: 34,
+    name: "Courgette Cannelloni (vg)",
+    type: "General Meal",
+    time: null,
+    rating: 4.5,
+    numRatings: 4,
+    tags: ["Vegetarian", "Plant-based"],
+    emoji: "🍝",
+    gradient: "linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)",
+    photo: "recipe_photos/Courgette Cannelloni.png",
+    ingredients: [
+      { amount: "3", item: "courgettes" },
+      { amount: "2 tsp", item: "olive oil" },
+      { amount: "1", item: "clove garlic, peeled and crushed" },
+      { amount: "2 tsp", item: "tomato purée" },
+      { amount: "205g", item: "tinned chopped tomatoes" },
+      { amount: "1 small bunch", item: "basil, leaves finely chopped" },
+      { amount: "150g", item: "vegan soft cheese" },
+      { amount: "30g", item: "vegan parmesan" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "15g", item: "vegan mozzarella" }
+    ],
+    method: "Step 1: Preheat the oven to 200C. Cut off the ends of the courgettes then use an apple corer to remove the centres of each courgette to create tubes (if you don't have any apple corer, split the courgettes lengthways and scoop the centres out with a teaspoon). Step 2: Heat the oil in a frying pan, finely chop the courgette centres and add to the pan with the garlic. Fry for 3-4 minutes until soft then stir in the tomato purée and tomatoes. Simmer gently for a couple of minutes then remove from the heat and stir through the basil. Step 3: Combine the vegan cream cheese and parmesan in a small bowl and season to taste. Stuff the courgettes with the cheese mixture. Step 4: Spoon half of the tomato sauce into shallow roasting dish, lay the stuffed courgettes on top then spoon over the remaining sauce. Top with the vegan mozzarella and bake for 25 minutes."
+  },
+  {
+    id: 35,
+    name: "Courgette and Cheese Breakfast Muffins",
+    type: "General Meal",
+    time: null,
+    rating: 3.6,
+    numRatings: 86,
+    tags: ["Vegetarian", "Breakfast"],
+    emoji: "🧁",
+    gradient: "linear-gradient(135deg, #FCCB90 0%, #D57EEB 100%)",
+    photo: "recipe_photos/Courgette and Cheese Breakfast Muffins.png",
+    ingredients: [
+      { amount: "95g", item: "self-raising flour" },
+      { amount: "100g", item: "protein powder, unflavoured" },
+      { amount: "1 tsp", item: "baking powder" },
+      { amount: "1 pinch", item: "salt and pepper" },
+      { amount: "2", item: "courgettes, grated" },
+      { amount: "150g", item: "cheddar cheese, grated" },
+      { amount: "75g", item: "parmesan or hard cheese, finely grated" },
+      { amount: "4", item: "large eggs" },
+      { amount: "215ml", item: "whole milk" },
+      { amount: "30g", item: "pumpkin seeds" }
+    ],
+    method: "Step 1: Preheat the oven to 200C. Sift the flour, protein powder, baking powder, salt and pepper into a bowl, stir in the grated courgettes, cheddar and parmesan and make a well in the centre. Whisk the eggs and milk together, pour into the well in the flour mixture and stir to combine. Step 2: Divide the mixture between a 12-hole, non-stick muffin tin. Scatter the pumpkin seeds over the top of the muffins then bake for 12-15 minutes until risen and golden. Remove from the oven and leave to cool slightly."
+  },
+  {
+    id: 36,
+    name: "Creamy Mustard Chicken with Crispy Bacon",
+    type: "General Meal",
+    time: null,
+    rating: 4.7,
+    numRatings: 154,
+    tags: ["High protein"],
+    emoji: "🍗",
+    gradient: "linear-gradient(135deg, #f7971e 0%, #ffd200 100%)",
+    photo: "recipe_photos/Creamy Mustard Chicken with Crispy Bacon.png",
+    ingredients: [
+      { amount: "2 rashers", item: "lean smoked back bacon" },
+      { amount: "200g", item: "skinless chicken breast" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "1½ tsp", item: "olive oil" },
+      { amount: "2 tsp", item: "butter" },
+      { amount: "1", item: "clove garlic, peeled and crushed" },
+      { amount: "145ml", item: "chicken stock" },
+      { amount: "60ml", item: "soured cream" },
+      { amount: "2 tsp", item: "wholegrain mustard" },
+      { amount: "140g", item: "new potatoes" },
+      { amount: "105g", item: "green beans, trimmed" }
+    ],
+    method: "Step 1: Preheat the grill to a high heat. Lay the bacon on a non-stick tray then grill for 2-3 minutes on each side until crisp. Chop the bacon and set aside. Step 2: Meanwhile preheat a heavy-based frying pan over a high heat. Lay the chicken between two sheets of clingfilm then bash with a rolling pin to flatten. Season with salt and pepper, drizzle with the oil then cook for 3 minutes on each side until golden. Set aside to rest. Step 3: Whilst the chicken is resting, boil the potatoes for 8-10 minutes, adding the green beans for the final 3-4 minutes of cooking. Drain once the potatoes are tender and the beans are cooked. Step 4: Meanwhile reduce the pan heat slightly, add the butter to the pan then fry the garlic for a couple of minutes until soft. Add the stock, bring to the boil then simmer for 2-3 minutes until reduced slightly. Remove from the heat then stir in the soured cream and mustard. Step 5: Lay the chicken on a plate, pour over the mustard sauce and top with the crispy bacon. Serve with new potatoes and green beans."
+  },
+  {
+    id: 37,
+    name: "Creamy Salmon and Asparagus Pasta",
+    type: "General Meal",
+    time: null,
+    rating: 4.6,
+    numRatings: 154,
+    tags: [],
+    emoji: "🍝",
+    gradient: "linear-gradient(135deg, #f093fb 0%, #a8e063 100%)",
+    photo: "recipe_photos/Creamy Salmon and Asparagus Pasta.png",
+    ingredients: [
+      { amount: "120g", item: "skinless salmon fillet" },
+      { amount: "70g", item: "dried pappardelle or tagliatelle" },
+      { amount: "155g", item: "asparagus, sliced" },
+      { amount: "2 tsp", item: "olive oil" },
+      { amount: "1", item: "clove garlic, peeled and crushed" },
+      { amount: "3 tbsp", item: "low-fat crème fraîche" },
+      { amount: "½", item: "lemon, juice only" },
+      { amount: "", item: "salt and pepper" }
+    ],
+    method: "Step 1: Preheat the grill to high. Lay the salmon on a baking tray lined with foil and place under the grill for 6-8 minutes until just cooked through. Set aside to cool slightly. Step 2: Meanwhile bring a large pan of salted water to the boil. Add the pasta and cook according to the packet instructions, adding the asparagus for the final minute of cooking. Drain the pasta and asparagus, reserving a little of the cooking water. Step 3: Put the empty pan back on the heat, add the oil and the garlic and gently cook for a minute. Remove from the heat, stir in the crème fraîche then tip in the pasta and asparagus. Add the lemon juice and a splash of the reserved cooking water then toss everything together with a pinch of salt and plenty of pepper. Flake the salmon into the pan and fold into the pasta. Transfer to a warmed bowl and serve."
+  },
+  {
+    id: 38,
+    name: "Gammon Steak with Green Bean Salad",
+    type: "General Meal",
+    time: null,
+    rating: 4.5,
+    numRatings: 28,
+    tags: ["High protein"],
+    emoji: "🥩",
+    gradient: "linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%)",
+    photo: "recipe_photos/Gammon Steak with Green Bean Salad.png",
+    ingredients: [
+      { amount: "200g", item: "gammon steak, trimmed of fat" },
+      { amount: "155g", item: "green beans, trimmed" },
+      { amount: "105g", item: "edamame or soya beans" },
+      { amount: "2 tsp", item: "extra virgin olive oil" },
+      { amount: "2 tsp", item: "white wine vinegar" },
+      { amount: "1 tsp", item: "dijon or grain mustard" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "1", item: "baby gem lettuce, leaves separated" },
+      { amount: "15g", item: "parmesan or hard cheese, shavings" }
+    ],
+    method: "Step 1: Preheat a griddle pan over a high heat, add the gammon steak and cook for 2-3 minutes on each side or until cooked through. Set aside to rest then cut into thick slices. Step 2: Bring a large pan of salted water to the boil, add both the beans and cook for 2-3 minutes. Drain thoroughly. Step 3: Whisk together the oil, vinegar, mustard and a pinch of salt and pepper in a large bowl. Add the beans, lettuce and parmesan and toss to coat. Toss through the gammon slices and serve."
+  },
+  {
+    id: 39,
+    name: "Green Goddess Smoothie Bowl",
+    type: "General Meal",
+    time: null,
+    rating: 4.4,
+    numRatings: 94,
+    tags: ["Breakfast"],
+    emoji: "🥑",
+    gradient: "linear-gradient(135deg, #56ab2f 0%, #a8e063 100%)",
+    photo: "recipe_photos/Green Goddess Smoothie Bowl.png",
+    ingredients: [
+      { amount: "170g", item: "frozen mango" },
+      { amount: "80g", item: "frozen spinach" },
+      { amount: "40g", item: "protein powder, vanilla or unflavoured" },
+      { amount: "95g", item: "yoghurt (greek, natural or soya)" },
+      { amount: "10g", item: "ground flaxseed" },
+      { amount: "60ml", item: "skimmed milk" },
+      { amount: "20g", item: "almond butter" },
+      { amount: "1", item: "kiwi fruit" },
+      { amount: "10g", item: "chia seeds" },
+      { amount: "40g", item: "blueberries, fresh or frozen" },
+      { amount: "15g", item: "desiccated coconut" }
+    ],
+    method: "Step 1: Place the mango, spinach, protein powder, yoghurt, flaxseed, milk, almond butter and half of the kiwi into a blender. Start blending on a low speed and gradually increase the speed until you have a smooth ice cream like texture. Step 2: Spoon the smoothie into a bowl and top with the rest of the kiwi, chia seeds, blueberries and coconut."
+  },
+  {
+    id: 40,
+    name: "Green Shakshuka",
+    type: "General Meal",
+    time: 20,
+    rating: 5.0,
+    numRatings: 5,
+    tags: ["Vegetarian", "Family friendly"],
+    emoji: "🍳",
+    gradient: "linear-gradient(135deg, #56ab2f 0%, #f7971e 100%)",
+    photo: "recipe_photos/Green Shakshuka.png",
+    ingredients: [
+      { amount: "95g", item: "green beans, trimmed" },
+      { amount: "95g", item: "tenderstem broccoli" },
+      { amount: "1½ tsp", item: "olive oil" },
+      { amount: "60g", item: "baby spinach" },
+      { amount: "20g", item: "green olive tapenade" },
+      { amount: "", item: "salt and pepper" },
+      { amount: "3", item: "large eggs" },
+      { amount: "60g", item: "cottage cheese" },
+      { amount: "2", item: "thick slices seeded bread, toasted" }
+    ],
+    method: "Step 1: Finely slice the green beans and the stalks off the broccoli, leaving the tips whole. Place them in a frying pan with the oil and cook for a few minutes over a medium to high heat. Add the spinach and leave it to wilt then stir in the tapenade and a good splash of water. Mix everything together and season to taste. Step 2: Make wells with the back of a spoon for the eggs. Crack the eggs into each well and cover with a lid. Cook over a medium heat for 3 minutes until the yolks are still runny and the whites are just set, or until cooked to your liking. Step 3: Spread the cottage cheese over the toast and serve with the shakshuka."
   }
 ];
 

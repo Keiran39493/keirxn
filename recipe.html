@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe — keirxn</title>
   <meta name="description" content="Recipe details">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
   <link rel="stylesheet" href="static/style.css">
+  <!-- Body hidden until auth guard confirms a valid session -->
+  <style>body { visibility: hidden; }</style>
 </head>
 <body>
 
@@ -14,6 +17,26 @@
 <nav class="nav">
   <div class="nav-inner">
     <a class="logo" href="index.html">keirxn</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link active" href="recipes.html">Recipes</a>
+    </div>
+    <div class="nav-right">
+      <div class="clock-wrap">
+        <div class="clock-label">Vaduz<span>LIE</span></div>
+        <div class="clock-time" id="clock-time">0000</div>
+        <div class="clock-secs" id="clock-secs">00</div>
+      </div>
+      <a class="nav-avatar" id="nav-avatar" href="profile.html" title="Profile">?</a>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
+      <button class="signout-btn" id="signout-btn" title="Sign out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -22,11 +45,17 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <p><strong>keirxn.com</strong> &mdash; personal recipe collection</p>
-  <p style="margin-top:6px">Recipes adapted from The Body Coach &bull; Made with ❤️</p>
+  <p><strong>keirxn</strong> &mdash; Recipes adapted from The Body Coach</p>
 </footer>
 
+<script src="static/auth.js"></script>
 <script src="static/data.js"></script>
 <script src="static/app.js"></script>
+<script>
+  AUTH.guard().then(ok => {
+    if (!ok) return;
+    document.getElementById('signout-btn').addEventListener('click', () => AUTH.logout());
+  });
+</script>
 </body>
 </html>

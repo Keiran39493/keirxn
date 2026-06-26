@@ -29,6 +29,7 @@ function renderStars(rating) {
 }
 
 function parsedSteps(method) {
+  if (!method) return [];
   return method
     .split(/(?=Step \d+:)/)
     .map(s => s.replace(/^Step \d+:\s*/i, '').trim())
@@ -155,10 +156,14 @@ function initIndexPage() {
       .map(t => `<span class="tag ${tagClass(t)}">${t}</span>`)
       .join('');
 
+    const thumbStyle = recipe.photo ? '' : `background:${recipe.gradient}`;
+    const thumbInner = recipe.photo
+      ? `<img class="card-thumb-img" src="${recipe.photo}" alt="${recipe.name}"><span class="card-thumb-type">${recipe.type}</span>`
+      : `${recipe.emoji}<span class="card-thumb-type">${recipe.type}</span>`;
+
     el.innerHTML = `
-      <div class="card-thumb" style="background:${recipe.gradient}">
-        ${recipe.emoji}
-        <span class="card-thumb-type">${recipe.type}</span>
+      <div class="card-thumb" style="${thumbStyle}">
+        ${thumbInner}
       </div>
       <div class="card-body">
         <div class="card-name">${recipe.name}</div>
@@ -232,41 +237,38 @@ function initRecipePage() {
 
   const timeLbl = timeLabel(recipe.time);
 
-  container.innerHTML = `
-    <div class="recipe-page">
+  const statsHTML = `
+    ${recipe.rating ? `<div class="recipe-stat">${icons.star}<strong>${recipe.rating}</strong><span>${recipe.numRatings ? `(${recipe.numRatings} reviews)` : ''}</span></div>` : ''}
+    ${timeLbl ? `<div class="recipe-stat">${icons.clock}<strong>${timeLbl}</strong><span>cook time</span></div>` : ''}
+    ${recipe.tags.includes('Best for 2 servings') ? `<div class="recipe-stat">${icons.users}<strong>Serves 2</strong></div>` : ''}
+  `;
+
+  const pageHeader = recipe.photo ? `
+    <div class="recipe-page-header" style="background-image:url('${recipe.photo}')">
       <a class="back-link" href="index.html">${icons.back} All recipes</a>
-
-      <div class="recipe-hero" style="background:${recipe.gradient}">
-        ${recipe.emoji}
-      </div>
-
-      <div class="recipe-header">
+      <div class="recipe-page-header-content">
         <div class="recipe-type-pill">${recipe.type}</div>
         <h1 class="recipe-title">${recipe.name}</h1>
-
-        <div class="recipe-stats">
-          ${recipe.rating ? `
-            <div class="recipe-stat">
-              ${icons.star}
-              <strong>${recipe.rating}</strong>
-              <span>${recipe.numRatings ? `(${recipe.numRatings} reviews)` : ''}</span>
-            </div>` : ''}
-          ${timeLbl ? `
-            <div class="recipe-stat">
-              ${icons.clock}
-              <strong>${timeLbl}</strong>
-              <span>cook time</span>
-            </div>` : ''}
-          ${recipe.tags.includes('Best for 2 servings') ? `
-            <div class="recipe-stat">
-              ${icons.users}
-              <strong>Serves 2</strong>
-            </div>` : ''}
-        </div>
-
+        <div class="recipe-stats">${statsHTML}</div>
         ${tagsHTML ? `<div class="recipe-tags">${tagsHTML}</div>` : ''}
       </div>
+    </div>
+  ` : `
+    <a class="back-link" href="index.html">${icons.back} All recipes</a>
+    <div class="recipe-hero" style="background:${recipe.gradient}">
+      ${recipe.emoji}
+    </div>
+    <div class="recipe-header">
+      <div class="recipe-type-pill">${recipe.type}</div>
+      <h1 class="recipe-title">${recipe.name}</h1>
+      <div class="recipe-stats">${statsHTML}</div>
+      ${tagsHTML ? `<div class="recipe-tags">${tagsHTML}</div>` : ''}
+    </div>
+  `;
 
+  container.innerHTML = `
+    <div class="recipe-page">
+      ${pageHeader}
       <div class="recipe-content">
         <div class="ingredients-card">
           <p class="section-heading">Ingredients</p>
@@ -281,8 +283,59 @@ function initRecipePage() {
   `;
 }
 
+// ── Dark mode ──────────────────────────────────────────────────────
+const THEME_KEY = 'keirxn_theme';
+
+const _moonSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+const _sunSVG  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('theme-toggle');
+  if (btn) btn.innerHTML = theme === 'dark' ? _sunSVG : _moonSVG;
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY) || 'light';
+  applyTheme(saved);
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const next = (document.documentElement.getAttribute('data-theme') || 'light') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
+  });
+}
+
+// ── Military Clock (Vaduz / Europe/Vaduz) ──────────────────────────
+function initClock() {
+  const timeEl = document.getElementById('clock-time');
+  const secsEl = document.getElementById('clock-secs');
+  if (!timeEl) return;
+
+  const fmtHHMM = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Vaduz',
+    hour: '2-digit', minute: '2-digit', hour12: false
+  });
+  const fmtSS = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Vaduz',
+    second: '2-digit', hour12: false
+  });
+
+  function tick() {
+    const now = new Date();
+    timeEl.textContent = fmtHHMM.format(now).replace(':', '');
+    if (secsEl) secsEl.textContent = fmtSS.format(now).padStart(2, '0');
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}
+
 // ── Router ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initClock();
   if (document.getElementById('recipe-grid')) {
     // Inject search icon
     const iconSlot = document.getElementById('search-icon');

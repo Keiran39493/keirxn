@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keirxn — Profile</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <link rel="stylesheet" href="static/style.css">
+  <style>body { visibility: hidden; }</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">keirxn</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="recipes.html">Recipes</a>
+    </div>
+    <div class="nav-right">
+      <div class="clock-wrap">
+        <div class="clock-label">Vaduz<span>LIE</span></div>
+        <div class="clock-time" id="clock-time">0000</div>
+        <div class="clock-secs" id="clock-secs">00</div>
+      </div>
+      <a class="nav-avatar nav-avatar-active" id="nav-avatar" href="profile.html" title="Profile">?</a>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
+      <button class="signout-btn" id="signout-btn" title="Sign out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PROFILE PAGE ── -->
+<div class="profile-page">
+  <div class="profile-inner">
+
+    <!-- Avatar + name -->
+    <div class="pf-hero">
+      <div class="pf-avatar-wrap">
+        <div class="pf-avatar" id="pf-avatar">?</div>
+      </div>
+      <div class="pf-hero-text">
+        <h1 class="pf-title">Profile</h1>
+        <p class="pf-subtitle">Your personal details and Garmin settings</p>
+      </div>
+    </div>
+
+    <form id="profile-form">
+
+      <!-- Personal details -->
+      <div class="pf-section">
+        <h2 class="pf-section-title">Personal Details</h2>
+        <div class="pf-grid">
+
+          <div class="form-group">
+            <label class="form-label" for="pf-name">Full name</label>
+            <input class="form-input" type="text" id="pf-name" placeholder="Keiran Moores" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pf-dob">Date of birth</label>
+            <input class="form-input" type="date" id="pf-dob">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pf-gender">Gender</label>
+            <select class="form-input" id="pf-gender">
+              <option value="">Select…</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other / prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pf-units">Units</label>
+            <select class="form-input" id="pf-units">
+              <option value="metric">Metric (kg, cm)</option>
+              <option value="imperial">Imperial (lbs, ft)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pf-height">Height (cm)</label>
+            <input class="form-input" type="number" id="pf-height" placeholder="180" min="100" max="250" step="0.5">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="pf-weight">Weight (kg)</label>
+            <input class="form-input" type="number" id="pf-weight" placeholder="80" min="30" max="300" step="0.1">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Goals -->
+      <div class="pf-section">
+        <h2 class="pf-section-title">Goals</h2>
+        <div class="form-group">
+          <label class="form-label" for="pf-goals">What are you training for?</label>
+          <input class="form-input" type="text" id="pf-goals"
+                 placeholder="e.g. Improve aerobic base, lose 5kg, run a half marathon">
+        </div>
+      </div>
+
+      <!-- Garmin -->
+      <div class="pf-section">
+        <h2 class="pf-section-title">Garmin Account</h2>
+        <div class="pf-garmin-row">
+          <div class="form-group" style="flex:1">
+            <label class="form-label" for="pf-garmin-email">Connected email</label>
+            <input class="form-input" type="email" id="pf-garmin-email" placeholder="Not connected" readonly>
+          </div>
+          <button class="btn-outline" type="button" id="btn-reconnect">Reconnect Garmin →</button>
+        </div>
+        <p class="pf-garmin-note">
+          Garmin data is fetched live — your credentials are never stored beyond the session token saved locally.
+        </p>
+      </div>
+
+      <!-- Save -->
+      <div class="pf-actions">
+        <button class="btn-primary" type="submit" id="pf-save-btn">Save changes</button>
+        <span id="pf-status"></span>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<footer>
+  <p><strong>keirxn</strong> — Personal performance dashboard</p>
+</footer>
+
+<script src="static/auth.js"></script>
+<script src="static/app.js"></script>
+<script src="static/profile.js"></script>
+</body>
+</html>
