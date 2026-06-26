@@ -436,8 +436,11 @@ def try_reconnect():
         except Exception as e:
             print(f"  Auto-reconnect failed: {e}")
 
+# Startup — runs on import (gunicorn) and on direct execution
+os.makedirs(TOKEN_DIR, exist_ok=True)
+try_reconnect()
+
 if __name__ == "__main__":
-    os.makedirs(TOKEN_DIR, exist_ok=True)
-    try_reconnect()
-    print("Running: http://localhost:5000")
-    app.run(debug=True, port=5000, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))
+    print(f"Running: http://localhost:{port}")
+    app.run(debug=True, port=port, use_reloader=False)
