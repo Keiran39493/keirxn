@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keirxn — Insights</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <link rel="stylesheet" href="static/style.css">
+  <style>body { visibility: hidden; }</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">keirxn</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link active" href="insights.html">Insights</a>
+      <a class="nav-link" href="recipes.html">Recipes</a>
+    </div>
+    <div class="nav-right">
+      <div class="clock-wrap">
+        <div class="clock-label">Vaduz<span>LIE</span></div>
+        <div class="clock-time" id="clock-time">0000</div>
+        <div class="clock-secs" id="clock-secs">00</div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
+      <button class="signout-btn" id="signout-btn" title="Sign out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<div class="dash-header">
+  <div class="dash-header-inner">
+    <div>
+      <h1 class="dash-title">Health Insights</h1>
+    </div>
+    <div id="garmin-chip" class="garmin-chip">Not synced</div>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<div class="ins-page">
+  <div class="ins-inner">
+
+    <!-- ── PROFILE CARD ── -->
+    <div class="ins-section">
+      <div class="ins-profile-card">
+        <div class="ins-card-top-label">Your Profile</div>
+        <div class="ins-profile-grid">
+          <div class="form-group">
+            <label class="form-label" for="ins-name">Name</label>
+            <input class="form-input" type="text" id="ins-name" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ins-age">Age</label>
+            <input class="form-input" type="number" id="ins-age" placeholder="28" min="10" max="100">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ins-gender">Gender</label>
+            <select class="form-input" id="ins-gender">
+              <option value="">Select…</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other / prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" id="height-label" for="ins-height">Height (cm)</label>
+            <input class="form-input" type="number" id="ins-height" placeholder="178" min="50" max="300" step="0.5">
+          </div>
+          <div class="form-group">
+            <label class="form-label" id="weight-label" for="ins-weight">Weight (kg)</label>
+            <input class="form-input" type="number" id="ins-weight" placeholder="75" min="20" max="500" step="0.1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ins-units">Units</label>
+            <select class="form-input" id="ins-units">
+              <option value="metric">Metric (kg, cm)</option>
+              <option value="imperial">Imperial (lbs, ft)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- BMI -->
+        <div class="ins-bmi">
+          <div class="ins-bmi-left">
+            <span class="ins-bmi-val" id="bmi-value">—</span>
+            <span class="ins-bmi-unit">BMI</span>
+          </div>
+          <div class="ins-bmi-right">
+            <div class="ins-bmi-label" id="bmi-label">—</div>
+            <div class="ins-bmi-tip" id="bmi-tip">Enter your height and weight above.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── HRV ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">HRV — Heart Rate Variability</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-hrv" placeholder="—" min="0" max="300">
+              <span class="ins-val-unit">ms</span>
+            </div>
+            <div class="ins-age-avg" id="hrv-avg">Enter your age to see age-adjusted percentiles.</div>
+          </div>
+          <div class="ins-badge" id="hrv-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+
+        <div class="ins-pct-section">
+          <div id="hrv-bar">
+            <div class="ins-pct-track"><div class="ins-pct-dot" style="left:1%"></div></div>
+            <div class="ins-pct-ticks"></div>
+          </div>
+        </div>
+
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">HRV measures the variation in time between consecutive heartbeats. A higher HRV means your autonomic nervous system is well-balanced — able to switch efficiently between stress and recovery. It is one of the strongest predictors of cardiovascular fitness, resilience to stress, and longevity.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">Your next goal</div>
+            <div class="ins-goal-box" id="hrv-goal">Enter your HRV and age to see your personalised target.</div>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>Zone 2 cardio 3–4× per week (30–45 min)</li>
+              <li>Consistent sleep and wake times daily</li>
+              <li>Breathwork or meditation (10 min/day)</li>
+              <li>Cold exposure (brief cold showers)</li>
+              <li>Limit alcohol — it significantly suppresses HRV</li>
+              <li>Avoid high-intensity training when HRV is low</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RESTING HEART RATE ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Resting Heart Rate</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-hr" placeholder="—" min="20" max="220">
+              <span class="ins-val-unit">bpm</span>
+            </div>
+            <div class="ins-age-avg" id="hr-avg">Enter your age to see age-adjusted percentiles.</div>
+          </div>
+          <div class="ins-badge" id="hr-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+
+        <div class="ins-pct-section">
+          <div id="hr-bar">
+            <div class="ins-pct-track"><div class="ins-pct-dot" style="left:1%"></div></div>
+            <div class="ins-pct-ticks"></div>
+          </div>
+        </div>
+
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Resting HR is the number of beats per minute your heart takes at complete rest. A lower resting HR indicates a stronger, more efficient heart that pumps more blood per beat. Elite endurance athletes typically have resting HRs of 40–50 bpm. High resting HR is linked to increased cardiovascular risk.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">Your next goal</div>
+            <div class="ins-goal-box" id="hr-goal">Enter your resting HR and age to see your personalised target.</div>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>Regular aerobic exercise (run, cycle, swim)</li>
+              <li>Build volume gradually — zone 2 is most effective</li>
+              <li>Maintain a healthy body weight</li>
+              <li>Manage chronic stress (cortisol elevates HR)</li>
+              <li>Limit caffeine, especially later in the day</li>
+              <li>Quality, consistent sleep lowers resting HR over time</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BODY BATTERY ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Body Battery</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-battery" placeholder="—" min="0" max="100">
+              <span class="ins-val-unit">/100</span>
+            </div>
+            <div class="ins-age-avg" id="battery-context"></div>
+          </div>
+          <div class="ins-badge" id="battery-level" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border);font-size:1rem;font-weight:800;letter-spacing:-0.02em;padding:6px 16px">—</div>
+        </div>
+
+        <!-- Battery bar -->
+        <div class="ins-pct-section">
+          <div id="battery-bar" class="batt-bar-wrap">
+            <div class="batt-track">
+              <div class="batt-fill" style="width:0%"></div>
+            </div>
+            <div class="batt-labels">
+              <span>0</span>
+              <span style="left:25%">25</span>
+              <span style="left:50%">50</span>
+              <span style="left:75%">75</span>
+              <span style="left:100%;transform:translateX(-100%)">100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Garmin's Body Battery uses HRV, stress data, and activity to estimate your energy reserves on a 0–100 scale. It accumulates during restful sleep and drains through activity and stress. Think of it as your daily fuel tank — it shows how recovered you are and how much you can push today.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">Reading the score</div>
+            <ul class="ins-tips">
+              <li><strong style="color:#10b981">75–100:</strong> Fully charged — push hard</li>
+              <li><strong style="color:#3b82f6">50–74:</strong> Good — moderate to high activity OK</li>
+              <li><strong style="color:#f59e0b">25–49:</strong> Low — light activity only</li>
+              <li><strong style="color:#ef4444">0–24:</strong> Critical — rest is essential</li>
+            </ul>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>Prioritise 7–9 hours of uninterrupted sleep</li>
+              <li>Avoid intense training when below 25</li>
+              <li>Short naps (10–20 min) can partially recharge</li>
+              <li>Manage daily stress — it drains battery constantly</li>
+              <li>Stay hydrated and avoid alcohol before sleep</li>
+              <li>A consistent sleep schedule maximises overnight recharge</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLEEP SCORE ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Sleep Score</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-sleep" placeholder="—" min="0" max="100">
+              <span class="ins-val-unit">/100</span>
+            </div>
+            <div class="ins-age-avg" id="sleep-avg">Enter your age to see age-adjusted percentiles.</div>
+          </div>
+          <div class="ins-badge" id="sleep-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+
+        <div class="ins-pct-section">
+          <div id="sleep-bar">
+            <div class="ins-pct-track"><div class="ins-pct-dot" style="left:1%"></div></div>
+            <div class="ins-pct-ticks"></div>
+          </div>
+        </div>
+
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Garmin's sleep score rates overall sleep quality 0–100 based on duration, sleep stages (deep, REM, light), overnight HRV, resting HR, and movement. Deep sleep drives physical repair; REM consolidates memory and emotion. A score above 85 indicates excellent, restorative sleep. Chronic poor sleep accelerates ageing and impairs performance.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">Your next goal</div>
+            <div class="ins-goal-box" id="sleep-goal">Enter your sleep score and age to see your personalised target.</div>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>Target 7–9 hours — no exceptions at the weekend</li>
+              <li>Same sleep and wake time every day (including weekends)</li>
+              <li>Keep bedroom cool: 16–19°C (60–67°F)</li>
+              <li>No screens 60 min before bed — use blue-light mode</li>
+              <li>No caffeine after 14:00</li>
+              <li>Avoid alcohol within 3 hours of sleep</li>
+              <li>Wind-down routine: dim lights, journalling, stretching</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p><strong>keirxn</strong> — Reference ranges based on published population health studies. Not medical advice.</p>
+</footer>
+
+<script src="static/auth.js"></script>
+<script src="static/app.js"></script>
+<script src="static/insights.js"></script>
+</body>
+</html>
