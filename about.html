@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keirxn — About</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <link rel="stylesheet" href="static/style.css">
+  <style>body { visibility: hidden; }</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">keirxn</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="insights.html">Insights</a>
+      <a class="nav-link" href="recipes.html">Recipes</a>
+    </div>
+    <div class="nav-right">
+      <div class="clock-wrap">
+        <div class="clock-label">Vaduz<span>LIE</span></div>
+        <div class="clock-time" id="clock-time">0000</div>
+        <div class="clock-secs" id="clock-secs">00</div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
+      <button class="signout-btn" id="signout-btn" title="Sign out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<div class="dash-header">
+  <div class="dash-header-inner">
+    <div>
+      <h1 class="dash-title">About</h1>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTENT ── -->
+<div class="profile-page">
+  <div class="profile-inner" style="max-width: 760px;">
+
+    <!-- Hero -->
+    <div class="pf-hero" style="margin-bottom: 40px;">
+      <div class="pf-hero-text">
+        <h2 class="pf-title" style="font-size: 2rem;">keirxn</h2>
+        <p class="pf-subtitle" style="font-size: 1rem; max-width: 560px; line-height: 1.65;">
+          A private personal dashboard for tracking health, fitness, and nutrition. It combines live Garmin biometric data with age-adjusted health analysis and a curated recipe collection — all in one place.
+        </p>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="pf-section">
+      <h2 class="pf-section-title">Dashboard</h2>
+      <p class="ins-col-text" style="margin-bottom: 16px;">
+        The dashboard pulls live data from Garmin Connect and presents today's metrics at a glance, alongside 7-day trend charts for the most important recovery and performance signals.
+      </p>
+      <div class="metrics-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px;">
+        <div class="metric-card" style="--accent:#10b981">
+          <div class="card-label">HRV</div>
+          <div class="card-desc">Heart rate variability — the primary readiness signal</div>
+        </div>
+        <div class="metric-card" style="--accent:#ef4444">
+          <div class="card-label">Resting HR</div>
+          <div class="card-desc">Beats per minute at complete rest</div>
+        </div>
+        <div class="metric-card" style="--accent:#3b82f6">
+          <div class="card-label">VO₂ Max</div>
+          <div class="card-desc">Aerobic capacity and fitness age estimate</div>
+        </div>
+        <div class="metric-card" style="--accent:#f59e0b">
+          <div class="card-label">Body Battery</div>
+          <div class="card-desc">Garmin energy reserve score (0–100)</div>
+        </div>
+        <div class="metric-card" style="--accent:#8b5cf6">
+          <div class="card-label">Sleep Score</div>
+          <div class="card-desc">Overall sleep quality based on duration and stages</div>
+        </div>
+        <div class="metric-card" style="--accent:#06b6d4">
+          <div class="card-label">Stress</div>
+          <div class="card-desc">Daily average stress level from HRV patterns</div>
+        </div>
+        <div class="metric-card" style="--accent:#8b5cf6">
+          <div class="card-label">Steps</div>
+          <div class="card-desc">Daily movement against your step goal</div>
+        </div>
+        <div class="metric-card" style="--accent:#ec4899">
+          <div class="card-label">SpO₂</div>
+          <div class="card-desc">Blood oxygen saturation percentage</div>
+        </div>
+        <div class="metric-card" style="--accent:#f97316">
+          <div class="card-label">Calories</div>
+          <div class="card-desc">Active calories burned throughout the day</div>
+        </div>
+        <div class="metric-card" style="--accent:#06b6d4">
+          <div class="card-label">Respiration</div>
+          <div class="card-desc">Average waking and sleep breathing rate</div>
+        </div>
+      </div>
+      <p class="ins-col-text" style="margin-top: 16px;">
+        The dashboard also generates automatic insights — flagging when HRV drops below your weekly baseline, when sleep is insufficient, when body battery is critically low, or when stress is elevated — each with a specific recommended action.
+      </p>
+    </div>
+
+    <!-- Insights -->
+    <div class="pf-section">
+      <h2 class="pf-section-title">Insights</h2>
+      <p class="ins-col-text" style="margin-bottom: 16px;">
+        The Insights page puts your metrics in context. Enter your age, height, weight, and gender to unlock age-adjusted analysis across four key health markers.
+      </p>
+      <ul class="ins-tips" style="margin-bottom: 16px;">
+        <li><strong>HRV</strong> — compared against population percentiles for your age group, with a target to move from your current percentile to the next tier</li>
+        <li><strong>Resting Heart Rate</strong> — lower is better; scored against age norms with elite athlete benchmarks for context</li>
+        <li><strong>Body Battery</strong> — colour-coded energy level with guidance on how to read and maximise your daily score</li>
+        <li><strong>Sleep Score</strong> — percentile ranking with evidence-based tips on sleep hygiene and recovery</li>
+      </ul>
+      <p class="ins-col-text">
+        Each metric card includes a plain-English explanation of what the number means, a personalised next goal, and a practical list of ways to improve it. BMI is calculated automatically from your height and weight in either metric or imperial units.
+      </p>
+    </div>
+
+    <!-- Recipes -->
+    <div class="pf-section">
+      <h2 class="pf-section-title">Recipes</h2>
+      <p class="ins-col-text" style="margin-bottom: 16px;">
+        A private, searchable collection of curated recipes — from quick weekday meals to weekend centrepieces. Each recipe shows a photo, dietary tags, prep and cook times, serving count, calories, and full ingredients and method.
+      </p>
+      <ul class="ins-tips">
+        <li>Full-text search across recipe names and ingredients</li>
+        <li>Dietary filters: vegan, vegetarian, high-protein, low-carb, and more</li>
+        <li>Responsive card grid — works on phone, tablet, and desktop</li>
+        <li>Detailed recipe view with step-by-step instructions</li>
+      </ul>
+    </div>
+
+    <!-- Tech -->
+    <div class="pf-section">
+      <h2 class="pf-section-title">How it works</h2>
+      <p class="ins-col-text" style="margin-bottom: 16px;">
+        keirxn is a lightweight Flask application served via Gunicorn, deployed on Render. The frontend is plain HTML, CSS, and JavaScript — no frameworks. Data flows from Garmin Connect via the <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">garminconnect</code> Python library and is cached for 30 minutes to avoid hitting rate limits.
+      </p>
+      <ul class="ins-tips">
+        <li>Authentication is handled client-side with a SHA-256 hashed passphrase and 8-hour session expiry</li>
+        <li>Garmin OAuth tokens are stored locally and used for silent reconnection on startup</li>
+        <li>Profile data (name, age, height, weight) is persisted in a local JSON file</li>
+        <li>Dark mode is stored in localStorage with an anti-flash inline script to prevent a white flicker on load</li>
+        <li>Hosted at <strong>keirxn.com</strong> via Namecheap DNS pointing to Render</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p><strong>keirxn</strong> — Personal performance dashboard</p>
+</footer>
+
+<script src="static/auth.js"></script>
+<script src="static/app.js"></script>
+</body>
+</html>
