@@ -19,20 +19,11 @@
       <a class="nav-link" href="index.html">Dashboard</a>
       <a class="nav-link" href="insights.html">Insights</a>
       <a class="nav-link active" href="recipes.html">Recipes</a>
-      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="workouts.html">Workouts</a>
+      <a class="nav-link" href="logs.html">Logs</a>
+      <a class="nav-link" href="notes.html">Notes</a>
     </div>
     <div class="nav-right">
-      <div class="search-wrap">
-        <span class="search-icon" id="search-icon"></span>
-        <input class="search-input" id="search" type="search"
-               placeholder="Search recipes or ingredients…" autocomplete="off">
-      </div>
-      <span class="nav-count" id="result-count"></span>
-      <div class="clock-wrap">
-        <div class="clock-label">Vaduz<span>LIE</span></div>
-        <div class="clock-time" id="clock-time">0000</div>
-        <div class="clock-secs" id="clock-secs">00</div>
-      </div>
       <a class="nav-avatar" id="nav-avatar" href="profile.html" title="Profile">?</a>
       <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
       <button class="signout-btn" id="signout-btn" title="Sign out">
@@ -50,6 +41,11 @@
 <div class="page-header">
   <div class="page-header-inner">
     <h1 class="page-title">Recipes</h1>
+    <div class="recipes-search-wrap">
+      <span class="search-icon" id="search-icon"></span>
+      <input class="search-input" id="search" type="search"
+             placeholder="Search recipes or ingredients…" autocomplete="off">
+    </div>
   </div>
 </div>
 
@@ -76,7 +72,7 @@
 <!-- ── GRID ── -->
 <main class="grid-section">
   <div class="results-bar">
-    <span><strong id="result-count-main"></strong></span>
+    <span><strong id="result-count"></strong></span>
   </div>
   <div class="recipe-grid" id="recipe-grid"></div>
 </main>
@@ -93,12 +89,7 @@
   AUTH.guard().then(ok => {
     if (ok) document.getElementById("signout-btn").addEventListener("click", () => AUTH.logout());
   });
-  const c1 = document.getElementById("result-count");
-  const c2 = document.getElementById("result-count-main");
-  const obs = new MutationObserver(() => { if (c2) c2.textContent = c1.textContent; });
-  obs.observe(c1, { childList: true, characterData: true, subtree: true });
 
-  // Set avatar initials from profile (best-effort)
   fetch("/api/profile").then(r => r.json()).then(p => {
     const el = document.getElementById("nav-avatar");
     if (el && p.name) el.textContent = p.name.trim().split(/\s+/).map(w => w[0]).slice(0,2).join("").toUpperCase();

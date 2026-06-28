@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keirxn — Logs</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <link rel="stylesheet" href="static/style.css">
+  <style>body { visibility: hidden; }</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">keirxn</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="insights.html">Insights</a>
+      <a class="nav-link" href="recipes.html">Recipes</a>
+      <a class="nav-link" href="workouts.html">Workouts</a>
+      <a class="nav-link active" href="logs.html">Logs</a>
+      <a class="nav-link" href="notes.html">Notes</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-avatar" id="nav-avatar" href="profile.html" title="Profile">?</a>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
+      <button class="signout-btn" id="signout-btn" title="Sign out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<div class="dash-header">
+  <div class="dash-header-inner">
+    <div>
+      <p class="dash-date" id="log-date"></p>
+      <h1 class="dash-title">Daily Log</h1>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<div class="log-page">
+  <div class="log-inner">
+
+    <!-- ── TODAY'S ENTRY ── -->
+    <div class="log-today-card">
+      <div class="ins-card-top-label" id="log-form-label">Log Today</div>
+
+      <!-- Primary metrics -->
+      <div class="log-form-grid">
+        <div class="log-field">
+          <label class="log-field-label">VO₂ Max</label>
+          <div class="log-field-input-wrap">
+            <input class="log-field-input" type="number" id="log-vo2" placeholder="—" min="10" max="90" step="0.1">
+            <span class="log-field-unit">mL/kg/min</span>
+          </div>
+        </div>
+        <div class="log-field">
+          <label class="log-field-label">Sleep Score</label>
+          <div class="log-field-input-wrap">
+            <input class="log-field-input" type="number" id="log-sleep" placeholder="—" min="0" max="100">
+            <span class="log-field-unit">/100</span>
+          </div>
+        </div>
+        <div class="log-field">
+          <label class="log-field-label">Body Battery</label>
+          <div class="log-field-input-wrap">
+            <input class="log-field-input" type="number" id="log-battery" placeholder="—" min="0" max="100">
+            <span class="log-field-unit">/100</span>
+          </div>
+        </div>
+      </div>
+      <p class="log-field-hint log-form-hint">Log Body Battery right after waking or at your energy peak for the most accurate reading.</p>
+
+      <!-- Optional measurements -->
+      <div class="log-optional-divider">
+        <span class="log-optional-divider-label">Optional measurements</span>
+      </div>
+      <div class="log-form-grid log-form-grid--2">
+        <div class="log-field">
+          <label class="log-field-label">Weight</label>
+          <div class="log-field-input-wrap">
+            <input class="log-field-input" type="number" id="log-weight" placeholder="—" min="20" max="500" step="0.1">
+            <span class="log-field-unit" id="log-weight-unit">kg</span>
+          </div>
+        </div>
+        <div class="log-field">
+          <label class="log-field-label">Waist circumference</label>
+          <div class="log-field-input-wrap">
+            <input class="log-field-input" type="number" id="log-waist" placeholder="—" min="40" max="200" step="0.5">
+            <span class="log-field-unit">cm</span>
+          </div>
+        </div>
+      </div>
+      <p class="log-field-hint log-form-hint">Waist is measured at the narrowest point of your torso and used to compute waist-to-height ratio.</p>
+
+      <div class="log-notes-row">
+        <label class="log-field-label">Notes <span class="log-optional">optional</span></label>
+        <textarea class="log-textarea" id="log-notes" placeholder="How did you feel today? Any training notes, context, or observations…" rows="3"></textarea>
+      </div>
+
+      <div class="log-submit-row">
+        <span class="log-status" id="log-status"></span>
+        <button class="btn-primary" id="log-submit-btn" onclick="submitLog()">Log Today</button>
+      </div>
+    </div>
+
+    <!-- ── CHARTS ── -->
+    <div class="log-section-label">Trends</div>
+    <div class="log-charts-grid" id="charts-section">
+      <div class="log-chart-card">
+        <div class="log-chart-title">Sleep Score</div>
+        <div class="log-chart-wrap"><canvas id="chart-sleep"></canvas></div>
+      </div>
+      <div class="log-chart-card">
+        <div class="log-chart-title">Body Battery</div>
+        <div class="log-chart-wrap"><canvas id="chart-battery"></canvas></div>
+      </div>
+      <div class="log-chart-card">
+        <div class="log-chart-title">VO₂ Max</div>
+        <div class="log-chart-wrap"><canvas id="chart-vo2"></canvas></div>
+      </div>
+      <div class="log-chart-card">
+        <div class="log-chart-title">Weight</div>
+        <div class="log-chart-wrap"><canvas id="chart-weight"></canvas></div>
+      </div>
+    </div>
+    <p class="log-empty-charts" id="no-chart-data" style="display:none">No chart data yet — log a few days to see your trends.</p>
+
+    <!-- ── HISTORY ── -->
+    <div class="log-section-label">History</div>
+    <div id="log-history">
+      <p class="log-empty-msg">No entries yet. Log your first day above.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p><strong>keirxn</strong> — Personal performance dashboard</p>
+</footer>
+
+<script src="static/auth.js"></script>
+<script src="static/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script src="static/logs.js"></script>
+</body>
+</html>

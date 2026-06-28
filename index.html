@@ -19,14 +19,11 @@
       <a class="nav-link active" href="index.html">Dashboard</a>
       <a class="nav-link" href="insights.html">Insights</a>
       <a class="nav-link" href="recipes.html">Recipes</a>
-      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="workouts.html">Workouts</a>
+      <a class="nav-link" href="logs.html">Logs</a>
+      <a class="nav-link" href="notes.html">Notes</a>
     </div>
     <div class="nav-right">
-      <div class="clock-wrap">
-        <div class="clock-label">Vaduz<span>LIE</span></div>
-        <div class="clock-time" id="clock-time">0000</div>
-        <div class="clock-secs" id="clock-secs">00</div>
-      </div>
       <a class="nav-avatar" id="nav-avatar" href="profile.html" title="Profile">?</a>
       <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
       <button class="signout-btn" id="signout-btn" title="Sign out">
@@ -47,161 +44,260 @@
       <p class="dash-date" id="dash-date"></p>
       <h1 class="dash-title"><span id="dash-greeting">Good morning</span><span id="dash-name"></span></h1>
     </div>
-    <button class="btn-ghost" id="refresh-btn" onclick="location.reload()" title="Refresh data">
+    <button class="btn-ghost" id="add-widget-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-        <polyline points="23 4 23 10 17 10"/>
-        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+           stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
       </svg>
-      Refresh
+      Add Widget
     </button>
   </div>
 </div>
 
-<!-- ── HERO SCORES ── -->
-<section class="dash-section">
+<!-- ── CALENDAR ── -->
+<div class="cal-section">
   <div class="dash-inner">
-    <div class="hero-grid">
-
-      <div class="hero-card">
-        <div class="hero-card-label">Body Battery</div>
-        <div id="ring-battery" class="ring-wrap"></div>
-        <div class="hero-card-val" id="hero-battery-val">—</div>
-        <div class="hero-card-status" id="hero-battery-label">—</div>
+    <div class="cal-header">
+      <div class="cal-nav">
+        <button class="cal-nav-btn" onclick="calPrevMonth()" title="Previous month">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <span class="cal-month-label" id="cal-month-label"></span>
+        <button class="cal-nav-btn" onclick="calNextMonth()" title="Next month">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
       </div>
-
-      <div class="hero-card">
-        <div class="hero-card-label">Sleep Score</div>
-        <div id="ring-sleep" class="ring-wrap"></div>
-        <div class="hero-card-val" id="hero-sleep-val">—</div>
-        <div class="hero-card-status" id="hero-sleep-label">—</div>
-      </div>
-
-      <div class="hero-card">
-        <div class="hero-card-label">Stress Level</div>
-        <div id="ring-stress" class="ring-wrap"></div>
-        <div class="hero-card-val" id="hero-stress-val">—</div>
-        <div class="hero-card-status" id="hero-stress-label">—</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── METRIC CARDS ── -->
-<section class="dash-section">
-  <div class="dash-inner">
-    <h2 class="section-title">Today's Metrics</h2>
-    <div class="metrics-grid">
-
-      <div class="metric-card" id="card-hrv" style="--accent:#10b981">
-        <div class="card-label">HRV</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Heart rate variability</div>
-      </div>
-
-      <div class="metric-card" id="card-vo2" style="--accent:#3b82f6">
-        <div class="card-label">VO₂ Max</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Aerobic capacity</div>
-      </div>
-
-      <div class="metric-card" id="card-hr" style="--accent:#ef4444">
-        <div class="card-label">Resting HR</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Beats per minute</div>
-      </div>
-
-      <div class="metric-card" id="card-steps" style="--accent:#8b5cf6">
-        <div class="card-label">Steps</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Daily movement</div>
-      </div>
-
-      <div class="metric-card" id="card-spo2" style="--accent:#ec4899">
-        <div class="card-label">SpO₂</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Blood oxygen saturation</div>
-      </div>
-
-      <div class="metric-card" id="card-resp" style="--accent:#06b6d4">
-        <div class="card-label">Respiration</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Breaths per minute</div>
-      </div>
-
-      <div class="metric-card" id="card-calories" style="--accent:#f97316">
-        <div class="card-label">Calories</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Active calories burned</div>
-      </div>
-
-      <div class="metric-card" id="card-fitness-age" style="--accent:#3b82f6">
-        <div class="card-label">Fitness Age</div>
-        <div class="card-val loading">—</div>
-        <div class="card-status"></div>
-        <div class="card-desc">Based on VO₂ Max</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── INSIGHTS ── -->
-<section class="dash-section">
-  <div class="dash-inner">
-    <h2 class="section-title">Insights</h2>
-    <div id="insights-list" class="insights-list">
-      <p class="insights-empty">Syncing data…</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── TRENDS ── -->
-<section class="dash-section">
-  <div class="dash-inner">
-    <h2 class="section-title">7-Day Trends</h2>
-    <div class="trends-grid">
-      <div class="trend-card">
-        <div class="trend-label">HRV</div>
-        <div class="trend-chart-wrap"><canvas id="chart-hrv"></canvas></div>
-      </div>
-      <div class="trend-card">
-        <div class="trend-label">Sleep Score</div>
-        <div class="trend-chart-wrap"><canvas id="chart-sleep"></canvas></div>
-      </div>
-      <div class="trend-card">
-        <div class="trend-label">Body Battery</div>
-        <div class="trend-chart-wrap"><canvas id="chart-battery"></canvas></div>
-      </div>
-      <div class="trend-card">
-        <div class="trend-label">Stress</div>
-        <div class="trend-chart-wrap"><canvas id="chart-stress"></canvas></div>
+      <div class="cal-header-right">
+        <button class="btn-ghost cal-today-btn" onclick="calGoToday()">Today</button>
+        <button class="btn-ghost cal-import-btn" id="cal-import-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="margin-right:4px">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Import
+        </button>
       </div>
     </div>
+    <div class="cal-grid" id="cal-grid"></div>
   </div>
-</section>
+</div>
+
+<!-- ── WIDGET GRID ── -->
+<div class="dash-widgets-section">
+  <div class="dash-inner">
+    <div class="widget-grid" id="widget-grid"></div>
+    <div class="widget-empty" id="widget-empty">
+      No widgets yet — hit <strong>Add Widget</strong> to build your dashboard.
+    </div>
+  </div>
+</div>
 
 <!-- ── FOOTER ── -->
 <footer>
   <p><strong>keirxn</strong> — Performance dashboard &nbsp;·&nbsp; <a href="about.html" style="color:inherit;opacity:0.5;text-decoration:none;">About</a></p>
 </footer>
 
+<!-- ── CALENDAR DAY MODAL ── -->
+<div class="modal-overlay hidden" id="cal-modal-overlay"></div>
+<div class="modal cal-modal hidden" id="cal-modal">
+  <div class="modal-header">
+    <span class="cal-modal-date-label" id="cal-modal-date"></span>
+    <button class="modal-close" id="cal-modal-close">×</button>
+  </div>
+
+  <!-- List view: events for the selected day -->
+  <div id="cal-list-view">
+    <div id="cal-events-list"></div>
+    <p class="cal-events-empty" id="cal-events-empty" style="display:none">No events — add one.</p>
+    <button class="btn-primary full-width" id="cal-add-btn" style="margin-top:16px">+ Add event</button>
+  </div>
+
+  <!-- Form view: create / edit event -->
+  <div id="cal-form-view" style="display:none">
+    <div class="cal-form-top">
+      <button class="btn-ghost" id="cal-form-back" style="font-size:0.8rem">← Back</button>
+      <span class="cal-form-view-label" id="cal-form-view-label">New event</span>
+    </div>
+    <div class="form-group" style="margin-top:6px">
+      <input class="form-input" type="text" id="cal-ev-title" placeholder="Event title" autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Date</label>
+      <input class="form-input" type="date" id="cal-ev-date">
+    </div>
+    <div class="form-group">
+      <label class="cal-allday-label">
+        <input type="checkbox" id="cal-ev-allday">
+        <span>All day</span>
+      </label>
+    </div>
+    <div class="form-group" id="cal-time-row">
+      <div class="cal-time-grid">
+        <div>
+          <label class="form-label">Start</label>
+          <input class="form-input" type="time" id="cal-ev-start">
+        </div>
+        <div>
+          <label class="form-label">End</label>
+          <input class="form-input" type="time" id="cal-ev-end">
+        </div>
+      </div>
+    </div>
+    <!-- Recurrence fields (hidden when editing a single occurrence) -->
+    <div id="cal-recurrence-section">
+      <div class="form-group">
+        <label class="form-label">Repeat</label>
+        <select class="form-input" id="cal-ev-recurrence">
+          <option value="none">Does not repeat</option>
+          <option value="daily">Daily</option>
+          <option value="weekdays">Every weekday (Mon–Fri)</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Annually</option>
+        </select>
+      </div>
+      <div class="form-group" id="cal-weekly-days" style="display:none">
+        <label class="form-label">Repeat on</label>
+        <div class="cal-day-toggles">
+          <button type="button" class="cal-day-tog" data-dow="0">S</button>
+          <button type="button" class="cal-day-tog" data-dow="1">M</button>
+          <button type="button" class="cal-day-tog" data-dow="2">T</button>
+          <button type="button" class="cal-day-tog" data-dow="3">W</button>
+          <button type="button" class="cal-day-tog" data-dow="4">T</button>
+          <button type="button" class="cal-day-tog" data-dow="5">F</button>
+          <button type="button" class="cal-day-tog" data-dow="6">S</button>
+        </div>
+      </div>
+      <div class="form-group" id="cal-recurrence-end" style="display:none">
+        <label class="form-label">Ends <span style="font-weight:400;color:var(--text-dim)">(optional)</span></label>
+        <input class="form-input" type="date" id="cal-ev-end-rec">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Colour</label>
+      <div class="cal-swatches" id="cal-swatches"></div>
+    </div>
+    <div class="cal-form-footer">
+      <button class="btn-ghost" id="cal-form-del" style="display:none;color:#ef4444;border-color:#ef4444">Delete</button>
+      <button class="btn-primary" id="cal-form-save">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── RECURRING EVENT SCOPE DIALOG ── -->
+<div class="modal-overlay hidden" id="cal-scope-overlay"></div>
+<div class="modal cal-scope-modal hidden" id="cal-scope-modal">
+  <p class="cal-scope-heading" id="cal-scope-heading">Edit recurring event</p>
+  <p class="modal-subtext">Which events do you want to change?</p>
+  <div class="cal-scope-options">
+    <button class="cal-scope-btn" id="cal-scope-this">This event</button>
+    <button class="cal-scope-btn" id="cal-scope-all">All events</button>
+  </div>
+  <button class="btn-ghost full-width" id="cal-scope-cancel" style="margin-top:8px">Cancel</button>
+</div>
+
+<!-- ── CALENDAR IMPORT MODAL ── -->
+<div class="modal-overlay hidden" id="cal-import-overlay"></div>
+<div class="modal cal-import-modal hidden" id="cal-import-modal">
+  <div class="modal-header">
+    <h3>Import Events</h3>
+    <button class="modal-close" id="cal-import-close">×</button>
+  </div>
+  <div class="cal-import-tabs">
+    <button class="cal-import-tab active" id="ci-tab-holidays" onclick="switchImportTab('holidays')">Public Holidays</button>
+    <button class="cal-import-tab" id="ci-tab-gcal" onclick="switchImportTab('gcal')">Google Calendar</button>
+  </div>
+
+  <!-- Public Holidays panel -->
+  <div id="ci-panel-holidays">
+    <p class="modal-subtext" style="margin-bottom:14px">Import national public holidays powered by <strong>Nager.Date</strong>.</p>
+    <div class="form-group">
+      <label class="form-label">Country</label>
+      <select class="form-input" id="ci-country"></select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Year</label>
+      <input class="form-input" type="number" id="ci-year" min="2020" max="2030">
+    </div>
+    <button class="btn-primary full-width" id="ci-holidays-btn">Import Holidays</button>
+    <p class="ci-status" id="ci-holidays-status"></p>
+  </div>
+
+  <!-- Google Calendar panel -->
+  <div id="ci-panel-gcal" style="display:none">
+    <!-- Not configured -->
+    <div id="ci-gcal-setup" style="display:none">
+      <p class="modal-subtext">Set environment variables to enable Google Calendar sync.</p>
+      <ol class="ci-setup-steps">
+        <li>Open <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a></li>
+        <li>Create a project → enable the <strong>Google Calendar API</strong></li>
+        <li>Create <strong>OAuth 2.0 credentials</strong> (Web application type)</li>
+        <li>Add <code>/api/gcal/callback</code> as an authorised redirect URI</li>
+        <li>Set env vars: <code>GOOGLE_CLIENT_ID</code> and <code>GOOGLE_CLIENT_SECRET</code></li>
+        <li>Restart the server, then return here</li>
+      </ol>
+    </div>
+    <!-- Configured, not connected -->
+    <div id="ci-gcal-connect" style="display:none">
+      <p class="modal-subtext" style="margin-bottom:14px">Connect your Google account to import calendar events.</p>
+      <a class="btn-primary full-width" id="ci-gcal-auth-btn" href="/api/gcal/auth" style="display:block;text-align:center;text-decoration:none">
+        Connect Google Calendar
+      </a>
+    </div>
+    <!-- Connected -->
+    <div id="ci-gcal-connected" style="display:none">
+      <p class="modal-subtext" style="margin-bottom:14px">Choose which calendar and date range to import.</p>
+      <div class="form-group">
+        <label class="form-label">Calendar</label>
+        <select class="form-input" id="ci-gcal-calendar">
+          <option value="primary">Primary calendar</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Date range</label>
+        <select class="form-input" id="ci-gcal-range">
+          <option value="3">Next 3 months</option>
+          <option value="6">Next 6 months</option>
+          <option value="12">Next 12 months</option>
+        </select>
+      </div>
+      <button class="btn-primary full-width" id="ci-gcal-sync-btn">Sync Events</button>
+      <button class="btn-ghost full-width ci-disconnect-btn" id="ci-gcal-disconnect-btn" style="margin-top:8px">
+        Disconnect Google Calendar
+      </button>
+      <p class="ci-status" id="ci-gcal-status"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ── WIDGET PICKER MODAL ── -->
+<div class="modal-overlay hidden" id="picker-overlay"></div>
+<div class="modal hidden" id="picker-modal">
+  <div class="modal-header">
+    <h3>Add Widget</h3>
+    <button class="modal-close" id="picker-close">×</button>
+  </div>
+  <p class="modal-subtext">Select a metric to pin to your dashboard. Values are pulled from your latest log entries and profile.</p>
+  <div class="picker-grid" id="picker-grid"></div>
+  <p class="picker-all-added" id="picker-all-added" style="display:none">All available widgets are already on your dashboard.</p>
+</div>
+
 <script>
-  // Set today's date
-  document.getElementById("dash-date").textContent = new Date().toLocaleDateString("en-GB", {
-    weekday: "long", day: "numeric", month: "long", year: "numeric"
+  document.getElementById('dash-date').textContent = new Date().toLocaleDateString('en-GB', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
   });
 </script>
 <script src="static/auth.js"></script>
 <script src="static/app.js"></script>
+<script src="static/calendar.js"></script>
 <script src="static/dashboard.js"></script>
 </body>
 </html>

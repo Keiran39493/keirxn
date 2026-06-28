@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keirxn — Notes</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <link rel="stylesheet" href="static/style.css">
+  <style>body { visibility: hidden; }</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">keirxn</a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Dashboard</a>
+      <a class="nav-link" href="insights.html">Insights</a>
+      <a class="nav-link" href="recipes.html">Recipes</a>
+      <a class="nav-link" href="workouts.html">Workouts</a>
+      <a class="nav-link" href="logs.html">Logs</a>
+      <a class="nav-link active" href="notes.html">Notes</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-avatar" id="nav-avatar" href="profile.html" title="Profile">?</a>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
+      <button class="signout-btn" id="signout-btn" title="Sign out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER (visible space between nav and content) ── -->
+<div class="dash-header" style="padding-bottom:0">
+  <div class="dash-header-inner" style="padding-bottom:0"></div>
+</div>
+
+<!-- ── NOTES PAGE ── -->
+<div class="notes-page">
+
+  <!-- State: setup -->
+  <div id="np-state-setup" class="np-state">
+    <div class="np-setup-card">
+      <div class="np-setup-icon">🔐</div>
+      <h2 class="np-setup-title">Protect your notes?</h2>
+      <p class="np-setup-desc">Encrypt notes with a local password so only you can read them — or skip for plain-text storage. You can change this any time in Settings.</p>
+      <div class="np-setup-btns">
+        <button class="btn-primary" id="np-setup-set-pw">Set a password</button>
+        <button class="btn-ghost" id="np-setup-skip">No encryption</button>
+        <button class="btn-ghost" id="np-setup-later">Decide later</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- State: locked -->
+  <div id="np-state-locked" class="np-state" style="display:none">
+    <div class="np-locked-card">
+      <div class="np-locked-icon">🔒</div>
+      <p class="np-locked-text">Your notes are encrypted. Enter your password to unlock them for this session.</p>
+      <div class="np-unlock-row">
+        <input class="form-input np-unlock-pw" type="password" id="np-unlock-pw"
+               placeholder="Password…" autocomplete="current-password">
+        <button class="btn-primary" id="np-unlock-btn">Unlock</button>
+      </div>
+      <p class="np-unlock-err" id="np-unlock-err"></p>
+      <a class="np-reset-link" href="javascript:void(0)" onclick="openNotesPageSettings()">Settings</a>
+    </div>
+  </div>
+
+  <!-- State: active -->
+  <div id="np-state-active" class="np-state" style="display:none">
+    <div class="np-page-header">
+      <div class="np-title-row">
+        <h1 class="np-title">Notes</h1>
+        <button class="btn-ghost" id="np-settings-btn" style="font-size:0.8rem">Settings</button>
+      </div>
+      <div class="np-toolbar">
+        <div class="np-search-wrap">
+          <svg class="np-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" width="14" height="14">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input class="np-search" type="search" id="np-search"
+                 placeholder="Search notes…" autocomplete="off">
+        </div>
+        <div class="np-sort-tabs">
+          <button class="np-sort-tab active" id="npt-date" onclick="setPageSort('date')">Date</button>
+          <button class="np-sort-tab" id="npt-alpha" onclick="setPageSort('alpha')">A–Z</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="np-list" id="np-list"></div>
+    <p class="np-empty" id="np-empty" style="display:none">
+      No notes yet — tap the <strong>+</strong> button to write your first one.
+    </p>
+  </div>
+
+</div>
+
+<!-- ── FAB: compose button ── -->
+<button class="np-fab" id="np-fab" style="display:none" title="New note">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+       stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+  </svg>
+</button>
+
+<!-- ── COMPOSE / EDIT MODAL ── -->
+<div class="modal-overlay hidden" id="np-compose-modal-overlay"></div>
+<div class="modal np-compose-modal hidden" id="np-compose-modal">
+  <div class="np-compose-header">
+    <button class="btn-ghost" id="np-compose-back" style="font-size:0.82rem">← Back</button>
+    <div class="np-compose-actions">
+      <button class="btn-ghost" id="np-compose-del"
+              style="display:none;color:#ef4444;border-color:#ef4444">Delete</button>
+      <button class="btn-primary" id="np-compose-save">Save</button>
+    </div>
+  </div>
+  <input class="np-compose-title-input" type="text" id="nc-title"
+         placeholder="Title" autocomplete="off">
+  <textarea class="np-compose-body-input" id="nc-body"
+            placeholder="Start writing…" rows="14"></textarea>
+  <p class="np-compose-ts" id="nc-timestamp"></p>
+</div>
+
+<!-- ── PASSWORD MODAL ── -->
+<div class="modal-overlay hidden" id="np-pw-modal-overlay"></div>
+<div class="modal hidden" id="np-pw-modal">
+  <div class="modal-header">
+    <h3 id="np-pw-modal-title">Set a password</h3>
+    <button class="modal-close" id="np-pw-close">×</button>
+  </div>
+  <p class="modal-subtext" id="np-pw-desc"></p>
+  <div id="np-pw-old-row" style="display:none" class="form-group">
+    <label class="form-label">Current password</label>
+    <input class="form-input" type="password" id="np-pw-old"
+           placeholder="Current password" autocomplete="current-password">
+  </div>
+  <div class="form-group">
+    <label class="form-label">New password</label>
+    <input class="form-input" type="password" id="np-pw-input"
+           placeholder="At least 6 characters" autocomplete="new-password">
+  </div>
+  <div id="np-pw-conf-row" class="form-group">
+    <label class="form-label">Confirm password</label>
+    <input class="form-input" type="password" id="np-pw-confirm"
+           placeholder="Repeat password" autocomplete="new-password">
+  </div>
+  <p class="form-error" id="np-pw-err"></p>
+  <button class="btn-primary full-width" id="np-pw-submit">Confirm</button>
+  <p style="font-size:0.72rem;color:var(--text-dim);margin-top:12px;line-height:1.5">
+    Your password is never sent to the server. If you forget it, encrypted notes cannot be recovered.
+  </p>
+</div>
+
+<!-- ── SETTINGS MODAL ── -->
+<div class="modal-overlay hidden" id="np-settings-modal-overlay"></div>
+<div class="modal hidden" id="np-settings-modal">
+  <div class="modal-header">
+    <h3>Notes Settings</h3>
+    <button class="modal-close" id="np-settings-close">×</button>
+  </div>
+  <div class="notes-settings-rows">
+    <div id="np-enable-row" class="notes-settings-row">
+      <div>
+        <div class="notes-settings-row-title">Enable encryption</div>
+        <div class="notes-settings-row-desc">Protect notes with a password. Your password is never sent to the server.</div>
+      </div>
+      <button class="btn-ghost" id="np-enable-enc-btn">Set up</button>
+    </div>
+    <div id="np-change-row" class="notes-settings-row" style="display:none">
+      <div>
+        <div class="notes-settings-row-title">Change password</div>
+        <div class="notes-settings-row-desc">Re-encrypts all existing notes with the new password.</div>
+      </div>
+      <button class="btn-ghost" id="np-change-pw-btn">Change</button>
+    </div>
+    <div id="np-disable-row" class="notes-settings-row" style="display:none">
+      <div>
+        <div class="notes-settings-row-title">Remove encryption</div>
+        <div class="notes-settings-row-desc">Decrypt all notes and store as plain text. Requires your current password.</div>
+      </div>
+      <button class="btn-ghost" id="np-disable-enc-btn"
+              style="color:#ef4444;border-color:#ef4444">Remove</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p><strong>keirxn</strong> — Performance dashboard</p>
+</footer>
+
+<script src="static/auth.js"></script>
+<script src="static/app.js"></script>
+<script src="static/notes.js"></script>
+<script>
+  AUTH.guard().then(ok => {
+    if (!ok) return;
+    document.getElementById('signout-btn').addEventListener('click', () => AUTH.logout());
+    fetch('/api/profile').then(r => r.json()).then(p => {
+      const el = document.getElementById('nav-avatar');
+      if (el && p.name) el.textContent = p.name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+    }).catch(() => {});
+    initNotesPage();
+  });
+</script>
+</body>
+</html>

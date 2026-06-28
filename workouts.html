@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipe — keirxn</title>
-  <meta name="description" content="Recipe details">
+  <title>keirxn — Workouts</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script>(function(){var t=localStorage.getItem('keirxn_theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
   <link rel="stylesheet" href="static/style.css">
-  <!-- Body hidden until auth guard confirms a valid session -->
   <style>body { visibility: hidden; }</style>
 </head>
 <body>
@@ -20,8 +18,8 @@
     <div class="nav-links">
       <a class="nav-link" href="index.html">Dashboard</a>
       <a class="nav-link" href="insights.html">Insights</a>
-      <a class="nav-link active" href="recipes.html">Recipes</a>
-      <a class="nav-link" href="workouts.html">Workouts</a>
+      <a class="nav-link" href="recipes.html">Recipes</a>
+      <a class="nav-link active" href="workouts.html">Workouts</a>
       <a class="nav-link" href="logs.html">Logs</a>
       <a class="nav-link" href="notes.html">Notes</a>
     </div>
@@ -39,21 +37,41 @@
   </div>
 </nav>
 
-<!-- ── CONTENT (rendered by JS) ── -->
-<div id="recipe-container"></div>
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1 class="page-title">Workouts</h1>
+  </div>
+</div>
 
-<!-- ── FOOTER ── -->
+<!-- ── COMING SOON ── -->
+<div class="wo-coming-soon">
+  <div class="wo-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+         stroke-linecap="round" stroke-linejoin="round" width="48" height="48">
+      <path d="M6.5 6.5h11M6.5 17.5h11M3 3l18 18"/>
+      <circle cx="12" cy="12" r="9"/>
+    </svg>
+  </div>
+  <h2 class="wo-title">Coming soon</h2>
+  <p class="wo-desc">Workout tracking, structured training plans, and session logging are in development. Check back soon.</p>
+  <a class="btn-ghost" href="logs.html">Go to Daily Log →</a>
+</div>
+
 <footer>
-  <p><strong>keirxn</strong> &mdash; Recipes &nbsp;·&nbsp; <a href="about.html" style="color:inherit;opacity:0.5;text-decoration:none;">About</a></p>
+  <p><strong>keirxn</strong> — Performance dashboard</p>
 </footer>
 
 <script src="static/auth.js"></script>
-<script src="static/data.js"></script>
 <script src="static/app.js"></script>
 <script>
   AUTH.guard().then(ok => {
     if (!ok) return;
     document.getElementById('signout-btn').addEventListener('click', () => AUTH.logout());
+    fetch('/api/profile').then(r => r.json()).then(p => {
+      const el = document.getElementById('nav-avatar');
+      if (el && p.name) el.textContent = p.name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+    }).catch(() => {});
   });
 </script>
 </body>
