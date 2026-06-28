@@ -1050,17 +1050,6 @@ footer strong { color: var(--text-muted); }
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-.pf-garmin-row {
-  display: flex;
-  align-items: flex-end;
-  gap: 12px;
-}
-.pf-garmin-note {
-  font-size: 0.75rem;
-  color: var(--text-dim);
-  margin-top: 10px;
-  line-height: 1.5;
-}
 .pf-actions {
   display: flex;
   align-items: center;
@@ -1188,6 +1177,103 @@ footer strong { color: var(--text-muted); }
   padding: 28px 32px 80px;
 }
 .ins-section { margin-bottom: 20px; }
+
+.ins-group-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+  margin-top: 12px;
+}
+
+/* Calculator sub-section */
+.ins-calc-section {
+  padding: 16px 24px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.ins-calc-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+.ins-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Auto-calculated display value */
+.ins-computed-val {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+/* Training zones */
+.ins-zones-section {
+  padding: 16px 24px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.ins-zones-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.ins-zone-card {
+  border-radius: 6px;
+  padding: 12px 8px;
+  text-align: center;
+}
+.ins-zone-num {
+  font-size: 0.58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.ins-zone-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.ins-zone-range {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+.ins-zone-pct {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+/* Blood pressure two-input row */
+.ins-bp-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.ins-bp-sep {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  line-height: 1;
+  flex-shrink: 0;
+}
 
 .ins-profile-card {
   background: var(--surface);
@@ -1445,19 +1531,6 @@ footer strong { color: var(--text-muted); }
 .batt-labels span:first-child { position: static; transform: none; }
 .batt-labels span:last-child  { position: static; transform: none; }
 
-/* Garmin sync chip */
-.garmin-chip {
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 5px 14px;
-  border-radius: 100px;
-  border: 1px solid var(--border);
-  color: var(--text-dim);
-  background: var(--bg);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
 /* ── RESPONSIVE ──────────────────────────────── */
 
 /* Tablet — hide verbose clock label */
@@ -1494,12 +1567,12 @@ footer strong { color: var(--text-muted); }
   .ins-metric-body  { grid-template-columns: 1fr; }
   .ins-body-col     { border-right: none; border-bottom: 1px solid var(--border); }
   .ins-body-col:last-child { border-bottom: none; }
+  .ins-calc-grid    { grid-template-columns: 1fr 1fr; }
+  .ins-zones-grid   { grid-template-columns: 1fr 1fr; }
 
   /* Profile */
   .profile-inner  { padding: 28px 20px 60px; }
   .pf-grid        { grid-template-columns: 1fr; }
-  .pf-garmin-row  { flex-direction: column; align-items: stretch; }
-  .pf-garmin-row .btn-outline { align-self: flex-start; }
 }
 
 /* Mobile */
@@ -1563,4 +1636,7 @@ footer strong { color: var(--text-muted); }
   .ins-badge          { align-self: flex-start; }
   .ins-bmi            { flex-direction: column; gap: 10px; }
   .ins-val-input      { font-size: 1.8rem; width: 120px; }
+  .ins-calc-grid      { grid-template-columns: 1fr 1fr; }
+  .ins-zones-grid     { grid-template-columns: 1fr 1fr; }
+  .ins-computed-val   { font-size: 1.8rem; }
 }

@@ -202,7 +202,7 @@
 <div class="about-hero">
   <div class="about-hero-inner">
     <div class="about-wordmark">keirxn</div>
-    <p class="about-lead">A private personal dashboard built around two things: knowing how your body is performing, and eating well. It connects live Garmin biometric data with age-adjusted health analysis and a curated recipe collection — all behind a single login.</p>
+    <p class="about-lead">A private personal dashboard built around two things: knowing how your body is performing, and eating well. It combines age-adjusted health analysis with a curated recipe collection — all behind a single login.</p>
   </div>
 </div>
 
@@ -214,7 +214,7 @@
     <div class="about-section">
       <div class="about-section-title">Page 1</div>
       <h2 class="about-h2">Dashboard</h2>
-      <p class="about-p">The dashboard is the home page. It connects to Garmin Connect and pulls today's biometric data in real time, caching it for 30 minutes to avoid hitting Garmin's rate limits. Three large ring gauges show your most important recovery signals at a glance — Body Battery, Sleep Score, and Stress Level. Below that, a grid of metric cards covers the full picture:</p>
+      <p class="about-p">The dashboard is the home page. Three large ring gauges show your most important recovery signals at a glance — Body Battery, Sleep Score, and Stress Level. Below that, a grid of metric cards covers the full picture:</p>
       <div class="about-grid">
         <div class="about-card">
           <div class="about-card-label"><span class="about-card-accent" style="background:#10b981"></span>HRV</div>
@@ -226,11 +226,11 @@
         </div>
         <div class="about-card">
           <div class="about-card-label"><span class="about-card-accent" style="background:#3b82f6"></span>VO₂ Max</div>
-          <div class="about-card-desc">Garmin's estimated aerobic capacity in mL/kg/min. One of the highest-ROI metrics for predicting long-term health and longevity.</div>
+          <div class="about-card-desc">Estimated aerobic capacity in mL/kg/min. One of the highest-ROI metrics for predicting long-term health and longevity.</div>
         </div>
         <div class="about-card">
           <div class="about-card-label"><span class="about-card-accent" style="background:#f59e0b"></span>Body Battery</div>
-          <div class="about-card-desc">Garmin's 0–100 energy reserve score, calculated from HRV, stress, and sleep. Refills overnight, drains through activity and stress.</div>
+          <div class="about-card-desc">0–100 energy reserve score, calculated from HRV, stress, and sleep. Refills overnight, drains through activity and stress.</div>
         </div>
         <div class="about-card">
           <div class="about-card-label"><span class="about-card-accent" style="background:#8b5cf6"></span>Sleep Score</div>
@@ -242,7 +242,7 @@
         </div>
         <div class="about-card">
           <div class="about-card-label"><span class="about-card-accent" style="background:#8b5cf6"></span>Steps</div>
-          <div class="about-card-desc">Daily step count tracked against your Garmin step goal. Distance in metres also recorded.</div>
+          <div class="about-card-desc">Daily step count tracked against your step goal. Distance in metres also recorded.</div>
         </div>
         <div class="about-card">
           <div class="about-card-label"><span class="about-card-accent" style="background:#ec4899"></span>SpO₂</div>
@@ -258,7 +258,7 @@
         </div>
         <div class="about-card">
           <div class="about-card-label"><span class="about-card-accent" style="background:#3b82f6"></span>Fitness Age</div>
-          <div class="about-card-desc">Garmin's biological age estimate based on your VO₂ Max. Can be lower than your actual age with good aerobic fitness.</div>
+          <div class="about-card-desc">Biological age estimate based on your VO₂ Max. Can be lower than your actual age with good aerobic fitness.</div>
         </div>
       </div>
       <p class="about-p">The dashboard also generates automatic text insights — flagging when HRV drops more than 15% below your weekly average, when sleep score falls below 60, when sleep duration is under 6 hours, when body battery hits critical low, or when daily stress exceeds 65/100. Each insight includes a specific action to take that day. The bottom of the page shows 7-day sparkline charts for HRV, Sleep Score, Body Battery, and Stress.</p>
@@ -268,7 +268,7 @@
     <div class="about-section">
       <div class="about-section-title">Page 2</div>
       <h2 class="about-h2">Insights</h2>
-      <p class="about-p">The Insights page puts your numbers in the context of the broader population. Enter your age, gender, height, and weight at the top — the page auto-saves to your profile and auto-fills from Garmin if connected. BMI is calculated in real time. Then enter your actual metric values (or they're pulled from Garmin automatically) and each card scores you against age-matched reference data from published population health studies.</p>
+      <p class="about-p">The Insights page puts your numbers in the context of the broader population. Enter your age, gender, height, and weight at the top — the page auto-saves to your profile. BMI is calculated in real time. Then enter your actual metric values and each card scores you against age-matched reference data from published population health studies.</p>
       <p class="about-p">Percentile tiers and their labels:</p>
       <table class="about-table">
         <thead>
@@ -382,10 +382,6 @@
           <span>Vanilla HTML, CSS, JS</span>
         </div>
         <div class="about-stack-item">
-          <strong>Garmin data</strong>
-          <span>garminconnect Python library</span>
-        </div>
-        <div class="about-stack-item">
           <strong>Charts</strong>
           <span>Chart.js v4</span>
         </div>
@@ -406,7 +402,7 @@
           <span>SHA-256 hash, 8h session</span>
         </div>
       </div>
-      <p class="about-p">Garmin OAuth tokens are saved to a local <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">.garmin/</code> directory and used for silent reconnection on server startup — no need to log in to Garmin again after the first time. Profile data (name, age, height, weight, units, gender) is persisted in <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">profile.json</code>. Dark mode preference is stored in <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">localStorage</code> with an anti-flash inline script in the <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">&lt;head&gt;</code> to prevent a white flicker before the CSS loads.</p>
+      <p class="about-p">Profile data (name, age, height, weight, units, gender) is persisted in <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">profile.json</code>. Dark mode preference is stored in <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">localStorage</code> with an anti-flash inline script in the <code style="font-family:monospace;font-size:0.85em;background:var(--bg);padding:2px 6px;border-radius:4px;border:1px solid var(--border)">&lt;head&gt;</code> to prevent a white flicker before the CSS loads.</p>
     </div>
 
   </div>

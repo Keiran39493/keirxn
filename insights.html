@@ -27,6 +27,7 @@
         <div class="clock-time" id="clock-time">0000</div>
         <div class="clock-secs" id="clock-secs">00</div>
       </div>
+      <a class="nav-avatar" id="nav-avatar" href="profile.html" title="Profile">?</a>
       <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode"></button>
       <button class="signout-btn" id="signout-btn" title="Sign out">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -43,9 +44,9 @@
 <div class="dash-header">
   <div class="dash-header-inner">
     <div>
-      <h1 class="dash-title">Health Insights</h1>
+      <h1 class="dash-title">Performance Insights</h1>
+      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:4px">Enter your numbers — every metric is saved to your profile automatically.</p>
     </div>
-    <div id="garmin-chip" class="garmin-chip">Not synced</div>
   </div>
 </div>
 
@@ -67,12 +68,12 @@
             <input class="form-input" type="number" id="ins-age" placeholder="28" min="10" max="100">
           </div>
           <div class="form-group">
-            <label class="form-label" for="ins-gender">Gender</label>
+            <label class="form-label" for="ins-gender">Biological sex</label>
             <select class="form-input" id="ins-gender">
               <option value="">Select…</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="other">Other / prefer not to say</option>
+              <option value="other">Prefer not to say</option>
             </select>
           </div>
           <div class="form-group">
@@ -91,8 +92,6 @@
             </select>
           </div>
         </div>
-
-        <!-- BMI -->
         <div class="ins-bmi">
           <div class="ins-bmi-left">
             <span class="ins-bmi-val" id="bmi-value">—</span>
@@ -101,6 +100,87 @@
           <div class="ins-bmi-right">
             <div class="ins-bmi-label" id="bmi-label">—</div>
             <div class="ins-bmi-tip" id="bmi-tip">Enter your height and weight above.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ CARDIOVASCULAR FITNESS ════ -->
+    <div class="ins-group-label">Cardiovascular Fitness</div>
+
+    <!-- ── VO2 MAX ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">VO₂ Max</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-vo2" placeholder="—" min="10" max="90" step="0.1">
+              <span class="ins-val-unit">mL/kg/min</span>
+            </div>
+            <div class="ins-age-avg" id="vo2-avg">Enter your age to see age-adjusted percentiles.</div>
+          </div>
+          <div class="ins-badge" id="vo2-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+        <div class="ins-pct-section">
+          <div id="vo2-bar">
+            <div class="ins-pct-track"><div class="ins-pct-dot" style="left:1%"></div></div>
+            <div class="ins-pct-ticks"></div>
+          </div>
+        </div>
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">VO₂ Max is the maximum rate at which your body can consume oxygen during maximal effort. It is the single strongest predictor of cardiovascular endurance and a key longevity biomarker. Elite marathon runners typically score 70–85 mL/kg/min. You can estimate yours with the Cooper 12-minute run: <em>VO₂ Max ≈ (distance in m − 504.9) ÷ 44.73</em>.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">Your next goal</div>
+            <div class="ins-goal-box" id="vo2-goal">Enter your VO₂ Max and age to see your personalised target.</div>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>Zone 2 cardio 3–5× per week (30–60 min) — the highest ROI training modality</li>
+              <li>Add one weekly VO₂ Max interval session (4–6 × 4 min at 90–95% max HR)</li>
+              <li>Gradually increase weekly training volume (no more than 10% per week)</li>
+              <li>Lose excess body fat — VO₂ Max is expressed per kg of bodyweight</li>
+              <li>Prioritise sleep — VO₂ Max adaptations occur overnight</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MAX HEART RATE & ZONES ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Max Heart Rate & Training Zones</div>
+            <div class="ins-metric-value-row">
+              <span class="ins-computed-val" id="mhr-value">—</span>
+              <span class="ins-val-unit">bpm estimated</span>
+            </div>
+            <div class="ins-age-avg" id="mhr-context">Enter your age in the profile card above.</div>
+          </div>
+        </div>
+        <div class="ins-zones-section">
+          <div class="ins-zones-grid" id="mhr-zones"></div>
+        </div>
+        <div class="ins-metric-body" style="grid-template-columns:1fr 1fr">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Max heart rate defines the ceiling of your cardiovascular system. Training zones derived from it give you precise intensity targets. Using your resting HR alongside MHR (the Karvonen method) makes zones more accurate by accounting for individual cardiac fitness — enter it in the Resting Heart Rate card below to activate personalised zones.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to use your zones</div>
+            <ul class="ins-tips">
+              <li><strong>Z1–Z2:</strong> 80% of your weekly volume — builds aerobic base without fatigue</li>
+              <li><strong>Z3:</strong> Tempo and steady-state efforts — used sparingly</li>
+              <li><strong>Z4:</strong> Lactate threshold training — race-pace work</li>
+              <li><strong>Z5:</strong> VO₂ Max intervals — 1–2× per week maximum</li>
+              <li>Most athletes do too much Z3 and not enough Z2 or Z5</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -120,18 +200,16 @@
           </div>
           <div class="ins-badge" id="hrv-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
         </div>
-
         <div class="ins-pct-section">
           <div id="hrv-bar">
             <div class="ins-pct-track"><div class="ins-pct-dot" style="left:1%"></div></div>
             <div class="ins-pct-ticks"></div>
           </div>
         </div>
-
         <div class="ins-metric-body">
           <div class="ins-body-col">
             <div class="ins-col-heading">What it means</div>
-            <p class="ins-col-text">HRV measures the variation in time between consecutive heartbeats. A higher HRV means your autonomic nervous system is well-balanced — able to switch efficiently between stress and recovery. It is one of the strongest predictors of cardiovascular fitness, resilience to stress, and longevity.</p>
+            <p class="ins-col-text">HRV measures millisecond-level variation between heartbeats. A high HRV reflects a well-functioning autonomic nervous system, capable of switching between sympathetic (stress) and parasympathetic (recovery) states. It is used by elite sports teams as the primary daily readiness metric — a single score matters less than the trend relative to your personal baseline.</p>
           </div>
           <div class="ins-body-col">
             <div class="ins-col-heading">Your next goal</div>
@@ -140,12 +218,12 @@
           <div class="ins-body-col">
             <div class="ins-col-heading">How to improve</div>
             <ul class="ins-tips">
-              <li>Zone 2 cardio 3–4× per week (30–45 min)</li>
-              <li>Consistent sleep and wake times daily</li>
-              <li>Breathwork or meditation (10 min/day)</li>
-              <li>Cold exposure (brief cold showers)</li>
-              <li>Limit alcohol — it significantly suppresses HRV</li>
-              <li>Avoid high-intensity training when HRV is low</li>
+              <li>Zone 2 cardio 3–4× per week — the most direct HRV driver</li>
+              <li>Consistent sleep and wake times, including weekends</li>
+              <li>Breathwork: 5.5 s inhale / 5.5 s exhale (resonance breathing)</li>
+              <li>Cold exposure — brief cold showers activate vagal tone</li>
+              <li>Alcohol significantly suppresses HRV for 24–48 hours</li>
+              <li>Reduce HRV-stressing workouts when the score is >15% below baseline</li>
             </ul>
           </div>
         </div>
@@ -166,18 +244,16 @@
           </div>
           <div class="ins-badge" id="hr-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
         </div>
-
         <div class="ins-pct-section">
           <div id="hr-bar">
             <div class="ins-pct-track"><div class="ins-pct-dot" style="left:1%"></div></div>
             <div class="ins-pct-ticks"></div>
           </div>
         </div>
-
         <div class="ins-metric-body">
           <div class="ins-body-col">
             <div class="ins-col-heading">What it means</div>
-            <p class="ins-col-text">Resting HR is the number of beats per minute your heart takes at complete rest. A lower resting HR indicates a stronger, more efficient heart that pumps more blood per beat. Elite endurance athletes typically have resting HRs of 40–50 bpm. High resting HR is linked to increased cardiovascular risk.</p>
+            <p class="ins-col-text">Resting HR is measured at complete rest, ideally first thing in the morning. It reflects how efficiently your heart pumps blood — a stronger heart ejects more blood per beat, requiring fewer beats per minute. Professional endurance athletes routinely sit at 40–50 bpm. Your RHR also activates personalised Karvonen training zones in the card above.</p>
           </div>
           <div class="ins-body-col">
             <div class="ins-col-heading">Your next goal</div>
@@ -186,24 +262,27 @@
           <div class="ins-body-col">
             <div class="ins-col-heading">How to improve</div>
             <ul class="ins-tips">
-              <li>Regular aerobic exercise (run, cycle, swim)</li>
-              <li>Build volume gradually — zone 2 is most effective</li>
-              <li>Maintain a healthy body weight</li>
-              <li>Manage chronic stress (cortisol elevates HR)</li>
-              <li>Limit caffeine, especially later in the day</li>
-              <li>Quality, consistent sleep lowers resting HR over time</li>
+              <li>Sustained aerobic training — even 30 min of brisk walking daily reduces RHR</li>
+              <li>Zone 2 volume is most effective for cardiac adaptation</li>
+              <li>Reduce body weight — every kg of fat demands extra cardiac output</li>
+              <li>Limit caffeine, especially in the afternoon</li>
+              <li>Manage chronic stress — cortisol chronically elevates heart rate</li>
+              <li>Track morning RHR — sudden rises of >7 bpm signal illness or overtraining</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- ════ RECOVERY & READINESS ════ -->
+    <div class="ins-group-label">Recovery &amp; Readiness</div>
+
     <!-- ── BODY BATTERY ── -->
     <div class="ins-section">
       <div class="ins-metric-card">
         <div class="ins-metric-header">
           <div class="ins-metric-left">
-            <div class="ins-metric-label">Body Battery</div>
+            <div class="ins-metric-label">Body Battery — Recovery Score</div>
             <div class="ins-metric-value-row">
               <input class="ins-val-input" type="number" id="ins-battery" placeholder="—" min="0" max="100">
               <span class="ins-val-unit">/100</span>
@@ -212,13 +291,9 @@
           </div>
           <div class="ins-badge" id="battery-level" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border);font-size:1rem;font-weight:800;letter-spacing:-0.02em;padding:6px 16px">—</div>
         </div>
-
-        <!-- Battery bar -->
         <div class="ins-pct-section">
           <div id="battery-bar" class="batt-bar-wrap">
-            <div class="batt-track">
-              <div class="batt-fill" style="width:0%"></div>
-            </div>
+            <div class="batt-track"><div class="batt-fill" style="width:0%"></div></div>
             <div class="batt-labels">
               <span>0</span>
               <span style="left:25%">25</span>
@@ -228,30 +303,28 @@
             </div>
           </div>
         </div>
-
         <div class="ins-metric-body">
           <div class="ins-body-col">
             <div class="ins-col-heading">What it means</div>
-            <p class="ins-col-text">Garmin's Body Battery uses HRV, stress data, and activity to estimate your energy reserves on a 0–100 scale. It accumulates during restful sleep and drains through activity and stress. Think of it as your daily fuel tank — it shows how recovered you are and how much you can push today.</p>
+            <p class="ins-col-text">The recovery score is a composite 0–100 metric calculated from overnight HRV, sleep duration and quality, resting heart rate, and accumulated stress. It fills during sleep and drains through physical and psychological demands throughout the day. Treat it as a daily readiness signal — not just a number, but an input for deciding training intensity.</p>
           </div>
           <div class="ins-body-col">
             <div class="ins-col-heading">Reading the score</div>
             <ul class="ins-tips">
-              <li><strong style="color:#10b981">75–100:</strong> Fully charged — push hard</li>
-              <li><strong style="color:#3b82f6">50–74:</strong> Good — moderate to high activity OK</li>
-              <li><strong style="color:#f59e0b">25–49:</strong> Low — light activity only</li>
-              <li><strong style="color:#ef4444">0–24:</strong> Critical — rest is essential</li>
+              <li><strong style="color:#10b981">75–100:</strong> Fully recovered — push hard</li>
+              <li><strong style="color:#3b82f6">50–74:</strong> Good reserves — moderate to high intensity OK</li>
+              <li><strong style="color:#f97316">25–49:</strong> Low — light activity only</li>
+              <li><strong style="color:#ef4444">0–24:</strong> Critical — rest is essential today</li>
             </ul>
           </div>
           <div class="ins-body-col">
             <div class="ins-col-heading">How to improve</div>
             <ul class="ins-tips">
-              <li>Prioritise 7–9 hours of uninterrupted sleep</li>
-              <li>Avoid intense training when below 25</li>
-              <li>Short naps (10–20 min) can partially recharge</li>
-              <li>Manage daily stress — it drains battery constantly</li>
-              <li>Stay hydrated and avoid alcohol before sleep</li>
-              <li>A consistent sleep schedule maximises overnight recharge</li>
+              <li>Prioritise 7–9 hours of uninterrupted sleep — the primary recharge mechanism</li>
+              <li>Avoid intense training when score is below 25</li>
+              <li>10–20 min naps can partially restore the score mid-day</li>
+              <li>Manage daily stress — psychological load drains the score as much as physical work</li>
+              <li>Avoid alcohol within 3 hours of sleep — it collapses recovery quality</li>
             </ul>
           </div>
         </div>
@@ -272,18 +345,16 @@
           </div>
           <div class="ins-badge" id="sleep-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
         </div>
-
         <div class="ins-pct-section">
           <div id="sleep-bar">
             <div class="ins-pct-track"><div class="ins-pct-dot" style="left:1%"></div></div>
             <div class="ins-pct-ticks"></div>
           </div>
         </div>
-
         <div class="ins-metric-body">
           <div class="ins-body-col">
             <div class="ins-col-heading">What it means</div>
-            <p class="ins-col-text">Garmin's sleep score rates overall sleep quality 0–100 based on duration, sleep stages (deep, REM, light), overnight HRV, resting HR, and movement. Deep sleep drives physical repair; REM consolidates memory and emotion. A score above 85 indicates excellent, restorative sleep. Chronic poor sleep accelerates ageing and impairs performance.</p>
+            <p class="ins-col-text">Sleep score aggregates overall sleep quality 0–100 from duration, sleep stage composition (deep, REM, light, awake), overnight HRV, and resting HR. Deep sleep drives physical repair and growth hormone release; REM consolidates skill and memory. A single night below 6 hours measurably reduces reaction time, strength output, and cognitive performance the following day.</p>
           </div>
           <div class="ins-body-col">
             <div class="ins-col-heading">Your next goal</div>
@@ -292,13 +363,278 @@
           <div class="ins-body-col">
             <div class="ins-col-heading">How to improve</div>
             <ul class="ins-tips">
-              <li>Target 7–9 hours — no exceptions at the weekend</li>
-              <li>Same sleep and wake time every day (including weekends)</li>
-              <li>Keep bedroom cool: 16–19°C (60–67°F)</li>
-              <li>No screens 60 min before bed — use blue-light mode</li>
-              <li>No caffeine after 14:00</li>
+              <li>Same sleep and wake time every day — including weekends</li>
+              <li>Keep bedroom 16–19°C (60–67°F) — core temperature drop triggers sleep</li>
+              <li>No screens 60 min before bed, or use blue-light blocking glasses</li>
+              <li>No caffeine after 14:00 — half-life is 5–7 hours</li>
               <li>Avoid alcohol within 3 hours of sleep</li>
-              <li>Wind-down routine: dim lights, journalling, stretching</li>
+              <li>Wind-down routine: dim lights, stretching, journalling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STRESS LEVEL ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Stress Level</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-stress" placeholder="—" min="0" max="100">
+              <span class="ins-val-unit">/100</span>
+            </div>
+            <div class="ins-age-avg" id="stress-detail"></div>
+          </div>
+          <div class="ins-badge" id="stress-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+        <div class="ins-pct-section">
+          <div id="stress-range"></div>
+        </div>
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Physiological stress level is derived from HRV patterns across the day — when the autonomic nervous system shifts toward sympathetic (fight-or-flight) dominance, stress rises. Chronic high stress elevates cortisol, which breaks down muscle tissue, suppresses immune function, and impairs sleep quality. Stress and training load compete for the same recovery resources.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">Reading the scale</div>
+            <ul class="ins-tips">
+              <li><strong style="color:#10b981">0–25:</strong> Resting state — ideal for adaptation</li>
+              <li><strong style="color:#3b82f6">26–50:</strong> Moderate — body handling demands well</li>
+              <li><strong style="color:#f59e0b">51–75:</strong> High — recovery and sleep will suffer</li>
+              <li><strong style="color:#ef4444">76–100:</strong> Very high — reduce load immediately</li>
+            </ul>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to reduce</div>
+            <ul class="ins-tips">
+              <li>Box breathing: 4 s in, 4 s hold, 4 s out, 4 s hold</li>
+              <li>10–20 min walk outdoors — nature exposure lowers cortisol</li>
+              <li>Cold water face immersion activates the dive reflex and lowers HR rapidly</li>
+              <li>Reduce training load — accumulated stress and workout stress stack</li>
+              <li>Prioritise sleep — even one additional hour meaningfully reduces daily stress load</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ VITAL SIGNS ════ -->
+    <div class="ins-group-label">Vital Signs</div>
+
+    <!-- ── BLOOD PRESSURE ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Blood Pressure</div>
+            <div class="ins-bp-row">
+              <input class="ins-val-input" type="number" id="ins-bp-sys" placeholder="120" min="60" max="250" style="width:90px">
+              <span class="ins-bp-sep">/</span>
+              <input class="ins-val-input" type="number" id="ins-bp-dia" placeholder="80" min="40" max="160" style="width:80px">
+              <span class="ins-val-unit">mmHg</span>
+            </div>
+            <div class="ins-age-avg" id="bp-detail"></div>
+          </div>
+          <div class="ins-badge" id="bp-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+        <div class="ins-pct-section">
+          <div id="bp-range"></div>
+        </div>
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Blood pressure is the force blood exerts on artery walls. Systolic (top number) is the peak pressure during a heartbeat; diastolic (bottom) is resting pressure between beats. Sustained high blood pressure accelerates arterial damage, increasing risk of heart attack and stroke. Aerobic exercise is one of the most evidence-based interventions — 3–5 sessions per week can reduce systolic BP by 5–8 mmHg.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">AHA categories</div>
+            <ul class="ins-tips">
+              <li><strong style="color:#10b981">Normal:</strong> &lt;120 / &lt;80 mmHg</li>
+              <li><strong style="color:#3b82f6">Elevated:</strong> 120–129 / &lt;80 mmHg</li>
+              <li><strong style="color:#f59e0b">Stage 1:</strong> 130–139 or 80–89 mmHg</li>
+              <li><strong style="color:#f97316">Stage 2:</strong> ≥140 or ≥90 mmHg</li>
+              <li><strong style="color:#ef4444">Crisis:</strong> &gt;180 or &gt;120 mmHg</li>
+            </ul>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>150+ min of moderate aerobic exercise per week</li>
+              <li>Reduce sodium intake — target &lt;2,300 mg/day</li>
+              <li>DASH diet: high in vegetables, fruits, whole grains, lean protein</li>
+              <li>Limit alcohol to &lt;2 drinks/day</li>
+              <li>Reduce chronic stress — cortisol raises blood pressure</li>
+              <li>Maintain healthy body weight</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SPO2 ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">SpO₂ — Blood Oxygen Saturation</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-spo2" placeholder="—" min="70" max="100" step="0.1">
+              <span class="ins-val-unit">%</span>
+            </div>
+            <div class="ins-age-avg" id="spo2-detail"></div>
+          </div>
+          <div class="ins-badge" id="spo2-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+        <div class="ins-pct-section">
+          <div id="spo2-range"></div>
+        </div>
+        <div class="ins-metric-body" style="grid-template-columns:1fr 1fr">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">SpO₂ measures the percentage of haemoglobin in your blood that is carrying oxygen. At altitude, during illness, or with sleep-disordered breathing, SpO₂ drops — directly impairing power output and cognitive function. During altitude camps, athletes monitor SpO₂ to ensure adaptation is occurring without compromising performance. A reading below 95% at sea level warrants attention.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to optimise</div>
+            <ul class="ins-tips">
+              <li>Measure at true rest — activity temporarily lowers readings</li>
+              <li>Nasal breathing at rest and during low-intensity exercise improves O₂ uptake</li>
+              <li>Diaphragmatic breathing exercises strengthen respiratory efficiency</li>
+              <li>Address sleep apnoea — nocturnal desaturations impair recovery significantly</li>
+              <li>Altitude acclimatisation protocols for high-altitude training camps</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RESPIRATORY RATE ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Resting Respiratory Rate</div>
+            <div class="ins-metric-value-row">
+              <input class="ins-val-input" type="number" id="ins-resp" placeholder="—" min="4" max="40" step="0.5">
+              <span class="ins-val-unit">breaths/min</span>
+            </div>
+            <div class="ins-age-avg" id="resp-detail"></div>
+          </div>
+          <div class="ins-badge" id="resp-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+        <div class="ins-pct-section">
+          <div id="resp-range"></div>
+        </div>
+        <div class="ins-metric-body" style="grid-template-columns:1fr 1fr">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Resting respiratory rate (measured over 60 seconds at complete rest) is a sensitive early biomarker for recovery status and acute illness. Elite aerobic athletes commonly exhibit resting rates of 10–14 br/min due to improved breathing mechanics and higher lung volumes. A sudden increase of 2–3 br/min above baseline can signal the onset of illness or significant overtraining before other symptoms appear.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to optimise</div>
+            <ul class="ins-tips">
+              <li>Practice slow breathing — 5–6 breaths/min during rest (coherence breathing)</li>
+              <li>Nasal breathing activates the diaphragm and improves efficiency</li>
+              <li>Yoga and Pilates improve respiratory muscle strength and control</li>
+              <li>Sustained cardio lowers resting rate over weeks and months</li>
+              <li>Address anxiety — chronic hyperventilation elevates resting rate</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ BODY COMPOSITION ════ -->
+    <div class="ins-group-label">Body Composition</div>
+
+    <!-- ── BODY FAT % ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Body Fat % — US Navy Formula</div>
+            <div class="ins-metric-value-row">
+              <span class="ins-computed-val" id="bf-value">—</span>
+              <span class="ins-val-unit">body fat</span>
+            </div>
+            <div class="ins-age-avg" id="bf-tip">Enter measurements below to calculate.</div>
+          </div>
+          <div class="ins-badge" id="bf-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+        <div class="ins-calc-section">
+          <div class="ins-calc-label">Circumference measurements (cm) — measure at widest point</div>
+          <div class="ins-calc-grid">
+            <div class="form-group" style="margin-bottom:0">
+              <label class="form-label">Waist (cm)</label>
+              <input class="form-input" type="number" id="ins-waist" placeholder="82" min="40" max="200" step="0.5">
+            </div>
+            <div class="form-group" style="margin-bottom:0">
+              <label class="form-label">Neck (cm)</label>
+              <input class="form-input" type="number" id="ins-neck" placeholder="37" min="20" max="80" step="0.5">
+            </div>
+            <div class="form-group" style="margin-bottom:0" id="hip-group">
+              <label class="form-label">Hip (cm) <span style="color:var(--text-dim);font-weight:400">— females only</span></label>
+              <input class="form-input" type="number" id="ins-hip" placeholder="95" min="40" max="200" step="0.5">
+            </div>
+          </div>
+        </div>
+        <div class="ins-metric-body">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Body fat percentage separates functional lean mass (muscle, bone, organ) from fat mass. Unlike scale weight, it determines your power-to-weight ratio — the key performance variable in running, cycling, and any sport requiring you to move your bodyweight. The Navy circumference formula requires only a tape measure and is accurate to ±3–4% compared to DEXA scanning.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">Categories by sex</div>
+            <ul class="ins-tips">
+              <li><strong>Male:</strong> Essential &lt;6% · Athletic 6–13% · Fitness 14–17% · Acceptable 18–24% · Obese ≥25%</li>
+              <li><strong>Female:</strong> Essential &lt;13% · Athletic 14–20% · Fitness 21–24% · Acceptable 25–31% · Obese ≥32%</li>
+              <li>Athletes in power-to-weight sports target the low end of their athletic range</li>
+            </ul>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>Caloric deficit of 300–500 kcal/day — larger deficits sacrifice muscle</li>
+              <li>High protein intake (1.6–2.2 g/kg bodyweight) preserves lean mass during a cut</li>
+              <li>Resistance training 3–4× per week protects and builds muscle tissue</li>
+              <li>Zone 2 cardio accelerates fat oxidation without cortisol-driven muscle loss</li>
+              <li>Sleep 7–9 hours — growth hormone (primary fat-burning hormone) peaks in deep sleep</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── WAIST-TO-HEIGHT RATIO ── -->
+    <div class="ins-section">
+      <div class="ins-metric-card">
+        <div class="ins-metric-header">
+          <div class="ins-metric-left">
+            <div class="ins-metric-label">Waist-to-Height Ratio</div>
+            <div class="ins-metric-value-row">
+              <span class="ins-computed-val" id="whtr-value">—</span>
+              <span class="ins-val-unit">ratio</span>
+            </div>
+            <div class="ins-age-avg" id="whtr-detail">Calculated from your waist (entered in Body Fat above) and height.</div>
+          </div>
+          <div class="ins-badge" id="whtr-badge" style="background:var(--bg);color:var(--text-dim);border:1px solid var(--border)">—</div>
+        </div>
+        <div class="ins-pct-section">
+          <div id="whtr-range"></div>
+        </div>
+        <div class="ins-metric-body" style="grid-template-columns:1fr 1fr">
+          <div class="ins-body-col">
+            <div class="ins-col-heading">What it means</div>
+            <p class="ins-col-text">Waist-to-height ratio predicts cardiometabolic risk more reliably than BMI because it captures central (abdominal) adiposity. Fat stored around the abdomen is metabolically active — it releases inflammatory cytokines and drives insulin resistance. The threshold of 0.50 (your waist = half your height) is validated across populations and sexes as the point where risk begins to meaningfully increase.</p>
+          </div>
+          <div class="ins-body-col">
+            <div class="ins-col-heading">How to improve</div>
+            <ul class="ins-tips">
+              <li>Target WHtR below 0.50 — "keep your waist less than half your height"</li>
+              <li>Visceral fat responds faster to exercise than subcutaneous fat</li>
+              <li>High-intensity interval training (HIIT) preferentially targets visceral fat</li>
+              <li>Reduce refined carbohydrates and sugars — primary drivers of visceral accumulation</li>
+              <li>Sleep deprivation increases visceral fat independently of diet and exercise</li>
             </ul>
           </div>
         </div>

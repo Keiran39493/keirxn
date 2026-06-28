@@ -18,8 +18,6 @@ async function loadAndPopulate() {
     set("pf-weight",       p.weight_kg);
     set("pf-units",        p.units || "metric");
     set("pf-goals",        p.goals);
-    set("pf-garmin-email", p.garmin_email);
-
     // Avatar
     renderAvatar(p.name);
     const navEl = document.getElementById("nav-avatar");
@@ -85,8 +83,4 @@ function wireForm() {
     }
   });
 
-  // Garmin reconnect
-  document.getElementById("btn-reconnect")?.addEventListener("click", () => {
-    window.location.href = "index.html";
-  });
 }
