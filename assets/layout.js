@@ -20,7 +20,6 @@
     ["Products", "products.html"],
     ["Gallery", "gallery.html"],
     ["Services", "service.html"],
-    ["Book Support", "book.html"],
     ["CV", "cv.html"],
     ["Blog", "blog.html"],
   ];
@@ -33,6 +32,7 @@
     id: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9v6M12 9h2a3 3 0 0 1 0 6h-2z"/>',
     code: '<path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/>',
     user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 5-6 8-6s7 2 8 6"/>',
+    calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
     play: '<rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/>',
   };
   const icon = (n) =>
@@ -58,7 +58,9 @@
     <div class="follow-label">Follow</div>
     <ul class="author-links">
       ${PROFILE.links.map((l) => `<li><a href="${l.href}">${icon(l.icon)}${l.label}</a></li>`).join("")}
-    </ul>`;
+    </ul>
+    <div class="follow-label">Get in touch</div>
+    <a class="btn-solid book-btn${here === "book.html" ? " active" : ""}" href="book.html">${icon("calendar")}Book a session</a>`;
 
   const footer = `
     <footer class="footer"><div class="footer-inner">
