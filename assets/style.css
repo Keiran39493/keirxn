@@ -57,6 +57,7 @@ a:hover { text-decoration: underline; }
 .sidebar { position: sticky; top: 84px; align-self: start; }
 @media (max-width: 820px) { .sidebar { position: static; } }
 .avatar {
+  object-fit: cover;
   width: 160px; height: 160px; border-radius: 50%; display: block;
   border: 1px solid var(--border); background: var(--card);
 }

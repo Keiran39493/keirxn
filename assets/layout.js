@@ -59,14 +59,8 @@
       </nav>
     </div></header>`;
 
-  const initials = PROFILE.name.split(" ").map((w) => w[0]).join("");
   const sidebar = `
-    <svg class="avatar" viewBox="0 0 160 160" role="img" aria-label="Profile photo placeholder">
-      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#4f8fd6"/><stop offset="1" stop-color="#2a4f86"/></linearGradient></defs>
-      <circle cx="80" cy="80" r="80" fill="url(#g)"/>
-      <text x="80" y="96" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="600" fill="#fff">${initials}</text>
-    </svg>
+    <img class="avatar" src="assets/profile.jpg" alt="Photo of ${PROFILE.name}" width="160" height="160">
     <div>
       <h2 class="author-name">${PROFILE.name}</h2>
       <p class="author-title">${PROFILE.title}</p>
