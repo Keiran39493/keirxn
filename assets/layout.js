@@ -46,6 +46,9 @@
       <nav class="nav" aria-label="Main">
         ${NAV.map(([t, h]) => `<a href="${h}"${h === here ? ' class="active" aria-current="page"' : ""}>${t}</a>`).join("")}
       </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        ${(window.I18N ? I18N.langs : ["en"]).map((l) => `<button type="button" data-lang="${l}" aria-pressed="${window.I18N && I18N.lang === l}">${l.toUpperCase()}</button>`).join("")}
+      </div>
     </div></header>`;
 
   const sidebar = `
@@ -73,6 +76,13 @@
   if (side) side.innerHTML = sidebar;
   document.body.insertAdjacentHTML("beforeend", footer);
 
+
+  // Language switcher + translate everything rendered so far
+  document.querySelector(".lang-switch").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-lang]");
+    if (b && window.I18N) I18N.set(b.dataset.lang);
+  });
+  if (window.I18N) I18N.apply();
 
   // Theme toggle (remembered per browser)
   const root = document.documentElement;

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reviews · Keiran Moores</title>
   <meta name="description" content="Leave a review for Keiran Moores' IT, AI adoption and security services.">
-  <link rel="stylesheet" href="assets/style.css?v=19">
+  <link rel="stylesheet" href="assets/style.css?v=20">
 </head>
 <body>
   <div class="page">
@@ -36,11 +36,11 @@
         <label>Service you received <span class="req">*</span>
           <select name="service" required>
             <option value="" disabled selected>Select a service…</option>
-            <option>On-site and remote IT services</option>
-            <option>AI adoption strategy</option>
-            <option>Security auditing &amp; compliance</option>
-            <option>Products / software</option>
-            <option>Other</option>
+            <option value="On-site and remote IT services">On-site and remote IT services</option>
+            <option value="AI adoption strategy">AI adoption strategy</option>
+            <option value="Security auditing &amp; compliance">Security auditing &amp; compliance</option>
+            <option value="Products / software">Products / software</option>
+            <option value="Other">Other</option>
           </select>
         </label>
 
@@ -71,14 +71,16 @@
         <button type="submit" class="btn-solid">Submit review</button>
       </form>
 
-      <div class="callout thanks" id="thanks" hidden>
+      <div class="callout thanks" id="thanks" data-i18n="reviews.thanks" hidden>
         <strong>Thank you!</strong> Your review has been received. I really appreciate you taking the time.
       </div>
     </main>
   </div>
-  <script src="assets/layout.js?v=19"></script>
+  <script src="assets/i18n.js?v=20"></script>
+  <script src="assets/layout.js?v=20"></script>
   <script>
     (function () {
+      const t = window.I18N ? I18N.t : (s) => s;
       const form = document.getElementById("review-form");
       const msg = form.querySelector(".form-msg");
       const btn = form.querySelector("button[type=submit]");
@@ -86,7 +88,7 @@
       const configured = id && id !== "YOUR_FORM_ID";
 
       if (!configured) {
-        msg.textContent = "Reviews aren't being accepted online just yet. Please check back soon.";
+        msg.textContent = t("Reviews aren't being accepted online just yet. Please check back soon.");
         msg.className = "form-msg err";
         btn.disabled = true;
       }
@@ -95,12 +97,12 @@
         e.preventDefault();
         if (!configured) return;
         if (!form.checkValidity()) {
-          msg.textContent = "Please fill in your name, the service, a rating and your review.";
+          msg.textContent = t("Please fill in your name, the service, a rating and your review.");
           msg.className = "form-msg err";
           form.reportValidity();
           return;
         }
-        btn.disabled = true; btn.textContent = "Sending…"; msg.textContent = "";
+        btn.disabled = true; btn.textContent = t("Sending…"); msg.textContent = "";
         try {
           const res = await fetch("https://formspree.io/f/" + id, {
             method: "POST",
@@ -111,9 +113,9 @@
           form.hidden = true;
           document.getElementById("thanks").hidden = false;
         } catch (err) {
-          msg.textContent = "Sorry, something went wrong sending your review. Please try again, or email me directly.";
+          msg.textContent = t("Sorry, something went wrong sending your review. Please try again, or email me directly.");
           msg.className = "form-msg err";
-          btn.disabled = false; btn.textContent = "Submit review";
+          btn.disabled = false; btn.textContent = t("Submit review");
         }
       });
     })();
