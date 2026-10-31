@@ -1,8 +1,8 @@
 // Shared masthead, sidebar and footer. Edit PROFILE / NAV here once and every page updates.
 (function () {
   const PROFILE = {
-    name: "Alex Rivera",
-    handle: "arivera",
+    name: "Keiran Moores",
+    handle: "keiranmoores",
     title: "Assistant Professor",
     affiliation: "Northbridge Institute of Technology",
     bio: "Cybersecurity · Machine Learning · Networking",
