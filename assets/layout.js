@@ -4,7 +4,7 @@
     name: "Keiran Moores",
     handle: "keiranmoores",
     title: "System Engineer",
-    affiliation: "Northbridge Institute of Technology",
+    affiliation: "Universität Liechtenstein",
     bio: "Cybersecurity · Artificial Intelligence · Networking",
     links: [
       { label: "Universität Liechtenstein", href: "https://www.uni.li", icon: "building" },
@@ -67,7 +67,7 @@
 
   const footer = `
     <footer class="footer"><div class="footer-inner">
-      <span>© ${new Date().getFullYear()} ${PROFILE.name}. Placeholder content.</span>
+      <span>© ${new Date().getFullYear()} ${PROFILE.name}</span>
       <span><button class="theme-toggle" type="button">Toggle theme</button></span>
     </div></footer>`;
 
