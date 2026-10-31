@@ -7,13 +7,13 @@
     affiliation: "Northbridge Institute of Technology",
     bio: "Cybersecurity · Machine Learning · Networking",
     links: [
-      { label: "Northbridge Institute", href: "#", icon: "building" },
-      { label: "Email", href: "mailto:alex.rivera@example.com", icon: "mail" },
+      { label: "Universität Liechtenstein", href: "https://www.uni.li", icon: "building" },
+      { label: "Email", href: "mailto:keiranmoores@gmail.com", icon: "mail" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/keiranmoores/", icon: "user" },
+      { label: "GitHub", href: "https://github.com/Keiran39493", icon: "code" },
       { label: "GPG Key", href: "#", icon: "key" },
       { label: "Google Scholar", href: "#", icon: "scholar" },
       { label: "ORCID", href: "#", icon: "id" },
-      { label: "GitHub", href: "#", icon: "code" },
-      { label: "LinkedIn", href: "#", icon: "user" },
       { label: "YouTube", href: "#", icon: "play" },
     ],
   };
