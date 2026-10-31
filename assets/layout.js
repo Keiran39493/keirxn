@@ -22,7 +22,7 @@
     ["Home", "index.html"],
     ["Publications", "publications.html"],
     ["Products", "products.html"],
-    ["Teaching", "teaching.html"],
+    ["Gallery", "gallery.html"],
     ["Services", "service.html"],
     ["CV", "cv.html"],
     ["Blog", "blog.html"],

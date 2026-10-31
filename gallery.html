@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery · Alex Rivera</title>
+  <link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar"></aside>
+    <main class="content">
+      <h1>Gallery</h1>
+      <p class="lead">A collection of 4K stock photos. Click any image to view it full size.</p>
+
+      <!--
+        HOW TO ADD A PHOTO
+        1. Put the full 4K image in  assets/gallery/full/   (e.g. mountains.jpg)
+        2. Put a small copy (~800px wide) in assets/gallery/thumbs/  with the same name
+           (keeps the page fast; the 4K file only loads when someone opens it)
+        3. Copy one <figure> block below and change the paths, alt text and caption.
+        The placeholder images below come from picsum.photos; replace them with your own.
+      -->
+      <div class="gallery" id="gallery">
+        <figure>
+          <a href="https://picsum.photos/id/1015/3840/2160" data-full>
+            <img src="https://picsum.photos/id/1015/800/450" alt="River winding through a mountain valley" loading="lazy" width="800" height="450">
+          </a>
+          <figcaption>River Valley</figcaption>
+        </figure>
+        <figure>
+          <a href="https://picsum.photos/id/1018/3840/2160" data-full>
+            <img src="https://picsum.photos/id/1018/800/450" alt="Misty mountain range" loading="lazy" width="800" height="450">
+          </a>
+          <figcaption>Misty Peaks</figcaption>
+        </figure>
+        <figure>
+          <a href="https://picsum.photos/id/1039/3840/2160" data-full>
+            <img src="https://picsum.photos/id/1039/800/450" alt="Waterfall in a forest" loading="lazy" width="800" height="450">
+          </a>
+          <figcaption>Forest Falls</figcaption>
+        </figure>
+        <figure>
+          <a href="https://picsum.photos/id/1043/3840/2160" data-full>
+            <img src="https://picsum.photos/id/1043/800/450" alt="Coastal cliffs at sunset" loading="lazy" width="800" height="450">
+          </a>
+          <figcaption>Coastline</figcaption>
+        </figure>
+        <figure>
+          <a href="https://picsum.photos/id/1067/3840/2160" data-full>
+            <img src="https://picsum.photos/id/1067/800/450" alt="City skyline" loading="lazy" width="800" height="450">
+          </a>
+          <figcaption>City Lights</figcaption>
+        </figure>
+        <figure>
+          <a href="https://picsum.photos/id/1080/3840/2160" data-full>
+            <img src="https://picsum.photos/id/1080/800/450" alt="Close-up of strawberries" loading="lazy" width="800" height="450">
+          </a>
+          <figcaption>Fresh Picks</figcaption>
+        </figure>
+      </div>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" type="button" aria-label="Close">×</button>
+    <button class="lb-prev" type="button" aria-label="Previous photo">‹</button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-next" type="button" aria-label="Next photo">›</button>
+  </div>
+
+  <script src="assets/layout.js?v=3"></script>
+  <script>
+    (function () {
+      const links = [...document.querySelectorAll("#gallery [data-full]")];
+      const lb = document.getElementById("lightbox");
+      const img = lb.querySelector("img");
+      const cap = lb.querySelector("figcaption");
+      let i = 0;
+
+      function show(n) {
+        i = (n + links.length) % links.length;
+        const a = links[i];
+        img.src = a.href;
+        img.alt = a.querySelector("img").alt;
+        cap.textContent = a.closest("figure").querySelector("figcaption")?.textContent || "";
+        lb.hidden = false;
+        document.body.style.overflow = "hidden";
+      }
+      function close() {
+        lb.hidden = true;
+        img.removeAttribute("src");
+        document.body.style.overflow = "";
+      }
+
+      links.forEach((a, n) => a.addEventListener("click", (e) => { e.preventDefault(); show(n); }));
+      lb.querySelector(".lb-close").onclick = close;
+      lb.querySelector(".lb-prev").onclick = () => show(i - 1);
+      lb.querySelector(".lb-next").onclick = () => show(i + 1);
+      lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+      document.addEventListener("keydown", (e) => {
+        if (lb.hidden) return;
+        if (e.key === "Escape") close();
+        if (e.key === "ArrowLeft") show(i - 1);
+        if (e.key === "ArrowRight") show(i + 1);
+      });
+    })();
+  </script>
+</body>
+</html>
