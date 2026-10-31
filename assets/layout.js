@@ -60,7 +60,7 @@
     </div></header>`;
 
   const sidebar = `
-    <img class="avatar" src="assets/profile.jpg?v=2" alt="Photo of ${PROFILE.name}" width="160" height="160">
+    <img class="avatar" src="assets/profile.jpg?v=3" alt="Photo of ${PROFILE.name}" width="160" height="160">
     <div>
       <h2 class="author-name">${PROFILE.name}</h2>
       <p class="author-title">${PROFILE.title}</p>
