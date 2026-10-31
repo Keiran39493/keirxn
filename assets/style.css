@@ -169,3 +169,35 @@ th { color: var(--muted); font-weight: 600; font-size: 0.82rem; text-transform: 
 .lb-close { top: 16px; right: 16px; }
 .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
 .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+/* Review form */
+.review-form { display: grid; gap: 16px; max-width: 640px; margin-top: 20px; }
+.review-form label { display: grid; gap: 6px; font-weight: 600; font-size: 0.92rem; }
+.review-form .form-row.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 560px) { .review-form .form-row.two { grid-template-columns: 1fr; } }
+.review-form input[type=text], .review-form input[type=email], .review-form select, .review-form textarea {
+  font: inherit; font-weight: 400; color: var(--fg); background: var(--bg);
+  border: 1px solid var(--border); border-radius: 6px; padding: 9px 11px; width: 100%;
+}
+.review-form textarea { resize: vertical; }
+.review-form :is(input, select, textarea):focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.review-form .req { color: #c0392b; }
+.review-form .opt { color: var(--muted); font-weight: 400; }
+.review-form .check { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; }
+.review-form .check input { margin-top: 5px; }
+.review-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.stars { border: 0; padding: 0; margin: 0; }
+.stars legend { font-weight: 600; font-size: 0.92rem; padding: 0; margin-bottom: 4px; }
+.stars-input { display: inline-flex; flex-direction: row-reverse; gap: 2px; }
+.stars-input input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.stars-input label { font-size: 2rem; line-height: 1; color: var(--border); cursor: pointer; transition: color 0.15s; }
+.stars-input label:hover, .stars-input label:hover ~ label,
+.stars-input input:checked ~ label { color: #e5a50a; }
+.stars-input input:focus-visible + label { outline: 2px solid var(--accent); border-radius: 4px; }
+.form-msg { margin: 0; font-size: 0.92rem; min-height: 1.2em; }
+.form-msg.err { color: #c0392b; }
+.btn-solid {
+  justify-self: start; font: inherit; font-weight: 600; cursor: pointer;
+  background: var(--accent); color: #fff; border: 0; border-radius: 6px; padding: 10px 20px;
+}
+.btn-solid:disabled { opacity: 0.55; cursor: not-allowed; }

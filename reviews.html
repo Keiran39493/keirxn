@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reviews · Keiran Moores</title>
+  <meta name="description" content="Leave a review for Keiran Moores' IT, AI adoption and security services.">
+  <link rel="stylesheet" href="assets/style.css?v=7">
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar"></aside>
+    <main class="content">
+      <h1>Leave a Review</h1>
+      <p class="lead">Thank you for working with me! Your feedback helps me improve and helps other businesses decide if my services are right for them. It only takes a minute.</p>
+
+      <!--
+        SETUP: create a form at https://formspree.io, then paste its ID
+        (the part after /f/ in the endpoint, e.g. "xayzabcd") into data-formspree below.
+        Until then the form shows a notice and won't submit.
+      -->
+      <form class="review-form" id="review-form" data-formspree="YOUR_FORM_ID" novalidate>
+        <div class="form-row two">
+          <label>Your name <span class="req">*</span>
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label>Company <span class="opt">(optional)</span>
+            <input type="text" name="company" autocomplete="organization">
+          </label>
+        </div>
+
+        <label>Email <span class="opt">(optional, never published)</span>
+          <input type="email" name="email" autocomplete="email">
+        </label>
+
+        <label>Service you received <span class="req">*</span>
+          <select name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option>On-site and remote IT services</option>
+            <option>AI adoption strategy</option>
+            <option>Security auditing &amp; compliance</option>
+            <option>Products / software</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <fieldset class="stars">
+          <legend>Rating <span class="req">*</span></legend>
+          <div class="stars-input">
+            <input type="radio" id="r5" name="rating" value="5" required><label for="r5" title="5 stars">★</label>
+            <input type="radio" id="r4" name="rating" value="4"><label for="r4" title="4 stars">★</label>
+            <input type="radio" id="r3" name="rating" value="3"><label for="r3" title="3 stars">★</label>
+            <input type="radio" id="r2" name="rating" value="2"><label for="r2" title="2 stars">★</label>
+            <input type="radio" id="r1" name="rating" value="1"><label for="r1" title="1 star">★</label>
+          </div>
+        </fieldset>
+
+        <label>Your review <span class="req">*</span>
+          <textarea name="review" rows="6" required minlength="10" placeholder="What did I help with, and how did it go?"></textarea>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" name="publish_consent" value="yes">
+          <span>I'm happy for my review (name, company and text) to be shown on this website.</span>
+        </label>
+
+        <!-- spam trap: hidden from people, bots fill it in -->
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <p class="form-msg" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn-solid">Submit review</button>
+      </form>
+
+      <div class="callout thanks" id="thanks" hidden>
+        <strong>Thank you!</strong> Your review has been received. I really appreciate you taking the time.
+      </div>
+    </main>
+  </div>
+  <script src="assets/layout.js?v=7"></script>
+  <script>
+    (function () {
+      const form = document.getElementById("review-form");
+      const msg = form.querySelector(".form-msg");
+      const btn = form.querySelector("button[type=submit]");
+      const id = form.dataset.formspree;
+      const configured = id && id !== "YOUR_FORM_ID";
+
+      if (!configured) {
+        msg.textContent = "Reviews aren't being accepted online just yet. Please check back soon.";
+        msg.className = "form-msg err";
+        btn.disabled = true;
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!configured) return;
+        if (!form.checkValidity()) {
+          msg.textContent = "Please fill in your name, the service, a rating and your review.";
+          msg.className = "form-msg err";
+          form.reportValidity();
+          return;
+        }
+        btn.disabled = true; btn.textContent = "Sending…"; msg.textContent = "";
+        try {
+          const res = await fetch("https://formspree.io/f/" + id, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          if (!res.ok) throw new Error(res.status);
+          form.hidden = true;
+          document.getElementById("thanks").hidden = false;
+        } catch (err) {
+          msg.textContent = "Sorry, something went wrong sending your review. Please try again, or email me directly.";
+          msg.className = "form-msg err";
+          btn.disabled = false; btn.textContent = "Submit review";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
