@@ -3,9 +3,9 @@
   const PROFILE = {
     name: "Keiran Moores",
     handle: "keiranmoores",
-    title: "Assistant Professor",
+    title: "System Engineer",
     affiliation: "Northbridge Institute of Technology",
-    bio: "Cybersecurity · Machine Learning · Networking",
+    bio: "Cybersecurity · Artificial Intelligence · Networking",
     links: [
       { label: "Universität Liechtenstein", href: "https://www.uni.li", icon: "building" },
       { label: "Email", href: "mailto:keiranmoores@gmail.com", icon: "mail" },
