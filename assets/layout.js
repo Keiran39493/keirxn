@@ -21,7 +21,7 @@
   const NAV = [
     ["Home", "index.html"],
     ["Publications", "publications.html"],
-    ["Talks", "talks.html"],
+    ["Products", "products.html"],
     ["Teaching", "teaching.html"],
     ["Services", "service.html"],
     ["CV", "cv.html"],
