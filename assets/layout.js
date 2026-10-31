@@ -23,7 +23,7 @@
     ["Publications", "publications.html"],
     ["Talks", "talks.html"],
     ["Teaching", "teaching.html"],
-    ["Service", "service.html"],
+    ["Services", "service.html"],
     ["CV", "cv.html"],
     ["Blog", "blog.html"],
   ];
