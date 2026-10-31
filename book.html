@@ -44,6 +44,7 @@
             <option>AI adoption strategy</option>
             <option>Security auditing &amp; compliance (SOC 2, ISO 27001)</option>
             <option>Products / software support</option>
+            <option value="Consultation / recommendation" data-key="consultation">Consultation / recommendation</option>
             <option>Other</option>
           </select>
         </label>
@@ -119,6 +120,11 @@
       const type = form.elements.support_type;
       const addrField = document.getElementById("address-field");
       const addr = form.elements.address;
+
+      // Preselect a service from the link, e.g. book.html?service=consultation
+      const want = new URLSearchParams(location.search).get("service");
+      const opt = [...form.elements.service.options].find((o) => want && o.dataset.key === want);
+      if (opt) opt.selected = true;
 
       // ---- Date picker ----
       const picker = document.getElementById("picker");
