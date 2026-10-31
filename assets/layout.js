@@ -14,24 +14,13 @@
     ],
   };
 
-  // Support calendar. Dates are "YYYY-MM-DD".
-  //  - workdays: days of the week you're normally available (0 = Sun ... 6 = Sat)
-  //  - requested: dates someone has already requested (shown as "Requested", can't be picked)
-  //  - unavailable: holidays / days off
-  const AVAILABILITY = {
-    workdays: [1, 2, 3, 4, 5],
-    requested: [],
-    unavailable: [],
-    monthsAhead: 2,
-    formspree: "xeaalyka",
-  };
-
   const NAV = [
     ["Home", "index.html"],
     ["Reviews", "reviews.html"],
     ["Products", "products.html"],
     ["Gallery", "gallery.html"],
     ["Services", "service.html"],
+    ["Book Support", "book.html"],
     ["CV", "cv.html"],
     ["Blog", "blog.html"],
   ];
@@ -69,53 +58,7 @@
     <div class="follow-label">Follow</div>
     <ul class="author-links">
       ${PROFILE.links.map((l) => `<li><a href="${l.href}">${icon(l.icon)}${l.label}</a></li>`).join("")}
-    </ul>
-    <div class="cal" id="support-cal">
-      <div class="follow-label">Support availability</div>
-      <div class="cal-head">
-        <button type="button" class="cal-nav" data-step="-1" aria-label="Previous month">‹</button>
-        <span class="cal-month" aria-live="polite"></span>
-        <button type="button" class="cal-nav" data-step="1" aria-label="Next month">›</button>
-      </div>
-      <div class="cal-grid" role="grid"></div>
-      <ul class="cal-legend">
-        <li><i class="dot avail"></i>Available</li>
-        <li><i class="dot req"></i>Requested</li>
-        <li><i class="dot off"></i>Unavailable</li>
-      </ul>
-      <p class="cal-hint">Click an available day to request support.</p>
-    </div>`;
-
-  const dialog = `
-    <dialog class="cal-dialog" id="cal-dialog" aria-labelledby="cal-dialog-title">
-      <form class="review-form" method="dialog" novalidate>
-        <h2 id="cal-dialog-title">Request support</h2>
-        <p class="cal-picked"></p>
-        <input type="hidden" name="requested_date">
-        <input type="hidden" name="_subject" value="Support request">
-        <input type="hidden" name="form_type" value="support-request">
-        <label>Your name <span class="req">*</span><input type="text" name="name" required autocomplete="name"></label>
-        <label>Email <span class="req">*</span><input type="email" name="email" required autocomplete="email"></label>
-        <label>Company <span class="opt">(optional)</span><input type="text" name="company" autocomplete="organization"></label>
-        <div class="form-row two">
-          <label>Time
-            <select name="time"><option>Any time</option><option>Morning</option><option>Afternoon</option></select>
-          </label>
-          <label>Support type
-            <select name="support_type"><option>Remote</option><option>On-site</option></select>
-          </label>
-        </div>
-        <label>What do you need help with? <span class="req">*</span>
-          <textarea name="details" rows="4" required minlength="5"></textarea>
-        </label>
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="form-msg" role="status" aria-live="polite"></p>
-        <div class="cal-actions">
-          <button type="button" class="btn cal-cancel">Cancel</button>
-          <button type="submit" class="btn-solid">Send request</button>
-        </div>
-      </form>
-    </dialog>`;
+    </ul>`;
 
   const footer = `
     <footer class="footer"><div class="footer-inner">
@@ -127,106 +70,7 @@
   const side = document.querySelector(".sidebar");
   if (side) side.innerHTML = sidebar;
   document.body.insertAdjacentHTML("beforeend", footer);
-  if (side) { document.body.insertAdjacentHTML("beforeend", dialog); initCalendar(); }
 
-  function initCalendar() {
-    const cal = document.getElementById("support-cal");
-    const grid = cal.querySelector(".cal-grid");
-    const label = cal.querySelector(".cal-month");
-    const dlg = document.getElementById("cal-dialog");
-    const form = dlg.querySelector("form");
-    const msg = form.querySelector(".form-msg");
-    const sendBtn = form.querySelector("button[type=submit]");
-    const pad = (n) => String(n).padStart(2, "0");
-    const ymd = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-    const today = new Date(); today.setHours(0, 0, 0, 0);
-    const first = new Date(today.getFullYear(), today.getMonth(), 1);
-    const last = new Date(today.getFullYear(), today.getMonth() + AVAILABILITY.monthsAhead, 1);
-    const requested = new Set(AVAILABILITY.requested);
-    try { JSON.parse(localStorage.getItem("myRequests") || "[]").forEach((d) => requested.add(d)); } catch (e) {}
-    const off = new Set(AVAILABILITY.unavailable);
-    let view = new Date(first);
-
-    function status(d) {
-      const k = ymd(d);
-      if (d <= today || off.has(k) || !AVAILABILITY.workdays.includes(d.getDay())) return "off";
-      if (requested.has(k)) return "req";
-      return "avail";
-    }
-
-    function render() {
-      label.textContent = view.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
-      cal.querySelector('[data-step="-1"]').disabled = view <= first;
-      cal.querySelector('[data-step="1"]').disabled = view >= last;
-      const names = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
-      let html = names.map((n) => `<span class="cal-dow">${n}</span>`).join("");
-      const lead = (new Date(view.getFullYear(), view.getMonth(), 1).getDay() + 6) % 7;
-      html += "<span></span>".repeat(lead);
-      const days = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
-      for (let i = 1; i <= days; i++) {
-        const d = new Date(view.getFullYear(), view.getMonth(), i);
-        const s = status(d);
-        const words = { avail: "available", req: "already requested", off: "unavailable" }[s];
-        const full = d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
-        html += `<button type="button" class="cal-day ${s}${ymd(d) === ymd(today) ? " today" : ""}" data-date="${ymd(d)}"
-          ${s === "avail" ? "" : "disabled"} aria-label="${full}, ${words}">${i}</button>`;
-      }
-      grid.innerHTML = html;
-    }
-
-    cal.addEventListener("click", (e) => {
-      const nav = e.target.closest(".cal-nav");
-      if (nav) { view.setMonth(view.getMonth() + Number(nav.dataset.step)); render(); return; }
-      const day = e.target.closest(".cal-day.avail");
-      if (!day) return;
-      const d = new Date(day.dataset.date + "T00:00:00");
-      form.elements.requested_date.value = day.dataset.date;
-      form.querySelector(".cal-picked").textContent =
-        d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-      msg.textContent = ""; msg.className = "form-msg";
-      sendBtn.disabled = false; sendBtn.textContent = "Send request";
-      form.hidden = false;
-      dlg.showModal();
-    });
-
-    form.querySelector(".cal-cancel").addEventListener("click", () => dlg.close());
-    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        msg.textContent = "Please add your name, email and what you need help with.";
-        msg.className = "form-msg err";
-        form.reportValidity();
-        return;
-      }
-      sendBtn.disabled = true; sendBtn.textContent = "Sending…"; msg.textContent = "";
-      try {
-        const res = await fetch("https://formspree.io/f/" + AVAILABILITY.formspree, {
-          method: "POST", body: new FormData(form), headers: { Accept: "application/json" },
-        });
-        if (!res.ok) throw new Error(res.status);
-        const date = form.elements.requested_date.value;
-        requested.add(date);
-        try {
-          const mine = JSON.parse(localStorage.getItem("myRequests") || "[]");
-          localStorage.setItem("myRequests", JSON.stringify([...new Set([...mine, date])]));
-        } catch (e) {}
-        form.reset();
-        render();
-        msg.textContent = "Thanks! Your request was sent. I'll confirm by email.";
-        msg.className = "form-msg ok";
-        sendBtn.textContent = "Sent";
-        setTimeout(() => dlg.close(), 2500);
-      } catch (err) {
-        msg.textContent = "Sorry, that didn't send. Please try again or email me directly.";
-        msg.className = "form-msg err";
-        sendBtn.disabled = false; sendBtn.textContent = "Send request";
-      }
-    });
-
-    render();
-  }
 
   // Theme toggle (remembered per browser)
   const root = document.documentElement;
