@@ -176,7 +176,7 @@ th { color: var(--muted); font-weight: 600; font-size: 0.82rem; text-transform: 
 .review-form label { display: grid; gap: 6px; font-weight: 600; font-size: 0.92rem; }
 .review-form .form-row.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 560px) { .review-form .form-row.two { grid-template-columns: 1fr; } }
-.review-form input[type=text], .review-form input[type=email], .review-form select, .review-form textarea {
+.review-form input[type=text], .review-form input[type=email], .review-form input[type=tel], .review-form select, .review-form textarea, .review-form .date-input {
   font: inherit; font-weight: 400; color: var(--fg); background: var(--bg);
   border: 1px solid var(--border); border-radius: 6px; padding: 9px 11px; width: 100%;
 }
@@ -211,12 +211,22 @@ th { color: var(--muted); font-weight: 600; font-size: 0.82rem; text-transform: 
 /* Date picker (matches form inputs) */
 .review-form .field { display: grid; gap: 6px; align-content: start; }
 .review-form .field-label { font-weight: 600; font-size: 0.92rem; }
-.when-row { align-items: start; }
-.when-side { gap: 16px; }
-.picker {
-  border: 1px solid var(--border); border-radius: 6px; padding: 10px; background: var(--bg);
+.date-field { position: relative; }
+.review-form .date-input {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  text-align: left; cursor: pointer; line-height: inherit;
 }
-.picker.invalid { border-color: #c0392b; }
+.date-input .date-text { color: var(--muted); }
+.date-input.has-date .date-text { color: var(--fg); }
+.date-input svg { width: 16px; height: 16px; color: var(--muted); flex: none; }
+.review-form .date-input:focus, .review-form .date-input[aria-expanded="true"] { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.review-form .date-input.invalid { border-color: #c0392b; }
+.picker {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 20; width: 290px; max-width: calc(100vw - 32px);
+  border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: var(--bg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.picker[hidden] { display: none; }
 .picker-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
 .picker-month { font-weight: 600; font-size: 0.92rem; }
 .picker-nav {
@@ -236,15 +246,3 @@ th { color: var(--muted); font-weight: 600; font-size: 0.82rem; text-transform: 
 .picker-day.today { border-color: var(--border); }
 .picker-day.selected, .picker-day.selected:hover { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
 .picker-day:focus-visible, .picker-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.picked { display: grid; gap: 6px; }
-.picked-value {
-  border: 1px dashed var(--border); border-radius: 6px; padding: 9px 11px; color: var(--muted); font-size: 0.92rem;
-}
-.picked-value.has-date { border-style: solid; border-color: var(--accent); background: var(--accent-soft); color: var(--fg); font-weight: 600; }
-
-/* Sidebar "Get in touch" */
-.book-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; }
-.book-btn:hover { text-decoration: none; filter: brightness(1.08); }
-.book-btn svg { width: 16px; height: 16px; }
-.book-btn.active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
-@media (max-width: 820px) { .sidebar .book-btn { grid-column: 1 / -1; justify-self: start; } }
