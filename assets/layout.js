@@ -11,10 +11,6 @@
       { label: "Email", href: "mailto:keiranmoores@gmail.com", icon: "mail" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/keiranmoores/", icon: "user" },
       { label: "GitHub", href: "https://github.com/Keiran39493", icon: "code" },
-      { label: "GPG Key", href: "#", icon: "key" },
-      { label: "Google Scholar", href: "#", icon: "scholar" },
-      { label: "ORCID", href: "#", icon: "id" },
-      { label: "YouTube", href: "#", icon: "play" },
     ],
   };
 
