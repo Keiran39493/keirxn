@@ -42,7 +42,7 @@
 
   const masthead = `
     <header class="masthead"><div class="masthead-inner">
-      <a class="site-title" href="index.html"><code>whoami</code> — ${PROFILE.name}</a>
+      <a class="site-title" href="index.html"><code>personal site</code> — ${PROFILE.name}</a>
       <nav class="nav" aria-label="Main">
         ${NAV.map(([t, h]) => `<a href="${h}"${h === here ? ' class="active" aria-current="page"' : ""}>${t}</a>`).join("")}
       </nav>
