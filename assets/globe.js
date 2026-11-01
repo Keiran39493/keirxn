@@ -51,6 +51,9 @@
   }
 
   function startFavicon(tex) {
+    // Search engines render pages with JavaScript and only accept a real icon URL, not a canvas data: URL.
+    // Leave the static <link rel="icon"> tags in place for them.
+    if (/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)) return;
     const S = 64;
     const c = document.createElement("canvas");
     c.width = c.height = S;
