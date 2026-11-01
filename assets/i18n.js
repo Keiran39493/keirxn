@@ -130,6 +130,7 @@
 
     // ---- CV ----
     ["Curriculum Vitae", "Lebenslauf", "Curriculum vitae", "Curriculum vitae"],
+    ["Request CV", "Lebenslauf anfordern", "Demander mon CV", "Richiedi il CV"],
     ["Positions", "Berufserfahrung", "Expérience professionnelle", "Esperienza professionale"],
     ["Education", "Ausbildung", "Formation", "Formazione"],
     ["Certifications", "Zertifikate", "Certifications", "Certificazioni"],
