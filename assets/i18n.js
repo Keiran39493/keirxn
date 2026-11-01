@@ -77,6 +77,9 @@
     ["Book a consultation and I'll review your needs and recommend the right tools, products and services for you.", "Buchen Sie eine Beratung – ich analysiere Ihre Anforderungen und empfehle Ihnen die passenden Tools, Produkte und Dienstleistungen.", "Réservez une consultation : j'analyse vos besoins et vous recommande les outils, produits et services adaptés.", "Prenoti una consulenza: analizzerò le sue esigenze e le consiglierò gli strumenti, i prodotti e i servizi più adatti."],
     ["Book a consultation", "Beratung buchen", "Réserver une consultation", "Prenota una consulenza"],
 
+    // ---- AI Workflow ----
+    ["My Study Workflow Template", "Meine Vorlage für den Lern-Workflow", "Mon modèle de workflow d'étude", "Il mio modello di workflow di studio"],
+
     // ---- Services ----
     ["Professional services for SMEs", "Professionelle Dienstleistungen für KMU", "Services professionnels pour les PME", "Servizi professionali per le PMI"],
     ["On-site and remote IT Services", "IT-Services vor Ort und aus der Ferne", "Services informatiques sur site et à distance", "Servizi IT in sede e da remoto"],
