@@ -239,3 +239,10 @@ th { color: var(--muted); font-weight: 600; font-size: 0.82rem; text-transform: 
 .lang-switch button:hover { color: var(--fg); }
 .lang-switch button[aria-pressed="true"] { background: var(--accent); color: #fff; }
 .lang-switch button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* Spinning ASCII globe (assets/globe.js) */
+.ascii-globe {
+  font-family: var(--mono); color: var(--accent);
+  font-size: clamp(6px, 2.1vw, 12px); line-height: 1.2;
+  margin: 24px 0; overflow: hidden; user-select: none;
+}
