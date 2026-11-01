@@ -18,10 +18,9 @@
     ["Home", "index.html"],
     ["Reviews", "reviews.html"],
     ["Products", "products.html"],
-    ["Gallery", "gallery.html"],
+    ["AI Workflow", "ai-workflow.html"],
     ["Services", "service.html"],
     ["CV", "cv.html"],
-    ["Blog", "blog.html"],
   ];
 
   const ICONS = {

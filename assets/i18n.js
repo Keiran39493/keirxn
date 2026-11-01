@@ -10,7 +10,7 @@
     ["Home", "Startseite", "Accueil", "Home"],
     ["Reviews", "Bewertungen", "Avis", "Recensioni"],
     ["Products", "Produkte", "Produits", "Prodotti"],
-    ["Gallery", "Galerie", "Galerie", "Galleria"],
+    ["AI Workflow", "KI-Workflow", "Workflow IA", "Workflow IA"],
     ["Services", "Dienstleistungen", "Services", "Servizi"],
     ["CV", "Lebenslauf", "CV", "CV"],
     ["Blog", "Blog", "Blog", "Blog"],
@@ -76,24 +76,6 @@
     ["Not sure what fits your business?", "Unsicher, was zu Ihrem Unternehmen passt?", "Vous ne savez pas ce qui convient à votre entreprise ?", "Non sa cosa sia più adatto alla sua azienda?"],
     ["Book a consultation and I'll review your needs and recommend the right tools, products and services for you.", "Buchen Sie eine Beratung – ich analysiere Ihre Anforderungen und empfehle Ihnen die passenden Tools, Produkte und Dienstleistungen.", "Réservez une consultation : j'analyse vos besoins et vous recommande les outils, produits et services adaptés.", "Prenoti una consulenza: analizzerò le sue esigenze e le consiglierò gli strumenti, i prodotti e i servizi più adatti."],
     ["Book a consultation", "Beratung buchen", "Réserver une consultation", "Prenota una consulenza"],
-
-    // ---- Gallery ----
-    ["A collection of 4K stock photos. Click any image to view it full size.", "Eine Sammlung von 4K-Stockfotos. Klicken Sie auf ein Bild, um es in voller Grösse anzuzeigen.", "Une collection de photos 4K. Cliquez sur une image pour l'afficher en plein écran.", "Una raccolta di foto stock in 4K. Clicchi su un'immagine per visualizzarla a schermo intero."],
-    ["River Valley", "Flusstal", "Vallée fluviale", "Valle del fiume"],
-    ["Misty Peaks", "Nebelgipfel", "Sommets brumeux", "Vette nella nebbia"],
-    ["Forest Falls", "Waldwasserfall", "Cascade en forêt", "Cascata nel bosco"],
-    ["Coastline", "Küste", "Littoral", "Costa"],
-    ["City Lights", "Lichter der Stadt", "Lumières de la ville", "Luci della città"],
-    ["Fresh Picks", "Frisch gepflückt", "Cueillette fraîche", "Raccolto fresco"],
-    ["River winding through a mountain valley", "Fluss, der sich durch ein Bergtal schlängelt", "Rivière serpentant dans une vallée de montagne", "Fiume che serpeggia in una valle montana"],
-    ["Misty mountain range", "Nebelverhangene Bergkette", "Chaîne de montagnes dans la brume", "Catena montuosa avvolta nella nebbia"],
-    ["Waterfall in a forest", "Wasserfall im Wald", "Cascade dans une forêt", "Cascata in una foresta"],
-    ["Coastal cliffs at sunset", "Küstenklippen bei Sonnenuntergang", "Falaises côtières au coucher du soleil", "Scogliere al tramonto"],
-    ["City skyline", "Skyline einer Stadt", "Silhouette d'une ville", "Skyline di una città"],
-    ["Close-up of strawberries", "Nahaufnahme von Erdbeeren", "Gros plan sur des fraises", "Primo piano di fragole"],
-    ["Close", "Schliessen", "Fermer", "Chiudi"],
-    ["Previous photo", "Vorheriges Foto", "Photo précédente", "Foto precedente"],
-    ["Next photo", "Nächstes Foto", "Photo suivante", "Foto successiva"],
 
     // ---- Services ----
     ["Professional services for SMEs", "Professionelle Dienstleistungen für KMU", "Services professionnels pour les PME", "Servizi professionali per le PMI"],
