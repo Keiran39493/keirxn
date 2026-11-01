@@ -8,7 +8,6 @@
   const SPIN_MS = 6000; // one full turn
   const LIGHT = norm([-0.55, 0.6, 0.7]);
   const RAMP = " .,-~:;=!*#$@";
-  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function norm(v) {
     const l = Math.hypot(v[0], v[1], v[2]);
@@ -48,7 +47,7 @@
   }
 
   function angleAt(t) {
-    return still ? 0.6 : ((t % SPIN_MS) / SPIN_MS) * Math.PI * 2;
+    return ((t % SPIN_MS) / SPIN_MS) * Math.PI * 2;
   }
 
   function startFavicon(tex) {
@@ -81,7 +80,7 @@
       link.href = c.toDataURL("image/png");
     }
     frame();
-    if (!still) setInterval(frame, 100);
+    setInterval(frame, 100);
   }
 
   function startAscii(pre, tex) {
@@ -106,7 +105,6 @@
       pre.textContent = txt;
     }
 
-    if (still) return frame(0);
     let prev = 0;
     (function loop(t) {
       if (t - prev > 33) { frame(t); prev = t; } // ~30 fps; rAF pauses in background tabs
