@@ -7,7 +7,7 @@
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v=21">
+  <link rel="stylesheet" href="assets/style.css?v=22">
 </head>
 <body>
   <div class="page">
@@ -16,12 +16,83 @@
       <h1>AI Workflow</h1>
 
       <h2>Productivity Workflow Agent System (PWAS)</h2>
+      <p class="lead">My workflow connects three tools: Google Drive stores my files, Claude reads and works with them, and Notion keeps the results organised.</p>
 
-      <pre id="ascii-globe" class="ascii-globe" aria-hidden="true"></pre>
+      <figure class="pwas-stage" role="img" aria-label="Google Drive, Claude and Notion connected across a spinning globe">
+        <pre id="ascii-globe" class="ascii-globe" aria-hidden="true"></pre>
+        <svg class="pwas-lines" viewBox="0 0 100 70" aria-hidden="true">
+          <path class="link" d="M12 18 Q20 20 27 24"/>
+          <path class="link arc" d="M27 24 Q50 6 76 38"/>
+          <path class="link" d="M88 35 Q82 37 76 38"/>
+          <path class="link arc" d="M76 38 Q52 66 28 48"/>
+          <path class="link" d="M28 48 Q20 51 12 52"/>
+          <g class="pt" style="--c:#1FA463"><circle class="ring" cx="27" cy="24" r="1"/><circle cx="27" cy="24" r="1"/></g>
+          <g class="pt" style="--c:#D97757"><circle class="ring" cx="76" cy="38" r="1"/><circle cx="76" cy="38" r="1"/></g>
+          <g class="pt" style="--c:var(--fg)"><circle class="ring" cx="28" cy="48" r="1"/><circle cx="28" cy="48" r="1"/></g>
+        </svg>
+        <div class="pwas-node" style="--x:12;--y:18"><span class="badge"><img src="assets/logos/googledrive.svg" alt=""></span><span class="label">Google Drive</span></div>
+        <div class="pwas-node" style="--x:88;--y:35"><span class="badge"><img src="assets/logos/claude.svg" alt=""></span><span class="label">Claude</span></div>
+        <div class="pwas-node" style="--x:12;--y:52"><span class="badge"><img src="assets/logos/notion.svg" alt=""></span><span class="label">Notion</span></div>
+      </figure>
+
+      <h3>How the pieces fit</h3>
+      <ol class="pwas-flow">
+        <li>
+          <img src="assets/logos/googledrive.svg" alt="" width="28" height="28">
+          <div><strong>1. Collect</strong><span>Google Drive</span></div>
+          <p>Lecture slides, PDFs, papers and notes go into one Drive folder per course or project.</p>
+        </li>
+        <li>
+          <img src="assets/logos/claude.svg" alt="" width="28" height="28">
+          <div><strong>2. Think</strong><span>Claude</span></div>
+          <p>Claude reads the files straight from Drive to summarise them, answer questions and draft notes or plans.</p>
+        </li>
+        <li>
+          <img src="assets/logos/notion.svg" alt="" width="28" height="28">
+          <div><strong>3. Organise</strong><span>Notion</span></div>
+          <p>Claude writes the results into Notion pages and databases, so notes, tasks and deadlines live in one place.</p>
+        </li>
+      </ol>
+
+      <h2>Set it up yourself</h2>
+      <p>You need a Claude account, a Google account and a Notion workspace. Which connectors you can use depends on your Claude plan.</p>
+
+      <h3>Step 1: Connect Google Drive</h3>
+      <ol>
+        <li>In Claude, open Settings and go to Connectors.</li>
+        <li>Find Google Drive and select Connect.</li>
+        <li>Sign in with your Google account and allow access.</li>
+      </ol>
+
+      <h3>Step 2: Connect Notion</h3>
+      <ol>
+        <li>In Settings → Connectors, browse the connectors and choose Notion.</li>
+        <li>Select Connect and sign in to Notion.</li>
+        <li>Choose which pages Claude can access. Share only what it needs.</li>
+      </ol>
+
+      <h3>Step 3: Use both in a chat</h3>
+      <ol>
+        <li>Start a new chat and open the tools menu below the message box.</li>
+        <li>Make sure Google Drive and Notion are switched on.</li>
+        <li>Ask Claude to use both, for example:</li>
+      </ol>
+      <blockquote class="pwas-prompt">Read the lecture notes in my Drive folder "Networking – Week 3", summarise the key concepts, and create a page in my Notion "Study Notes" database with the summary and five revision questions.</blockquote>
+
+      <h3>Using Claude Code instead?</h3>
+      <p>Add Notion as an MCP server from your terminal, then run /mcp inside Claude Code to sign in:</p>
+      <pre class="pwas-code"><code>claude mcp add --transport http notion https://mcp.notion.com/mcp</code></pre>
+
+      <h3>Tips</h3>
+      <ul>
+        <li>Keep one Drive folder per course or project so Claude finds the right files quickly.</li>
+        <li>Set up a Notion database with properties like Course, Topic and Status first, so Claude fills in the same structure every time.</li>
+        <li>Check what Claude writes to Notion, especially when you are just getting started.</li>
+      </ul>
     </main>
   </div>
 
-  <script src="assets/i18n.js?v=20"></script>
+  <script src="assets/i18n.js?v=21"></script>
 
   <script src="assets/layout.js?v=21"></script>
   <script src="assets/globe.js?v=2"></script>
