@@ -209,13 +209,31 @@
   const DICT = {};
   ROWS.forEach(([en, de, fr, it]) => { DICT[norm(en)] = { de, fr, it }; });
 
-  function save(l) { try { localStorage.setItem("lang", l); } catch (e) {} }
+  // Each language has its own URL so search engines can index it:
+  // English at /page.html, the others at /de/page.html, /fr/page.html, /it/page.html.
+  const PREFIX = /^\/(de|fr|it)\//;
+  function save(l) { try { localStorage.setItem("lang", l); return localStorage.getItem("lang") === l; } catch (e) { return false; } }
+  function stored() { try { const s = localStorage.getItem("lang"); return LANGS.includes(s) ? s : null; } catch (e) { return null; } }
+  function urlFor(l, keepLangParam) {
+    const url = new URL(location.href);
+    url.searchParams.delete("lang");
+    if (keepLangParam) url.searchParams.set("lang", l);
+    url.pathname = (l === "en" ? "" : "/" + l) + url.pathname.replace(PREFIX, "/");
+    return url.toString();
+  }
   function detect() {
+    const m = location.pathname.match(PREFIX);
+    if (m) return m[1];
+    // English page: send visitors who chose (or whose browser prefers) another language to that version.
+    // Crawlers have no saved choice and an English browser, so they stay on the English page.
     const q = new URLSearchParams(location.search).get("lang");
-    if (LANGS.includes(q)) { save(q); return q; }
-    try { const s = localStorage.getItem("lang"); if (LANGS.includes(s)) return s; } catch (e) {}
-    const n = (navigator.language || "en").slice(0, 2).toLowerCase();
-    return LANGS.includes(n) ? n : "en";
+    let want = LANGS.includes(q) ? (save(q), q) : stored();
+    if (!want) {
+      const n = (navigator.language || "en").slice(0, 2).toLowerCase();
+      want = LANGS.includes(n) ? n : "en";
+    }
+    if (want !== "en") location.replace(urlFor(want));
+    return "en";
   }
   const lang = detect();
   document.documentElement.lang = lang;
@@ -252,13 +270,9 @@
 
   function set(l) {
     if (!LANGS.includes(l) || l === lang) return;
-    save(l);
-    const url = new URL(location.href);
-    url.searchParams.delete("lang");
-    // If storage is blocked, carry the choice in the URL instead
-    let stored = null; try { stored = localStorage.getItem("lang"); } catch (e) {}
-    if (stored !== l) url.searchParams.set("lang", l);
-    location.href = url.toString();
+    // If storage is blocked, carry an English choice in the URL so the browser language doesn't override it
+    const ok = save(l);
+    location.href = urlFor(l, !ok && l === "en");
   }
 
   window.I18N = { lang, langs: LANGS, locale: LOCALES[lang], t, apply, set };
