@@ -10,6 +10,7 @@
     ["Home", "Startseite", "Accueil", "Home"],
     ["Reviews", "Bewertungen", "Avis", "Recensioni"],
     ["Products", "Produkte", "Produits", "Prodotti"],
+    ["Tools", "Tools", "Outils", "Strumenti"],
     ["AI Workflow", "KI-Workflow", "Workflow IA", "Workflow IA"],
     ["Services", "Dienstleistungen", "Services", "Servizi"],
     ["CV", "Lebenslauf", "CV", "CV"],
