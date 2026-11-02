@@ -208,9 +208,9 @@
       it: 'Aiuto le piccole e medie imprese con supporto IT, adozione dell\'IA, audit di sicurezza e conformità, e sviluppo strumenti open source che risolvono i problemi IT di tutti i giorni.',
     },
     "home.callout": {
-      de: '<strong>Brauchen Sie Hilfe bei IT, KI oder Sicherheit?</strong> Sehen Sie sich meine <a href="service.html">Dienstleistungen</a> an oder entdecken Sie meine <a href="products.html">Produkte</a>. Bereits mit mir gearbeitet? <a href="reviews.html">Hinterlassen Sie eine Bewertung</a>.',
-      fr: '<strong>Besoin d\'aide en informatique, en IA ou en sécurité ?</strong> Découvrez les <a href="service.html">services que je propose</a> ou parcourez mes <a href="products.html">produits</a>. Vous avez déjà travaillé avec moi ? <a href="reviews.html">Laissez un avis</a>.',
-      it: '<strong>Ha bisogno di aiuto con IT, IA o sicurezza?</strong> Scopra i <a href="service.html">servizi che offro</a> o consulti i miei <a href="products.html">prodotti</a>. Ha già lavorato con me? <a href="reviews.html">Lasci una recensione</a>.',
+      de: '<strong>Brauchen Sie Hilfe bei IT, KI oder Sicherheit?</strong> Sehen Sie sich meine <a href="service.html">Dienstleistungen</a> an oder entdecken Sie meine <a href="tools.html">Tools</a>. Bereits mit mir gearbeitet? <a href="reviews.html">Hinterlassen Sie eine Bewertung</a>.',
+      fr: '<strong>Besoin d\'aide en informatique, en IA ou en sécurité ?</strong> Découvrez les <a href="service.html">services que je propose</a> ou parcourez mes <a href="tools.html">outils</a>. Vous avez déjà travaillé avec moi ? <a href="reviews.html">Laissez un avis</a>.',
+      it: '<strong>Ha bisogno di aiuto con IT, IA o sicurezza?</strong> Scopra i <a href="service.html">servizi che offro</a> o consulti i miei <a href="tools.html">strumenti</a>. Ha già lavorato con me? <a href="reviews.html">Lasci una recensione</a>.',
     },
     "reviews.thanks": {
       de: '<strong>Vielen Dank!</strong> Ihre Bewertung ist eingegangen. Ich schätze es sehr, dass Sie sich die Zeit genommen haben.',

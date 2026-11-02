@@ -16,6 +16,8 @@ from pathlib import Path
 SITE = "https://keirxn.com"
 LANGS = ["en", "de", "fr", "it"]
 SKIP = {"404.html"}
+# Old page names that now redirect to a new page, so existing links and search results keep working.
+REDIRECTS = {"products.html": "tools.html"}
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
 
@@ -50,7 +52,21 @@ def head_links(lang, page):
     return "\n  ".join(tags)
 
 
-pages = sorted(p.name for p in root.glob("*.html") if p.name not in SKIP)
+pages = sorted(p.name for p in root.glob("*.html") if p.name not in SKIP and p.name not in REDIRECTS)
+
+for old, new in REDIRECTS.items():
+    for lang in LANGS:
+        target = url(lang, new)
+        out = root / old if lang == "en" else root / lang / old
+        out.parent.mkdir(exist_ok=True)
+        out.write_text(
+            f'<!doctype html>\n<html><head><meta charset="utf-8"><title>Redirecting…</title>\n'
+            f'<link rel="canonical" href="{target}">\n'
+            f'<meta http-equiv="refresh" content="0; url={target}">\n'
+            f'<script>location.replace("{target}" + location.search + location.hash)</script>\n'
+            f'</head><body><p>This page has moved to <a href="{target}">{target}</a>.</p></body></html>\n',
+            encoding="utf-8",
+        )
 
 for page in pages:
     src = (root / page).read_text(encoding="utf-8")
